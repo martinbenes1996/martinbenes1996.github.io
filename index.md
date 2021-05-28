@@ -5,3 +5,8 @@ Hello and welcome to this blog. Edit the `index.md` file to change this content.
 ## This is a title
 
 And you can include links, like this [link to fast.ai](https://www.fast.ai). Posts will appear after this file. 
+
+{% for post in site.posts %}	
+    <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
+    <p><small><strong>{{ post.date | date: "%B %e, %Y" }}</strong> . {{ post.category }} . <a href="http://martinbenes1996.github.io{{ post.url }}"></a></small></p>			
+{% endfor %}	
