@@ -41,6 +41,7 @@ plugins:
   - jekyll-github-metadata
   - jekyll-paginate
   - jekyll-remote-theme
+  - jekyll-seo-tag
 
 # analytics
 google_analytics:
