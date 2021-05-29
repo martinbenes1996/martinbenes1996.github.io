@@ -9,6 +9,7 @@
 title: Martin Beneš
 description: This is where the description of your site will go. You should change it by editing the _config.yml file. It can be as long as you like! Happy blogging... ❤
 github_username: martinbenes1996@gmail.com
+github_repo: "https://github.com/martinbenes1996/martinbenes1996.github.io.git"
 
 # Email and twitter are optional:
 email: martinbenes1996@gmail.com
@@ -21,7 +22,7 @@ use_math: true
 google_analytics:
 
 # Everything below here can be ignored, unless you want to change the theme entirely
-theme: poole/hyde #jekyll-theme-minimal
+remote_theme: poole/hyde #jekyll-theme-minimal
 plugins:
   - jekyll-feed
   - jekyll-gist
