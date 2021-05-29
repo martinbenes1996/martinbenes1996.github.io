@@ -14,9 +14,12 @@ twitter_username: martinbenes1996
 
 # insite settings
 #remote_theme             : "mmistakes/minimal-mistakes@4.23.0"
-remote_theme: jekyll-theme-minimal
+# logic
+paginate: 10
 use_math: true
 search_enabled: true
+# theme
+remote_theme: jekyll-theme-minimal
 titles_from_headings:
   enabled:     true
   strip_title: true

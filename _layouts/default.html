@@ -1,12 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<!--{% include head.html %}-->
+{% include head.html %}
 
 <!-- hack iOS CSS :active style -->
 <body ontouchstart="">
-
-    * TOC {:toc}
     
     <!--<div class="posts">
         {% for post in paginator.posts %}
@@ -24,6 +22,9 @@
     {% endfor %}
   </div>
 -->
+
+        {{ content }}
+
         <div class="pagination">
             {% if paginator.next_page %}
                 <a class="pagination-item older" href="{{ paginator.next_page_path | absolute_url }}">Older</a>
