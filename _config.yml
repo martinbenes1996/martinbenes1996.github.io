@@ -52,7 +52,11 @@ markdown: kramdown
 highlighter: rouge
 kramdown:
   input: GFM                            # use Github Flavored Markdown !important
-
+  math_engine: katex
+  auto_ids: true
+  hard_wrap: false
+  syntax_highlighter: rouge
+use_math: true
 
 
 # 评论系统
