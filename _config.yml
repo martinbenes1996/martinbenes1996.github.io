@@ -19,7 +19,7 @@ paginate: 10
 use_math: true
 search_enabled: true
 # theme
-theme: jekyll-theme-minimal
+theme: minimal #jekyll-theme-minimal
 titles_from_headings:
   enabled:     true
   strip_title: true
