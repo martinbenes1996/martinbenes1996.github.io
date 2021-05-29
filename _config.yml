@@ -6,7 +6,6 @@ description: This is where the description of your site will go.
 github_username: martinbenes1996
 github_repo: "https://github.com/martinbenes1996/martinbenes1996.github.io.git"
 permalink: pretty
-baseurl: "/"
 
 # contact
 email: martinbenes1996@gmail.com
