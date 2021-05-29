@@ -13,8 +13,8 @@ email: martinbenes1996@gmail.com
 twitter_username: martinbenes1996
 
 # insite settings
-remote_theme             : "mmistakes/minimal-mistakes@4.23.0"
-#remote_theme: poole/hyde #jekyll-theme-minimal
+#remote_theme             : "mmistakes/minimal-mistakes@4.23.0"
+remote_theme: jekyll-theme-minimal
 use_math: true
 search_enabled: true
 titles_from_headings:
