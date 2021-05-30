@@ -33,7 +33,8 @@ if [ $? != 0 ]; then
 fi
 # replace img directory
 sed -ri "s/$1_data/$1_files/g" _posts/$1.md # > _posts/$1.md
-sed -ri "s/($1_files)/\/img\/\1/g" _posts/$1.md # > _posts/$1.md
+#sed -ri 's/"(?=$1_files)/"\//g' _posts/$1.md # > _posts/$1.md
+sed -ri "s/($1_files)/img\/\1/g" _posts/$1.md # > _posts/$1.md
 # rename with date
 printf -v date '%(%Y-%m-%d)T' -1
 mv _posts/$1.md _posts/$date-$1.md
