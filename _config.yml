@@ -61,8 +61,6 @@ kramdown:
   hard_wrap: true
   syntax_highlighter: rouge
 
-
-
 # 评论系统
 # Disqus（https://disqus.com/）
 # disqus_username: qiubaiying

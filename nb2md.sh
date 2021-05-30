@@ -20,6 +20,7 @@ fi
 
 # copy files
 rm -rf img/$1_files
+cp notebooks/$1/$1_data/* notebooks/$1/$1_files 2>/dev/null
 mv notebooks/$1/$1_files img/
 if [ $? != 0 ]; then
     echo "Copying of dependent files failed!"
@@ -31,6 +32,7 @@ if [ $? != 0 ]; then
     exit 1
 fi
 # replace img directory
+sed -ri "s/$1_data/$1_files/g" _posts/$1.md # > _posts/$1.md
 sed -ri "s/($1_files)/\/img\/\1/g" _posts/$1.md # > _posts/$1.md
 # rename with date
 printf -v date '%(%Y-%m-%d)T' -1
