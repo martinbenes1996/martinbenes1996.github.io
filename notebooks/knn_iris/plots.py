@@ -33,8 +33,8 @@ def kNN_plot(n_neighbors):
     ax.add_collection(lc)
     
     
-    ax.set_xlabel('PC1 [%5.3f%%]' % pca.explained_variance_ratio_[0])
-    ax.set_ylabel('PC2 [%5.3f%%]' % pca.explained_variance_ratio_[1])
+    ax.set_xlabel('PC1 [%5.3f%%]' % (pca.explained_variance_ratio_[0] * 100))
+    ax.set_ylabel('PC2 [%5.3f%%]' % (pca.explained_variance_ratio_[1] * 100))
     ax.legend()
     fig.savefig('notebooks/knn_iris/knn_iris_data/knn_points.png')
     plt.show()
