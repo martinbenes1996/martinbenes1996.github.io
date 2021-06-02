@@ -5,6 +5,8 @@ import numpy as np
 from scipy import stats
 from sklearn.datasets import load_iris
 from sklearn.decomposition import PCA
+from sklearn.model_selection import train_test_split
+from sklearn.neighbors import KNeighborsClassifier
 
 def kNN_plot(n_neighbors):
     # fetch data
@@ -39,51 +41,71 @@ def kNN_plot(n_neighbors):
     
     #print(pca.explained_variance_ratio_)
 
-def objective_function(x):
-    return np.abs(x - 10) + 4*np.sin(x) + 3
+def objective_function(x, type = 'train'):
+    iris = load_iris()
+    xtrain, xtest, ytrain, ytest = train_test_split(iris.data, iris.target, train_size=.75, random_state=12345)
+    knn = KNeighborsClassifier(n_neighbors=int(x))
+    knn.fit(xtrain, ytrain)
+    if type == 'train':
+        return 1 - (knn.predict(xtrain) == ytrain).mean()
+    elif type == 'test':
+        return 1 - (knn.predict(xtest) == ytest).mean()
+    else:
+        raise NotImplementedError(f'type {type} not recognized')
+    #return np.abs(x - 10) + 4*np.sin(x) + 3
 
 def _plot_objective_function(ax):
-    xgrid = np.linspace(0,20, 1000)
-    fx = objective_function(xgrid)
+    xgrid = np.array(range(1,100))#np.linspace(0,100, 1000)
+    fx_train = [objective_function(x,'train') for x in xgrid]
+    fx_test = [objective_function(x,'test') for x in xgrid]
     # plot
-    ax.plot(xgrid, fx)
+    ax.plot(xgrid, fx_train, label='Train set')
+    ax.plot(xgrid, fx_test, label='Test set')
 
 def plot_grid_search(n = 10, ax = None):
     # create grid
-    xgrid = np.linspace(0,20,n)
-    fx = objective_function(xgrid)
-    min_idx = np.argmin(fx)
+    xgrid = np.linspace(1,100,n)
+    fx_train = [objective_function(x,'train') for x in xgrid]
+    fx_test = [objective_function(x,'test') for x in xgrid]
+    min_idx = np.argmin(fx_test)
     # plot
     if ax is None:
         fig,ax = plt.subplots()
     else:
         fig = None
     _plot_objective_function(ax)
-    ax.scatter(xgrid, fx)
+    ax.scatter(xgrid, fx_train)
+    ax.scatter(xgrid, fx_test)
     for x in xgrid:
         ax.axvline(x, alpha=.1)
-    ax.scatter(xgrid[min_idx], fx[min_idx], c='red')
+    ax.scatter(xgrid[min_idx], fx_train[min_idx], c='red')
+    ax.scatter(xgrid[min_idx], fx_test[min_idx], c='red')
     ax.set_title('Grid search')
+    ax.legend()
     if fig is not None:
         fig.savefig('notebooks/knn_iris/knn_iris_data/grid_search.png')
 
 def plot_random_search(n = 10, ax = None):
     # create grid
     np.random.seed(54321)
-    xgrid = np.random.uniform(0,20,n)
-    fx = objective_function(xgrid)
-    min_idx = np.argmin(fx)
+    xgrid = np.random.uniform(0,100,n)
+    fx_train = [objective_function(x,'train') for x in xgrid]
+    fx_test = [objective_function(x,'test') for x in xgrid]
+    min_idx = np.argmin(fx_test)
     # plot
     if ax is None:
         fig,ax = plt.subplots()
     else:
         fig = None
     _plot_objective_function(ax)
-    ax.scatter(xgrid, fx)
+    ax.scatter(xgrid, fx_train)
+    ax.scatter(xgrid, fx_test)
     for x in xgrid:
         ax.axvline(x, alpha=.1)
-    ax.scatter(xgrid[min_idx], fx[min_idx], c='red')
+    ax.scatter(xgrid[min_idx], fx_train[min_idx], c='red')
+    ax.scatter(xgrid[min_idx], fx_test[min_idx], c='red')
     ax.set_title('Random search')
+    ax.legend()
     if fig is not None:
         fig.savefig('notebooks/knn_iris/knn_iris_data/random_search.png')
     
