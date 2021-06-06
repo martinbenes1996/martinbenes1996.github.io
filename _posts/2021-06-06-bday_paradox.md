@@ -132,3 +132,8 @@ np.argmin(Pn < 0.9)
 In this article, we described a phonemonon called *Bithday paradox*, which describes surprisingly high probability of two people having birthday on the same day. The probability distribution for the group size is visualized.
 
 In a group of 23 people the probability is more than 0.5.
+
+## References
+
+- Better Explained: Understanding the Birthday Paradox. <a href="https://betterexplained.com/articles/understanding-the-birthday-paradox/">https://betterexplained.com/</a>.
+- Marek Valášek: Jak nás klame intuice 1. <a href="https://www.youtube.com/watch?v=cuBbmeLwZGg">https://www.youtube.com/</a>
