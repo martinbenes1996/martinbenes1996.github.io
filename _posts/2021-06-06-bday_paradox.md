@@ -60,7 +60,7 @@ Probability of all people in a group of 3 having birthday on different days is 0
 
 ## For N people
 
-Let's transform our previous computation for a general group of N people. In the last expression, we raplace the exponent with number of combinations for N
+Let's transform our previous computation for a general group of N people. In the last expression, we replace the exponent with number of combinations for N
 
 $$P(\text{N peoples' birthdays in different days}) = \Big[\frac{364}{365}\Big]^{N\choose 2}$$
 
