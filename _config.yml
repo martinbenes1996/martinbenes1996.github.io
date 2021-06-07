@@ -72,8 +72,8 @@ kramdown:
 # https://github.com/settings/applications/new
 gitalk:
   enable: true    #是否开启Gitalk评论
-  clientID: 0b8e84e35d232e637cc4                            #生成的clientID
-  clientSecret: 6f881fab1a5264f7bdeb086b321334b1460579ef    #生成的clientSecret
+  clientID: f29d0c9bb0260afbac15                            #生成的clientID
+  clientSecret: b2194ecc38e5263045dc91bfd660724e40ee89ed    #生成的clientSecret
   repo: martinbenes1996.github.io    #仓库名称
   owner: martinbenes1996    #github用户名
   admin: martinbenes1996
