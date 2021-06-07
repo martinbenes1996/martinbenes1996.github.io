@@ -6,7 +6,7 @@ email: martinbenes1996@gmail.com
 description: "Blog about machine learning, artificial intelligence and software development."
 keyword: "MB, MB Blog, Martin Beneš, martinbenes1996, machinelearning, Python, software"
 url: "https://www.martinbenes1996.github.io"          # your host, for absolute URL
-baseurl: "/"      # for example, '/blog' if your blog hosted on 'host/blog'
+baseurl: ""      # for example, '/blog' if your blog hosted on 'host/blog'
 github_repo: "https://www.github.com/martinbenes1996/martinbenes1996.github.io.git" # you code repository
 theme_github_username: qiubaiying
 theme_github_repo: https://www.github.com/qiubaiying/qiubaiying.github.io # theme repo
