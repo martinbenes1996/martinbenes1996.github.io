@@ -69,12 +69,12 @@ function tr(key){
 function trAll(){
     console.log('trAll()')
     // translate all the items
-    var items = document.querySelectorAll("[xloc]")
+    var items = document.querySelectorAll("[xloc-tr]")
     for(i in items) {
         let item = items[i]
         console.log(item)
-        console.log(item.getAttribute('xloc'))
-        item.text = tr(item.getAttribute('xloc'))
+        console.log(item.getAttribute('xloc-tr'))
+        item.text = tr(item.getAttribute('xloc-tr'))
     }
     // change translate button
     document.querySelector(".setLang").text = lang

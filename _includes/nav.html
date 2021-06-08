@@ -21,7 +21,7 @@
                     </li>
                     {% for page in site.pages %}{% if page.title %}
                     <li>
-                        <a href="{{ page.url | prepend: site.baseurl }}" xloc="{{page.xloc}}">{{ page.title }}</a>
+                        <a href="{{ page.url | prepend: site.baseurl }}" xloc-tr="{{page.xloc}}">{{ page.title }}</a>
                     </li>
                     {% endif %}{% endfor %}
                     <li>
