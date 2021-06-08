@@ -36,7 +36,7 @@ var getJSON = function(url, callback) {
     xhr.send();
 };
 var _tr;
-var getTr = function(lang) {
+var downloadTr = function(lang) {
     getJSON('/tr/'+lang.toLowerCase()+'.json', function(err, data) {
         console.log("received tr for " + lang)
         if (err !== null) {
@@ -52,18 +52,21 @@ function getCurrLang() { return getCookie('language'); }
 function setCurrLang(lang) {
     console.log("Language: changing to " + lang)
     lang = lang || getCurrLang()
+    // download translations
+    downloadTr(lang)
+    // set cookie
     setCookie('language', lang)
-    var $setLang = document.querySelector(".setLang");
-    console.log("object " + $setLang)
-    $setLang.text = lang
+    // change language button
+    document.querySelector(".setLang").text = lang
 }
 function changeLang(){
     let currLang = getCurrLang()
     console.log("Language: current " + currLang)
-    // CZ
-    if(currLang == 'EN') { setCurrLang('CZ') }
     // EN or default
-    else { setCurrLang('EN') }
+    var nextLang = 'EN';
+    // CZ
+    if(currLang == 'EN') { nextLang = 'CZ' }
+    setCurrLang(nextLang)
 }
 
 // --- get translation ---
