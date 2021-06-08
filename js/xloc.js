@@ -60,7 +60,8 @@ function trAll(){
     var items = document.querySelectorAll("[xloc]")
     for(i in items) {
         let item = items[i]
-        console.log(item + ' - ' + item.getAttribute('xloc'))
+        console.log(item)
+        console.log(item.getAttribute('xloc'))
         item.text = tr(item.getAttribute('xloc'))
     }
     // change translate button
