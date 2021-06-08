@@ -75,7 +75,8 @@ function trAll(){
         let item = items[i]
         try {
             console.log(item())
-        } catch {
+        } catch (e) {
+            console.log(e)
             console.log(item)
         }
         
