@@ -4,6 +4,8 @@ layout: page_intro
 
 <h1 xloc-tr="TR_CURRENTLY_BLOG">Currently on the blog</h1>
 
+<span xloc-tr="TR_POSTS_ONLY_ENGLISH"></span>
+
 {% for post in paginator.posts %}
 <div class="post-preview">
     <a href="{{ post.url | prepend: site.baseurl }}">
