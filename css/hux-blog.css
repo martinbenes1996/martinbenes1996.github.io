@@ -440,9 +440,8 @@ pre code {
     color: white;
     padding: 20px;
   }
-  .navbar-custom-dark .nav li a {
+  .navbar-custom-dark {
     color: black;
-    padding: 20px;
   }
   .navbar-custom .nav li a:hover,
   .navbar-custom .nav li a:focus {
