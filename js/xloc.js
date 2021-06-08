@@ -49,6 +49,20 @@ var downloadTr = function(lang) {
     })
 }
 
+// --- get translation ---
+function tr(key){
+    return _tr[key]
+}
+function trAll(){
+    // translate all the items
+    for(item in document.querySelectorAll("[xloc]")) {
+        console.log(item)
+        item.text = tr(item.xloc)
+    }
+    // change translate button
+    document.querySelector(".setLang").text = lang
+}
+
 // --- change language setting ---
 function getCurrLang() { return getCookie('language'); }
 function setCurrLang(lang) {
@@ -58,8 +72,8 @@ function setCurrLang(lang) {
     downloadTr(lang)
     // set cookie
     setCookie('language', lang)
-    // change language button
-    document.querySelector(".setLang").text = lang
+    // translate all
+    trAll()
 }
 function changeLang(){
     let currLang = getCurrLang()
@@ -71,7 +85,3 @@ function changeLang(){
     setCurrLang(nextLang)
 }
 
-// --- get translation ---
-function tr(key){
-    return _tr[key]
-}
