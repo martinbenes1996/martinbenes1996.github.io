@@ -12,7 +12,7 @@ theme_github_username: qiubaiying
 theme_github_repo: https://www.github.com/qiubaiying/qiubaiying.github.io # theme repo
 
 # Sidebar settings
-sidebar: true                           # whether or not using Sidebar.
+sidebar: false                           # whether or not using Sidebar.
 sidebar-about-description: "Machine learning specialist, statistician and software developer."
 sidebar-avatar: /img/washington.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
 
