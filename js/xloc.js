@@ -74,7 +74,7 @@ function trAll(lang){
     for(i in items) {
         try {
             console.log(items[i])
-            item.text = tr(items[i].getAttribute('xloc-tr'))
+            items[i].text = tr(items[i].getAttribute('xloc-tr'))
         } catch (e) {
             console.log('Error to translate: ' + items[i])
             console.log(e)
