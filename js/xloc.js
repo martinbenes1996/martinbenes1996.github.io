@@ -73,15 +73,13 @@ function trAll(){
     for(i in items) {
         let item = items[i]
         try {
-            console.log("Try calling entries.")
-            console.log(item())
+            item.text = tr(item.getAttribute('xloc-tr'))
         } catch (e) {
-            console.log(e)
-            console.log(item)
+            console.log('Error to translate: ' + item)
+            item.text = '<FAIL>'
         }
         
-        console.log(item.getAttribute('xloc-tr'))
-        item.text = tr(item.getAttribute('xloc-tr'))
+        
     }
     // change translate button
     document.querySelector(".setLang").text = lang
