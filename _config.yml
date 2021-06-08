@@ -71,14 +71,14 @@ disqus_username: martinbenes1996-github-io
 
 # Gitalk - to setup
 # https://github.com/settings/applications/new
-gitalk:
-  enable: true    #是否开启Gitalk评论
-  clientID: f29d0c9bb0260afbac15                            #生成的clientID
-  clientSecret: b2194ecc38e5263045dc91bfd660724e40ee89ed    #生成的clientSecret
-  repo: martinbenes1996.github.io    #仓库名称
-  owner: martinbenes1996    #github用户名
-  admin: martinbenes1996
-  distractionFreeMode: true #是否启用类似FB的阴影遮罩
+#gitalk:
+#  enable: true    #是否开启Gitalk评论
+#  clientID: f29d0c9bb0260afbac15                            #生成的clientID
+#  clientSecret: b2194ecc38e5263045dc91bfd660724e40ee89ed    #生成的clientSecret
+#  repo: martinbenes1996.github.io    #仓库名称
+#  owner: martinbenes1996    #github用户名
+#  admin: martinbenes1996
+#  distractionFreeMode: true #是否启用类似FB的阴影遮罩
 
 
 # 统计
