@@ -93,3 +93,20 @@ friends: [
         href: "https://www.google.com"
     }
 ]
+
+# localization
+defaults:
+    -
+     scope:
+         path: ""
+     values:
+         #author: "Martin"
+         #layout: myLayout
+         lang: en
+         base-url: "/"
+    -
+     scope:
+         path: es
+     values:
+         lang: es
+         base-url: "/es/"

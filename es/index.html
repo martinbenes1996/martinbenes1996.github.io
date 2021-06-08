@@ -5,12 +5,18 @@ description: "Main page"
 
 This is the index page.
 
+{% assign posts=site.posts | where:"i18n-link", page.i18n-link | sort: 'lang' %}
+
+{% if posts.size == 0 %}
+  {% assign posts=site.pages | where:"i18n-link", page.i18n-link | sort: 'lang' %}
+{% endif %}
 
 <div class="lang">
-    <ul>
-        <li>EN</li>
-        <li>FR</li>      
-    </ul>
+  <ul>
+    {% for post in posts %}
+      <li><a class="{{ post.lang }}" href="{{ site.base-url }}{{ post.url }}">{{ post.lang }}</a></li>
+    {% endfor %}
+  </ul>
 </div>
 
 <h2>Latest on blog</h2>
