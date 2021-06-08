@@ -58,12 +58,12 @@ var downloadTr = function(lang) {
 
 // --- get translation ---
 function tr(key){
-    try {
+    //try {
         return _tr[key]
-    } catch(e) {
-        console.log("Translation fallback: " + key)
-        return _tr_default[key]
-    }
+    //} catch(e) {
+    //    console.log("Translation fallback: " + key)
+    //    return _tr_default[key]
+    //}
     
 }
 function trAll(lang){
@@ -73,18 +73,19 @@ function trAll(lang){
     // translate all the items
     var items = document.querySelectorAll('[xloc-tr]:not([xloc-tr=""])')
     for(i = 0; i < items.length; i++) {
+        var item = items[i]
         try {
             console.log(i)
-            console.log(items[i])
-            items[i].text = tr(items[i].getAttribute('xloc-tr'))
+            console.log(item)
+            item.text = tr(item.getAttribute('xloc-tr'))
         } catch (e) {
-            console.log('Error to translate: ' + items[i])
+            console.log('Error to translate: ' + item)
             console.log(e)
-            items[i].text = '<FAIL>'
+            item.text = '<FAIL>'
         }
     }
     // change translate button
-    document.querySelector(".setLang").text = lang
+    document.querySelector(".langBtn").text = lang
 }
 
 // --- change language setting ---
