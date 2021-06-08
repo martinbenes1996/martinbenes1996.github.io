@@ -42,40 +42,32 @@ var _tr_default = {
     "TR_BLOG": "Blog",
     "TR_TAGS": "Tags"
 }
-var downloadTr = function(lang) {
+var downloadTr = function(lang, callback) {
     getJSON('/xloc/'+lang.toLowerCase()+'.json', function(err, data) {
         
         if (err !== null) {
-            console.log("loading xloc for " + lang + " failed")
+            //console.log("loading xloc for " + lang + " failed")
             throw new Error(err)
         } else {
-            console.log("loaded " + lang + " xloc")
+            //console.log("loaded " + lang + " xloc")
             _tr = data;
-            trAll(lang);
         }
+        callback();
     })
 }
 
 // --- get translation ---
 function tr(key){
-    //try {
-        return _tr[key]
-    //} catch(e) {
-    //    console.log("Translation fallback: " + key)
-    //    return _tr_default[key]
-    //}
-    
+    return _tr[key]
 }
 function trAll(lang){
     // set lang
     lang = lang || getCurrLang()
-    console.log(_tr)
     // translate all the items
     var items = document.querySelectorAll('[xloc-tr]:not([xloc-tr=""])')
     for(i = 0; i < items.length; i++) {
         var item = items[i]
         try {
-            console.log(i)
             console.log(item)
             item.innerHTML = tr(item.getAttribute('xloc-tr'))
         } catch (e) {
@@ -93,10 +85,10 @@ function getCurrLang() { return getCookie('language'); }
 function setCurrLang(lang) {
     console.log("Language: changing to " + lang)
     lang = lang || getCurrLang() || 'EN'
-    // download translations and set
-    downloadTr(lang)
     // set cookie
     setCookie('language', lang)
+    // download translations and set
+    downloadTr(lang, function() { trAll(lang); })
 }
 function changeLang(){
     let currLang = getCurrLang()
