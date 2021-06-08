@@ -67,7 +67,6 @@ function tr(key){
     
 }
 function trAll(){
-    console.log('trAll()')
     // translate all the items
     var items = document.querySelectorAll("[xloc-tr]")
     console.log(JSON.stringify(items))
@@ -75,7 +74,7 @@ function trAll(){
         let item = items[i]
         try {
             console.log("Try calling entries.")
-            console.log(item.entries())
+            console.log(item())
         } catch (e) {
             console.log(e)
             console.log(item)
