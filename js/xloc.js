@@ -51,7 +51,7 @@ var downloadTr = function(lang) {
         } else {
             console.log("loaded " + lang + " xloc")
             _tr = data;
-            trAll();
+            trAll(lang);
         }
     })
 }
@@ -66,7 +66,9 @@ function tr(key){
     }
     
 }
-function trAll(){
+function trAll(lang){
+    // set lang
+    lang = lang || getCurrLang()
     // translate all the items
     var items = document.querySelectorAll("[xloc-tr]")
     console.log(JSON.stringify(items))
@@ -78,8 +80,6 @@ function trAll(){
             console.log('Error to translate: ' + item)
             item.text = '<FAIL>'
         }
-        
-        
     }
     // change translate button
     document.querySelector(".setLang").text = lang
