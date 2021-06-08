@@ -38,12 +38,30 @@
 <script type="text/javascript">
     // get nodes
     var $setLang = document.querySelector(".setLang");
-    function changeLang(){
-        console.log("changeLang()");
-        console.log($setLang);
-        console.log($setLang.text);
-        console.log($setLang.value);
+    function getCurrLang() {
+        return $.cookie( 'language' );
     }
+    function setCurrLang(lang) {
+        $.cookie('language', lang);
+    }
+    function changeLang(){
+        let currLang = getCurrLang()
+        // CZ
+        if(currLang == 'EN') {
+            console.log("Setting language: Czech")
+            setCurrLang('CZ')
+            $setLang.text = 'CZ'
+        // EN or default
+        } else {
+            if($setLang.text != 'EN') {
+                console.log("Undefined current language.")
+            }
+            console.log("Setting language: English")
+            setCurrLang('EN')
+            $setLang.text = 'EN'
+        }
+    }
+    setCurrLang('EN');
     //var $cz = document.querySelector(".cz");
     //var $ru = document.querySelector(".ru");
     //var $select = document.querySelector("select");
