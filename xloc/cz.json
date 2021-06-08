@@ -6,10 +6,14 @@
     "TR_FEATURED_TAGS": "POPULÁRNÍ TAGY",
     "TR_FRIENDS": "SPŘÁTELNENÍ PARTNEŘI",
     "TR_ABOUT_ME": "O MNĚ",
+    "TR_THEME_ON": "Motiv na",
+    "TR_GITHUB_6": "GitHubu",
 
     "TR_CURRENTLY_BLOG": "Aktuální příspěvky",
     "TR_POSTED_BY": "Autorem",
     "TR_POSTED_ON": ", ",
+    "TR_OLDER_POSTS": "Starší příspěvky",
+    "TR_NEWER_POSTS": "Novější příspěvky",
     
     "TR_ABOUT_INTRO": "Jmenuji se Martin Beneš, rád Vás poznávám. Zaměřuji se na strojové učení, statistiku a vývoj software."
 }
