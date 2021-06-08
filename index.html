@@ -3,24 +3,6 @@ layout: page_intro
 description: "Main page"
 ---
 
-This is the index page.
-
-<!--
-{% assign posts=site.posts | where:"i18n-link", page.i18n-link | sort: 'lang' %}
-
-{% if posts.size == 0 %}
-  {% assign posts=site.pages | where:"i18n-link", page.i18n-link | sort: 'lang' %}
-{% endif %}
-
-<div class="lang">
-  <ul>
-    {% for post in posts %}
-      <li><a class="{{ post.lang }}" href="{{ site.base-url }}{{ post.url }}">{{ post.lang }}</a></li>
-    {% endfor %}
-  </ul>
-</div>
--->
-
 <h2>Latest on blog</h2>
 
 <div class="card-deck">
@@ -32,7 +14,7 @@ This is the index page.
     </div>
     <div class="card-body">
         <h5 class="card-title">{{ post.title }}</h5>
-        <p class="card-text">{% if post.subtitle %}</p>
+        <p class="card-text">{{ post.subtitle }}</p>
         <!--<a href="#" class="btn btn-primary">Go somewhere</a>-->
     </div>
     <div class="card-footer text-muted">
@@ -43,50 +25,6 @@ This is the index page.
 </a>
 {% endfor %}
 </div>
-<!--
-<div class="post-preview">
-    <a href="{{ post.url | prepend: site.baseurl }}">
-        <h2 class="post-title">
-            {{ post.title }}
-        </h2>
-        {% if post.subtitle %}
-        <h3 class="post-subtitle">
-            {{ post.subtitle }}
-        </h3>
-        {% endif %}
-        <div class="post-content-preview">
-            {{ post.content | strip_html | truncate:200 }}
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by {% if post.author %}{{ post.author }}{% else %}{{ site.title }}{% endif %} on {{ post.date | date: "%B %-d, %Y" }}
-    </p>
-</div>
-<hr>
--->
-<!--
-{% for post in paginator.posts %}
-<div class="post-preview">
-    <a href="{{ post.url | prepend: site.baseurl }}">
-        <h2 class="post-title">
-            {{ post.title }}
-        </h2>
-        {% if post.subtitle %}
-        <h3 class="post-subtitle">
-            {{ post.subtitle }}
-        </h3>
-        {% endif %}
-        <div class="post-content-preview">
-            {{ post.content | strip_html | truncate:200 }}
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by {% if post.author %}{{ post.author }}{% else %}{{ site.title }}{% endif %} on {{ post.date | date: "%B %-d, %Y" }}
-    </p>
-</div>
-<hr>
-{% endfor %}
--->
 
 <!-- Pager -->
 {% if paginator.total_pages > 1 %}
