@@ -71,7 +71,7 @@ function trAll(lang){
     lang = lang || getCurrLang()
     // translate all the items
     var items = document.querySelectorAll('span[xloc-tr]:not([xloc-tr=""])')
-    for(i in items) {
+    for(i = 0; i < items.length; i++) {
         try {
             console.log(items[i])
             items[i].text = tr(items[i].getAttribute('xloc-tr'))
