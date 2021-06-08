@@ -3,7 +3,8 @@ layout: page_intro
 description: "Main page"
 ---
 
-<h1>Recently on the blog</h1>
+<h1 xloc-tr="TR_RECENTLY_BLOG">Recently on the blog</h1>
+
 {% for post in paginator.posts %}
 <div class="post-preview">
     <a href="{{ post.url | prepend: site.baseurl }}">
@@ -20,7 +21,7 @@ description: "Main page"
         </div>
     </a>
     <p class="post-meta">
-        Posted by {% if post.author %}{{ post.author }}{% else %}{{ site.title }}{% endif %} on {{ post.date | date: "%B %-d, %Y" }}
+        <span xloc-tr="TR_POSTED_BY">Posted by</span> {% if post.author %}{{ post.author }}{% else %}{{ site.title }}{% endif %}<span xloc-tr="TR_POSTED_ON">, on</span> {{ post.date | date: "%B %-d, %Y" }}
     </p>
 </div>
 <hr>

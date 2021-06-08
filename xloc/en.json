@@ -4,5 +4,9 @@
     "TR_BLOG": "Blog",
     "TR_TAGS": "Tags",
 
+    "TR_RECENTLY_BLOG": "Currently on the blog",
+    "TR_POSTED_BY": "Posted by",
+    "TR_POSTED_ON": " on",
+
     "TR_ABOUT_INTRO": "I am Martin Beneš, nice to meet you. I am specialist in machine learning, statistics and software development."
 }
