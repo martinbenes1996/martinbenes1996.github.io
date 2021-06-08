@@ -70,7 +70,7 @@ function trAll(lang){
     // set lang
     lang = lang || getCurrLang()
     // translate all the items
-    var items = document.querySelectorAll('span[xloc-tr]:not([xloc-tr=""])')
+    var items = document.querySelectorAll('[xloc-tr]:not([xloc-tr=""])')
     for(i = 0; i < items.length; i++) {
         try {
             console.log(i)
