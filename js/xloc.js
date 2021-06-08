@@ -45,6 +45,7 @@ var downloadTr = function(lang) {
         } else {
             console.log("loaded " + lang + " xloc")
             _tr = data;
+            trAll();
         }
     })
 }
@@ -71,12 +72,10 @@ function getCurrLang() { return getCookie('language'); }
 function setCurrLang(lang) {
     console.log("Language: changing to " + lang)
     lang = lang || getCurrLang()
-    // download translations
+    // download translations and set
     downloadTr(lang)
     // set cookie
     setCookie('language', lang)
-    // translate all
-    trAll()
 }
 function changeLang(){
     let currLang = getCurrLang()
