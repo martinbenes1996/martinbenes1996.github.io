@@ -38,10 +38,12 @@ var getJSON = function(url, callback) {
 var _tr;
 var downloadTr = function(lang) {
     getJSON('/xloc/'+lang.toLowerCase()+'.json', function(err, data) {
-        console.log("received tr for " + lang)
+        
         if (err !== null) {
+            console.log("loading xloc for " + lang + " failed")
             throw new Error(err)
         } else {
+            console.log("loaded " + lang + " xloc")
             _tr = data;
         }
     })
