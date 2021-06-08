@@ -54,6 +54,7 @@ function tr(key){
     return _tr[key]
 }
 function trAll(){
+    console.log('trAll()')
     // translate all the items
     for(item in document.querySelectorAll("[xloc]")) {
         console.log(item)
