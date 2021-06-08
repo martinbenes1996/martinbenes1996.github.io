@@ -24,6 +24,9 @@
                         <a href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
                     </li>
                     {% endif %}{% endfor %}
+                    <li>
+                        <button>EN</button>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -31,6 +34,24 @@
     </div>
     <!-- /.container -->
 </nav>
+
+<!--<script>
+    var welcome = {
+        en:"English",
+        es:"Espanol",
+        fr:"Francais"
+    },
+
+//read previously set cookie value
+language = $.cookie( 'language' );
+
+$(document).ready(function () {
+
+    //use value of cookie as key in welcome object to retrieve the language.
+    $('#greet').html( welcome[language] );
+
+});
+</script>-->
 <script>
     // Drop Bootstarp low-performance Navbar
     // Use customize navbar with high-quality material design animation
