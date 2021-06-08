@@ -27,6 +27,7 @@ function setCurrLang(lang) {
     lang = lang || getCurrLang()
     setCookie('language', lang)
     var $setLang = document.querySelector(".setLang");
+    console.log("object " + $setLang)
     $setLang.text = lang
 }
 function changeLang(){
