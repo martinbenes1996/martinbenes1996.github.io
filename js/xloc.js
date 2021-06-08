@@ -40,7 +40,7 @@ var downloadTr = function(lang) {
     getJSON('/xloc/'+lang.toLowerCase()+'.json', function(err, data) {
         console.log("received tr for " + lang)
         if (err !== null) {
-            throw new Exception(err)
+            throw new Error(err)
         } else {
             _tr = data;
         }
