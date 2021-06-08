@@ -77,11 +77,11 @@ function trAll(lang){
         try {
             console.log(i)
             console.log(item)
-            item.text = tr(item.getAttribute('xloc-tr'))
+            item.value = tr(item.getAttribute('xloc-tr'))
         } catch (e) {
             console.log('Error to translate: ' + item)
             console.log(e)
-            item.text = '<FAIL>'
+            item.value = '<FAIL>'
         }
     }
     // change translate button
