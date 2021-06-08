@@ -42,7 +42,7 @@ header-img: "img/post-bg-rwd.jpg"
     var $select = document.querySelector("select");
 
     // bind hashchange event
-    window.addEventListener('hashchange', _render);
+    /*window.addEventListener('hashchange', _render);
 
     // handle render
     function _render(){
@@ -67,21 +67,31 @@ header-img: "img/post-bg-rwd.jpg"
             $cz.style.display = "none";
             $ru.style.display = "none";
         }
-    }
+    }*/
 
     // handle select change
     function onLanChange(index){
         if(index == 1){
-            window.location.hash = "#cz"
+            $en.style.display = "none";
+            $cz.style.display = "block";
+            $ru.style.display = "none";
+            //window.location.hash = "#cz"
         }else if(index == 2){
-            window.location.hash = "#ru"
+            //window.location.hash = "#ru"
+            $en.style.display = "none";
+            $cz.style.display = "none";
+            $ru.style.display = "block";
         }else {
-            window.location.hash = "#en"
+            //window.location.hash = "#en"
+            $en.style.display = "block";
+            $cz.style.display = "none";
+            $ru.style.display = "none";
         }
     }
 
     // init
-    _render();
+    //_render();
+    onLanChange(0);
 </script>
 
 
