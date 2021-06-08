@@ -25,7 +25,7 @@
                     </li>
                     {% endif %}{% endfor %}
                     <li>
-                        <button>EN</button>
+                        <a class="setLang" onclick = "changeLang();">EN</a>
                     </li>
                 </ul>
             </div>
@@ -34,6 +34,71 @@
     </div>
     <!-- /.container -->
 </nav>
+
+<script type="text/javascript">
+    // get nodes
+    var $setLang = document.querySelector(".setLang");
+    function changeLang(){
+        console.log("changeLang()");
+        console.log($setLang);
+        console.log($setLang.text);
+        console.log($setLang.value);
+    }
+    //var $cz = document.querySelector(".cz");
+    //var $ru = document.querySelector(".ru");
+    //var $select = document.querySelector("select");
+
+    // bind hashchange event
+    /*window.addEventListener('hashchange', _render);
+
+    // handle render
+    function _render(){
+        var _hash = window.location.hash;
+        // cz
+        if(_hash == "#cz"){
+            $select.selectedIndex = 1;
+            $en.style.display = "none";
+            $cz.style.display = "block";
+            $ru.style.display = "none";
+        // 
+        } else if(_hash == "#ru"){
+            $select.selectedIndex = 2;
+            $en.style.display = "none";
+            $cz.style.display = "none";
+            $ru.style.display = "block";
+
+        }else{
+            // not trigger onChange, otherwise cause a loop call.
+            $select.selectedIndex = 0;
+            $en.style.display = "block";
+            $cz.style.display = "none";
+            $ru.style.display = "none";
+        }
+    }*/
+
+    // handle select change
+    /*function onLanChange(index){
+        if(index == 1){
+            $en.style.display = "none";
+            $cz.style.display = "block";
+            $ru.style.display = "none";
+            //window.location.hash = "#cz"
+        }else if(index == 2){
+            //window.location.hash = "#ru"
+            $en.style.display = "none";
+            $cz.style.display = "none";
+            $ru.style.display = "block";
+        }else {
+            //window.location.hash = "#en"
+            $en.style.display = "block";
+            $cz.style.display = "none";
+            $ru.style.display = "none";
+        }
+    }
+
+    // init
+    onLanChange(0);*/
+</script>
 
 <!--<script>
     var welcome = {
