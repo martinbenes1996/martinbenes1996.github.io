@@ -77,6 +77,7 @@ function trAll(lang){
             item.text = tr(items[i].getAttribute('xloc-tr'))
         } catch (e) {
             console.log('Error to translate: ' + items[i])
+            console.log(e)
             items[i].text = '<FAIL>'
         }
     }
