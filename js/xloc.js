@@ -74,7 +74,8 @@ function trAll(){
     for(i in items) {
         let item = items[i]
         try {
-            console.log(item())
+            console.log("Try calling entries.")
+            console.log(item.entries())
         } catch (e) {
             console.log(e)
             console.log(item)
