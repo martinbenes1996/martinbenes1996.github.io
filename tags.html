@@ -5,14 +5,14 @@ xloc: "TR_TAGS"
 header-img: "img/tag-bg.jpg"
 ---
 
-<span xloc-tr="TR_POSTS_ONLY_ENGLISH"></span>
-
 <!-- Main Content -->
 <div id='tag_cloud' class="tags">
 	{% for tag in site.tags %}
 		<a href="#{{ tag[0] }}" title="{{ tag[0] }}" rel="{{ tag[1].size }}">{{ tag[0] }}</a>
 	{% endfor %}
 </div>
+
+<span xloc-tr="TR_POSTS_ONLY_ENGLISH"></span>
 
 {% for tag in site.tags %}
 	<div class="one-tag-list">
