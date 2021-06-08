@@ -61,6 +61,7 @@ function tr(key){
     try {
         return _tr[key]
     } catch(e) {
+        console.log("Translation fallback: " + key)
         return _tr_default[key]
     }
     
