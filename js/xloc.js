@@ -70,6 +70,7 @@ function trAll(){
     console.log('trAll()')
     // translate all the items
     var items = document.querySelectorAll("[xloc-tr]")
+    console.log(JSON.stringify(items))
     for(i in items) {
         let item = items[i]
         try {
