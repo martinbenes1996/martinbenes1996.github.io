@@ -37,7 +37,7 @@ var getJSON = function(url, callback) {
 };
 var _tr;
 var downloadTr = function(lang) {
-    getJSON('/tr/'+lang.toLowerCase()+'.json', function(err, data) {
+    getJSON('/xloc/'+lang.toLowerCase()+'.json', function(err, data) {
         console.log("received tr for " + lang)
         if (err !== null) {
             throw new Exception(err)
