@@ -37,7 +37,11 @@
 
 <script type="text/javascript">
 function setCookie(cname, cvalue, exdays) {
-  document.cookie = cname + "=" + cvalue + ";path=/";
+    var expiration_date = new Date();
+    var cookie_string = '';
+    expiration_date.setFullYear(expiration_date.getFullYear() + 1);
+    // Build the set-cookie string:
+    document.cookie = cname+"="+cvalue+";path=/;expires="+expiration_date.toUTCString();
 }
 function getCookie(cname) {
   var name = cname + "=";
