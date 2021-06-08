@@ -7,12 +7,13 @@ header-img: "img/post-bg-rwd.jpg"
 
 <!-- Language Selector -->
 <select class="sel-lang" onchange= "onLanChange(this.options[this.options.selectedIndex].value)">
-    <option value="0" selected> 中文 Chinese </option>
-    <option value="1"> 英文 English </option>
+    <option value="0" selected>English</option>
+    <option value="1">Česky</option>
+    <option value="2">По-русски</option>
 </select>
 
-<!-- Chinese Version -->
-<div class="zh post-container">
+<!-- English Version -->
+<div class="en post-container">
 
     <!--copied from markdown -->
     <blockquote><p>冰冻三尺 非一日之寒<br>
@@ -36,8 +37,8 @@ header-img: "img/post-bg-rwd.jpg"
     </ul>
 </div>
 
-<!-- English Version -->
-<div class="en post-container">
+<!-- Czech Version -->
+<div class="cz post-container">
     <blockquote><p>Yet another iOS Developer. <br>
     Yet another Life-long Student.</p></blockquote>
 
@@ -57,11 +58,38 @@ header-img: "img/post-bg-rwd.jpg"
     </ul>
 </div>
 
+<!-- Czech Version -->
+<div class="cz post-container">
+    <blockquote><p>Yet another iOS Developer. <br>
+    Yet another Life-long Student.</p></blockquote>
+
+    <p>Hi, I am <strong>Baiying Qiu</strong>，you can call me <strong>BY</strong>. I am an iOS software engineer and currently working in Xiamen</p>
+
+    <p>This is my personal blog, through making Github Pages and Jekyll.My GitHub  👉 <a href="http://github.com/qiubaiying">Github·BY</a>.</p>
+    
+    <p>I am a sports enthusiast, I like fitness, running and boxing.</p>
+
+    <h5>Talks</h5>
+
+    <ul>
+    <li><a href="https://github.com">GitHub</a></li>
+    <li><a href="http://jekyll.com.cn/">jekyll</a></li>
+    <li><a href="https://pages.github.com/">GitHub Pages</a></li>
+    <li><a href="https://qiubaiying.github.io">BY</a></li>
+    </ul>
+</div>
+
+<!-- Russian Version -->
+<div class="ru post-container">
+    <strong>Russian</strong>
+</div>
+
 <!-- Handle Language Change -->
 <script type="text/javascript">
     // get nodes
-    var $zh = document.querySelector(".zh");
     var $en = document.querySelector(".en");
+    var $cz = document.querySelector(".cz");
+    var $ru = document.querySelector(".ru");
     var $select = document.querySelector("select");
 
     // bind hashchange event
@@ -70,25 +98,35 @@ header-img: "img/post-bg-rwd.jpg"
     // handle render
     function _render(){
         var _hash = window.location.hash;
-        // en
-        if(_hash == "#en"){
+        // cz
+        if(_hash == "#cz"){
             $select.selectedIndex = 1;
-            $en.style.display = "block";
-            $zh.style.display = "none";
-        // zh by default
+            $en.style.display = "none";
+            $cz.style.display = "block";
+            $ru.style.display = "none";
+        // 
+        } else if(_hash == "#ru"){
+            $select.selectedIndex = 2;
+            $en.style.display = "none";
+            $cz.style.display = "none";
+            $ru.style.display = "block";
+
         }else{
             // not trigger onChange, otherwise cause a loop call.
             $select.selectedIndex = 0;
-            $zh.style.display = "block";
-            $en.style.display = "none";
+            $en.style.display = "block";
+            $cz.style.display = "none";
+            $ru.style.display = "none";
         }
     }
 
     // handle select change
     function onLanChange(index){
-        if(index == 0){
-            window.location.hash = "#zh"
-        }else{
+        if(index == 1){
+            window.location.hash = "#cz"
+        }else if(index == 2){
+            window.location.hash = "#ru"
+        }else {
             window.location.hash = "#en"
         }
     }
