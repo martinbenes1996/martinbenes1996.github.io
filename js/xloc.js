@@ -21,12 +21,12 @@ function getCookie(cname) {
 }
 
 // get nodes
-var $setLang = document.querySelector(".setLang");
 function getCurrLang() { return getCookie('language'); }
 function setCurrLang(lang) {
     console.log("Language: changing to " + lang)
     lang = lang || getCurrLang()
     setCookie('language', lang)
+    var $setLang = document.querySelector(".setLang");
     $setLang.text = lang
 }
 function changeLang(){
