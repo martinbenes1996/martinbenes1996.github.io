@@ -72,7 +72,12 @@ function trAll(){
     var items = document.querySelectorAll("[xloc-tr]")
     for(i in items) {
         let item = items[i]
-        console.log(item)
+        try {
+            console.log(item())
+        } catch {
+            console.log(item)
+        }
+        
         console.log(item.getAttribute('xloc-tr'))
         item.text = tr(item.getAttribute('xloc-tr'))
     }
