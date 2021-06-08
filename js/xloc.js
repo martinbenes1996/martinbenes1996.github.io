@@ -36,6 +36,12 @@ var getJSON = function(url, callback) {
     xhr.send();
 };
 var _tr;
+var _tr_default = {
+    "TR_HOME": "Home",
+    "TR_ABOUT": "About",
+    "TR_BLOG": "Blog",
+    "TR_TAGS": "Tags"
+}
 var downloadTr = function(lang) {
     getJSON('/xloc/'+lang.toLowerCase()+'.json', function(err, data) {
         
@@ -52,7 +58,12 @@ var downloadTr = function(lang) {
 
 // --- get translation ---
 function tr(key){
-    return _tr[key]
+    try {
+        return _tr[key]
+    } catch(e) {
+        return _tr_default[key]
+    }
+    
 }
 function trAll(){
     console.log('trAll()')
