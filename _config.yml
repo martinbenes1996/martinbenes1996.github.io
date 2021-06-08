@@ -95,18 +95,18 @@ friends: [
 ]
 
 # localization
-defaults:
-    -
-     scope:
-         path: ""
-     values:
-         #author: "Martin"
-         #layout: myLayout
-         lang: en
-         base-url: "/"
-    -
-     scope:
-         path: es
-     values:
-         lang: es
-         base-url: "/es/"
+#defaults:
+#    -
+#     scope:
+#         path: ""
+#     values:
+#         #author: "Martin"
+#         #layout: myLayout
+#         lang: en
+#         base-url: "/"
+#    -
+#     scope:
+#         path: es
+#     values:
+#         lang: es
+#         base-url: "/es/"
