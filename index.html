@@ -22,7 +22,7 @@ layout: page_intro
         </div>
     </a>
     <p class="post-meta">
-        <span xloc-tr="TR_POSTED_BY">Posted by</span> {% if post.author %}{{ post.author }}{% else %}{{ site.title }}{% endif %}<span xloc-tr="TR_POSTED_ON">, on</span> {{ post.date | date: "%-d. %m. %Y" }} <!--{{ post.date | date: "%B %-d, %Y" }}-->
+        <span xloc-tr="TR_POSTED_BY">Posted by</span> {% if post.author %}{{ post.author }}{% else %}{{ site.title }}{% endif %}<span xloc-tr="TR_POSTED_ON">, on</span> {{ post.date | date: "%-d. %-m. %Y" }} <!--{{ post.date | date: "%B %-d, %Y" }}-->
     </p>
 </div>
 <hr>
