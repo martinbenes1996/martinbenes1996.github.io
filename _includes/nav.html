@@ -25,7 +25,7 @@
                     </li>
                     {% endif %}{% endfor %}
                     <li>
-                        <a class="setLang" onclick = "changeLang();"></a>
+                        <a class="setLang" onclick = "changeLang();" onload="setCurrLang();"></a>
                     </li>
                 </ul>
             </div>
@@ -86,8 +86,4 @@
         if(e.target.className == 'icon-bar') return;
         __HuxNav__.close();
     })
-
-    document.addEventListener('DOMContentLoaded', function() {
-        setCurrLang()
-    }, false);
 </script>
