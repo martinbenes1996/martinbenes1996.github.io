@@ -69,6 +69,7 @@ function tr(key){
 function trAll(lang){
     // set lang
     lang = lang || getCurrLang()
+    console.log(_tr)
     // translate all the items
     var items = document.querySelectorAll('[xloc-tr]:not([xloc-tr=""])')
     for(i = 0; i < items.length; i++) {
@@ -90,7 +91,7 @@ function trAll(lang){
 function getCurrLang() { return getCookie('language'); }
 function setCurrLang(lang) {
     console.log("Language: changing to " + lang)
-    lang = lang || getCurrLang()
+    lang = lang || getCurrLang() || 'EN'
     // download translations and set
     downloadTr(lang)
     // set cookie
