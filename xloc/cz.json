@@ -2,5 +2,7 @@
     "TR_HOME": "Domů",
     "TR_ABOUT": "O mně",
     "TR_BLOG": "Blog",
-    "TR_TAGS": "Štítky"
+    "TR_TAGS": "Štítky",
+
+    "TR_ABOUT_INTRO": "Jmenuji se Martin Beneš, rád Vás poznávám. Zaměřuji se na strojové učení, statistiku a vývoj software."
 }
