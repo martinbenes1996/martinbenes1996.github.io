@@ -60,7 +60,7 @@ function getCookie(cname) {
     // get nodes
     var $setLang = document.querySelector(".setLang");
     function getCurrLang() {
-        getCookie('language');
+        return getCookie('language');
     }
     function setCurrLang(lang) {
         setCookie('language', lang);
