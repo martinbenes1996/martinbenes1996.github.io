@@ -73,7 +73,7 @@ function trAll(lang){
     var items = document.querySelectorAll('span[xloc-tr]:not([xloc-tr=""])')
     for(i = 0; i < items.length; i++) {
         try {
-            console.log(items[i])
+            console.log(i + ") " + items[i])
             items[i].text = tr(items[i].getAttribute('xloc-tr'))
         } catch (e) {
             console.log('Error to translate: ' + items[i])
