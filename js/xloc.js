@@ -72,12 +72,12 @@ function trAll(lang){
     // translate all the items
     var items = document.querySelectorAll('span[xloc-tr]:not([xloc-tr=""])')
     for(i in items) {
-        let item = items[i]
         try {
-            item.text = tr(item.getAttribute('xloc-tr'))
+            console.log(items[i])
+            item.text = tr(items[i].getAttribute('xloc-tr'))
         } catch (e) {
-            console.log('Error to translate: ' + item)
-            item.text = '<FAIL>'
+            console.log('Error to translate: ' + items[i])
+            items[i].text = '<FAIL>'
         }
     }
     // change translate button
