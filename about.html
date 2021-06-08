@@ -6,11 +6,12 @@ header-img: "img/post-bg-rwd.jpg"
 ---
 
 <!-- Language Selector -->
-<select class="sel-lang" onchange= "onLanChange(this.options[this.options.selectedIndex].value)">
-    <option value="0" selected>English</option>
-    <option value="1">Česky</option>
-    <option value="2">По-русски</option>
+<select class="selectpicker" data-width="fit" onchange= "onLanChange(this.options[this.options.selectedIndex].value)">
+    <option value="0" data-content='<span class="flag-icon flag-icon-us"></span> English'>English</option>
+    <option value="1" data-content='<span class="flag-icon flag-icon-cz"></span> Česky'>Česky</option>
+    <option value="2" data-content='<span class="flag-icon flag-icon-ru"></span> По-русски'>По-русски</option>
 </select>
+
 
 <!-- English Version -->
 <div class="en post-container">
