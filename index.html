@@ -3,38 +3,29 @@ layout: page_intro
 description: "Main page"
 ---
 
-<h2>Latest on blog</h2>
-
-<div class="card-deck">
-    <div class="card" style="width: 18rem;">
-        <img src="..." class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
-        </div>
-      </div>
+<h1>Recently on the blog</h1>
 {% for post in paginator.posts %}
-
-<div class="card text-center">
-    <div class="card-header">
-        <i>{{ post.author }}</i>
-    </div>
-
-    <div class="card-body">
-        <a href="{{ post.url | prepend: site.baseurl }}">
-            <h5 class="card-title">{{ post.title }}</h5>
-            <p class="card-text">{{ post.subtitle }}</p>
-        </a>
-        <!--<a href="#" class="btn btn-primary">Go somewhere</a>-->
-    </div>
-    <div class="card-footer text-muted">
-        By {{ post.author }}, {{ post.date | date: "%B %-d, %Y" }}.
-    </div>
-    
+<div class="post-preview">
+    <a href="{{ post.url | prepend: site.baseurl }}">
+        <h2 class="post-title">
+            {{ post.title }}
+        </h2>
+        {% if post.subtitle %}
+        <h3 class="post-subtitle">
+            {{ post.subtitle }}
+        </h3>
+        {% endif %}
+        <div class="post-content-preview">
+            {{ post.content | strip_html | truncate:200 }}
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by {% if post.author %}{{ post.author }}{% else %}{{ site.title }}{% endif %} on {{ post.date | date: "%B %-d, %Y" }}
+    </p>
 </div>
+<hr>
 {% endfor %}
-</div>
+
 
 <!-- Pager -->
 {% if paginator.total_pages > 1 %}
