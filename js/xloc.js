@@ -70,7 +70,7 @@ function trAll(lang){
     // set lang
     lang = lang || getCurrLang()
     // translate all the items
-    var items = document.querySelectorAll("[xloc-tr]")
+    var items = document.querySelectorAll("span[xloc-tr]")
     console.log(JSON.stringify(items))
     for(i in items) {
         let item = items[i]
