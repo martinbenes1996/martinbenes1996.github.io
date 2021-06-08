@@ -41,7 +41,9 @@ function setCookie(cname, cvalue, exdays) {
     var cookie_string = '';
     expiration_date.setFullYear(expiration_date.getFullYear() + 1);
     // Build the set-cookie string:
-    document.cookie = cname+"="+cvalue+";path=/;expires="+expiration_date.toUTCString();
+    cookie_string = cname+"="+cvalue+";path=/;expires="+expiration_date.toUTCString();
+    console.log('cookie string: ' + cookie_string)
+    document.cookie = cookie_string
 }
 function getCookie(cname) {
   var name = cname + "=";
