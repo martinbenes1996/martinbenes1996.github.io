@@ -1,0 +1,195 @@
+
+html {
+    font-family: 'Helvetica';
+}
+
+.cookieBanner {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #eee;
+    border-radius: 5px;
+    box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.2);
+    z-index: 10000;
+    opacity: 0.75;
+}
+
+.cookieClose {
+    /*padding: 0.5rem;*/
+    background-color: black;
+    border: none;
+    color: white;
+    border-radius: 2px;
+    cursor: pointer;
+    opacity: 1;
+}
+
+div.main {
+    padding: 5rem;
+    min-height: calc(100vh - 10vh);
+}
+
+@media only screen and (max-width: 600px) {
+    div.main {
+        padding: 3rem;
+    }
+
+    div.main-article {
+        padding: 3rem;
+    }
+}
+
+article.list-item {
+    margin-top: 3rem;
+}
+article.portfolio-list-item {
+    margin-top: 4rem;
+}
+
+.first-column {
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.profile-header {
+}
+
+.profile-subheader {
+    display: none;
+}
+
+img.profile-photo {
+    position: relative;
+    opacity: 1;
+    border-radius: 50%;
+    width: 50%;
+    margin: 3rem;
+    margin-top: 2rem;
+    border: 0.5rem solid #000;
+}
+
+@media (max-width: 768px) {
+    .first-column {
+        margin-bottom: 0rem;
+    }
+    img.profile-photo {
+        position: relative;
+        opacity: 1;
+        border-radius: 50%;
+        width: 50%;
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+        border: 0.5rem solid #000;
+    }
+}
+
+div.profile-text {
+    text-align: left;
+}
+
+div.profile-links {
+    margin: 7%;
+}
+
+.portfolio-header {
+    font-size: 150%
+}
+
+hr.portfolio-separator {
+    height: 0.5rem;
+    background-color: black;
+}
+
+.portfolio-link {
+    margin-top: 2rem;
+    text-align: right;
+}
+
+.w3-model {
+    padding-top: 20%;
+}
+
+.w3-modal-content {
+    height: 80%;
+    background-color: rgba(0, 0, 0, 0);
+    text-align: center;
+}
+
+#img01 {
+    height: 100%;
+    object-fit: contain;
+}
+
+@media (max-width: 768px) {
+    #img01 {
+        height: auto;
+        width: 100%;
+    }
+
+    .w3-modal-content {
+        height: 80%;
+        background-color: rgba(0, 0, 0, 0);
+    }
+}
+
+.achievements-row {
+}
+
+.achievements-item {
+}
+
+footer {
+    background-color: black;
+    color: white;
+    padding-top: 4vh;/*3rem;*/
+    padding-left: 1vh;
+    padding-right: 1vh;
+    padding-bottom: 4vh;/*1.5rem;*/
+    /*position: absolute;*/
+    /*bottom: 0;*/
+    width: 100%;
+    text-align: center;
+}
+
+
+footer a {
+    color: white;
+}
+
+div.footer-category-column {
+    margin-bottom: 0rem;
+}
+
+@media only screen and (max-width: 991px) {
+    div.footer-category-column {
+        margin-bottom: 2rem;
+    }
+}
+
+footer a:hover {
+    color: grey;
+}
+
+footer a:visited {
+    color: white;
+}
+
+footer a:visited:hover {
+    color: grey;
+}
+
+footer h5 {
+    font-weight: bold;
+    color: white;
+}
+
+.footer-design-row {
+    margin-top: 2rem;
+    color: gray;
+}
