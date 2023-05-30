@@ -7,24 +7,20 @@
 		gtag('js', new Date());
 		gtag('config', 'UA-206809522-1');
 	</script>
+
 	<!-- <title>Martin Benes's Personal Page</title> -->
 	<title>{% if page.title %}{{ page.title }} - {{ site.SEOTitle }}{% else %}{{ site.SEOTitle }}{% endif %}</title>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-	<link rel="stylesheet" href="css/style.css">
+    <!-- Web App Manifest -->
+	<link rel="manifest" href="static/manifest.json">
 
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <!-- robots.txt -->
+	<meta name=”static/robots” content="none">
 
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
-	<meta name="title" content="Personal page - Martin Benes">
-	<meta name="description" content="Martin Benes is a data scientist and software developer. His mother tongue is Python, but he is fluent in R as well.">
-	<link rel="canonical" href="https://mbenes.me/" />
-
-	<link rel="apple-touch-icon" sizes="57x57" href="img/apple-icon-57x57.png">
+    <!-- Favicon -->
+	<link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
+    <!-- Web Icons -->
+	<link rel="apple-touch-icon" sizes="57x57" href="{{ site.baseurl }}/img/apple-icon-57x57.png">
 	<link rel="apple-touch-icon" sizes="60x60" href="img/apple-icon-60x60.png">
 	<link rel="apple-touch-icon" sizes="72x72" href="img/apple-icon-72x72.png">
 	<link rel="apple-touch-icon" sizes="76x76" href="img/apple-icon-76x76.png">
@@ -39,15 +35,32 @@
 	<link rel="icon" type="image/png" sizes="96x96"  href="img/android-icon-96x96.png">
 	<link rel="icon" type="image/png" sizes="144x144"  href="img/android-icon-144x144.png">
 	<link rel="icon" type="image/png" sizes="192x192"  href="img/android-icon-192x192.png">
-	<link rel="icon" type="image/x-icon" href="img/favicon.ico">
 	<link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
 	<link rel="icon" type="image/png" sizes="96x96" href="img/favicon-96x96.png">
 	<link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
-	<link rel="manifest" href="static/manifest.json">
+
+    <!-- Canonical URL -->
+	<link rel="canonical" href="https://mbenes.me/" />
+
+    <!-- Bootstrap JS -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <!-- jQuery -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- W3 CSS -->
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+	<!-- Custom CSS -->
+	<link rel="stylesheet" href="css/style.css">
+
+	<!-- Meta -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<meta name="title" content="Personal page - Martin Benes">
+	<meta name="description" content="Martin Benes is a data scientist and software developer. His mother tongue is Python, but he is fluent in R as well.">
 	<meta name="msapplication-TileColor" content="#ffffff">
 	<meta name="msapplication-TileImage" content="img/ms-icon-144x144.png">
 	<meta name="theme-color" content="#ffffff">
-
-	<meta name=”static/robots” content="none">
 
 </head>
