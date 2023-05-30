@@ -8,7 +8,7 @@
 		gtag('config', 'UA-206809522-1');
 	</script>
 	<!-- <title>Martin Benes's Personal Page</title> -->
-	<title>{% block fulltitle %}{% block title %}{% endblock %} - Martin Benes{% endblock %}</title>
+	<title>{% if page.title %}{{ page.title }} - {{ site.SEOTitle }}{% else %}{{ site.SEOTitle }}{% endif %}</title>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
