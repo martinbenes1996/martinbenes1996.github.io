@@ -10,10 +10,10 @@ github_repo: "https://www.github.com/martinbenes1996/martinbenes1996.github.io.g
 
 # Build settings
 # from 2016, 'pygments' is unsupported on GitHub Pages. Use 'rouge' for highlighting instead.
-permalink: pretty
+# permalink: pretty
 #permalink: /:year/:month/:day/:title
 paginate: 10
-# exclude: ["less","node_modules","oldposts","notebooks","nb2md.sh","Gruntfile.js","package.json","README.md"]
+exclude: ["old"]
 # anchorjs: true                          # if you want to customize anchor. check out line:181 of `post.html`
 
 # Gems
