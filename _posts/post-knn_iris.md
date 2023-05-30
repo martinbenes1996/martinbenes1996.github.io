@@ -50,7 +50,7 @@ print(iris.feature_names) # names of attributes
     (150, 4) (150,)
     ['setosa' 'versicolor' 'virginica']
     ['sepal length (cm)', 'sepal width (cm)', 'petal length (cm)', 'petal width (cm)']
-    
+
 
 The task will be to determine the species for a sample based on the dimensions of its petals and sepals.
 
@@ -113,11 +113,11 @@ print(xtest.shape, ytest.shape) # dimension of test set
 
     (112, 4) (112,)
     (38, 4) (38,)
-    
+
 
 ## kNN model
 
-Intuitively the idea of the kNN (k-nearest neighbors) model is 
+Intuitively the idea of the kNN (k-nearest neighbors) model is
 
 > Majority of the most similar samples are class A, so the sample is also class A.
 
@@ -148,7 +148,7 @@ $$= \sum_{i=1}^D(x[i]-y[i])$$
 
 <img src="/img/knn_iris_files/manhattan.png" width = "50%"/>
 
-In the schema you can see the distance between the two points in Euclidean (green) and two alternatives of Manhattan metric (purple). 
+In the schema you can see the distance between the two points in Euclidean (green) and two alternatives of Manhattan metric (purple).
 
 * Similarity of geographic coordinates is done with spheric distance, rather than planear. Most common metric is **great-circle distance**, usually computed with *haversine formula*.
 
@@ -226,7 +226,7 @@ print(f"Test set: {acc_test}")
 
     Train set: 0.9642857142857143
     Test set: 0.9736842105263158
-    
+
 
 The accuracy of the classifier on the train set should be the same or a bit better than on the test set. If the test accuracy is much worse, we are overfitting the model and have to change parameters. In kNN, the value of `n_neighbors` is the key to achieve the best results, more about it in the section [Hyperparameter tuning](#hyperparameter-tuning).
 
@@ -245,7 +245,7 @@ print(f"Most frequent accuracy: {acc_most_frequent}")
 ```
 
     Most frequent accuracy: 0.3333333333333333
-    
+
 
 **Stratified** model assigns random label based on ratio of the labels in the dataset. In case of `iris`, the probabilities of each species are equal.
 
@@ -259,7 +259,7 @@ print(f"Stratified accuracy: {acc_most_frequent}")
 ```
 
     Stratified accuracy: 0.3333333333333333
-    
+
 
 Accuracy of kNN is thus much better compared to these naive classifiers. We could now continue with comparison with other machine learning classification models.
 
@@ -362,7 +362,7 @@ Randomized search means random choosing of the `n_neighbors` value. We specify t
 from sklearn.model_selection import RandomizedSearchCV
 distributions = dict(n_neighbors=list(range(1,50)))
 clf = RandomizedSearchCV(knn2, distributions, random_state=0, n_iter = 10)
-# run 
+# run
 
 search = clf.fit(xtrain, ytrain)
 search.best_params_['n_neighbors']
@@ -386,7 +386,7 @@ Grid search means we are looking for the `n_neighbors` value in a regular grid o
 from sklearn.model_selection import GridSearchCV
 parameters = dict(n_neighbors=list(range(1,50)))
 clf2 = GridSearchCV(knn2, parameters)
-# run 
+# run
 
 search2 = clf2.fit(xtrain, ytrain)
 search2.best_params_['n_neighbors']
@@ -419,7 +419,7 @@ print((ytest_pred == ytest).mean())
 
     0.9642857142857143
     0.9736842105263158
-    
+
 
 The accuracy for `n_neighbors` 3 and 5 is identical.
 
