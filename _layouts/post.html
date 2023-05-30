@@ -47,16 +47,16 @@ comments: true
         <div class="col-md-12">
             <!-- Title -->
             <h1>
-                {{ post.title }}
+                {{ title }}
             </h1>
             <!-- Author -->
             <strong>
-                {{ post.author }}
+                {{ author }}
             </strong><br/>
             <!-- Date -->
             <small>
                 <time datetime="{{ post.date.strftime('%Y-%m-%d') }}">
-                    {{ post.date.strftime('%b %d, %Y') }}
+                    {{ date.strftime('%b %d, %Y') }}
                 </time>
             </small>
             <hr class="portfolio-separator" />
