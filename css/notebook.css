@@ -79,7 +79,9 @@ sub {
 }
 img {
   border: 0;
-  width: 100%
+  width: 100%;
+  overflow: auto;
+  max-height: 30ex;
 }
 svg:not(:root) {
   overflow: hidden;
