@@ -79,10 +79,10 @@ sub {
 }
 img {
   border: 0;
-  width: 100%;
+  width: 75%;
   overflow: auto;
   height: auto;
-  max-height: 60ex;
+  object-fit: contain;
 }
 svg:not(:root) {
   overflow: hidden;
