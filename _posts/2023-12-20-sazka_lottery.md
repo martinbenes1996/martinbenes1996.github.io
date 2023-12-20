@@ -19,10 +19,12 @@ tags:
 
 ```r
 # probability of sance
+
 Pr_sance <- 1/10^(1:6)
 Pr_sance <- c(1-sum(Pr_sance), Pr_sance)
 
 # reward of sance
+
 price_sance <- 20
 rewards_sance <- c(0, 50, 100, 10^3, 10^4, 10^5, 970000)
 avg_reward_sance <- Pr_sance %*% (rewards_sance - price_sance)
