@@ -31,8 +31,8 @@ Pr_dodatkove <- 1/(49-6)  # dodatkove cislo
 | 4/6              | 4.    | $9.7\cdot10^{-4}$ |
 | 3/6              | 5.    | $1.8\cdot10^{-2}$ |
 
+<img src="/img/sazka_lottery/guess_probability.png" style="width: 100%" />
 
-![guess_probability](/img/sazka_lottery/guess_probability.png)
 
 
 <a href="https://www.sazka.cz/centrum-podpory/loterie-a-hry/loterie/sportka/jak-zjistit-vyhru-v-doplnkove-hre-sance">Sazka Šance</a>
