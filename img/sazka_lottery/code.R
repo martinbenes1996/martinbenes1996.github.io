@@ -27,32 +27,34 @@ ggplot(data.frame(Uhodnuto=0:6, Pr=Pr_sportka)) +
   scale_x_continuous(breaks=0:6) +
   xlab("Numbers guessed") +
   ylab("Probability")
-ggsave("guess_probability.png", width=8, height=4)
+ggsave("guess_probability.png", width=10, height=3)
 ggplot(data.frame(`Vsazeno`=1:10, cols=1-sum(Pr_sportka[0:2+1])^(1:10))) +
   geom_bar(aes(x=Vsazeno, y=cols), stat="identity", fill="steelblue") +
   theme_minimal() +
   xlab("Vsazeno sloupců") +
   ylab("Pravděpodobnost jakékoli výhry") +
   scale_x_continuous(breaks=1:10)
-reward_sportka_tah1 <- c(0, 0, 0, 108, 588, 23006, 393674)
-reward_sportka_tah2 <- c(0, 0, 0, 116, 645, 24491, 1000000)
-avg_reward_sportka <- (
-  # tah 1
-  Pr_sportka %*% (reward_sportka_tah1 - 20) +
-    Pr_sportka[5+1]*Pr_dodatkove*(700000 - 20) +
-    # tah 2
-    Pr_sportka %*% (reward_sportka_tah2) +
-    Pr_sportka[5+1]*Pr_dodatkove*(700000))
+reward_tah1 <- c(0, 0, 0, 112, 630, 24283, 330520)
+reward_tah2 <- c(0, 0, 0, 117, 664, 47217, 330520)
+reward_poradi2 <- 730000
+avg_reward_tah1 <- (
+  Pr_sportka %*% reward_tah1 +
+    Pr_sportka[6] * Pr_dodatkove * reward_poradi2 )
+avg_reward_tah2 <- (
+  Pr_sportka %*% (reward_tah2) +
+    Pr_sportka[6]*Pr_dodatkove*(reward_poradi2))
+avg_reward <- avg_reward_tah1 + avg_reward_tah2 - 20
+reward_superjackpot <- 151000000
 
 # total reward
 avg_reward <- (
   # tah 1+2
   avg_reward_sportka +
-    # sance
-    avg_reward_sance +
-    # superjackpot
-    Pr_sportka[6+1]*Pr_sance[2]*(147000000 - 40) +
-    Pr_sportka[6+1]*Pr_sance[2]*(147000000))
+  # sance
+  avg_reward_sance +
+  # superjackpot
+  Pr_sportka[6+1]*sum(Pr_sance[2:7])*(151000000 - 40) +
+  Pr_sportka[6+1]*sum(Pr_sance[2:7])*(151000000))
 
 # sportka - simulation
 set.seed(12345)
