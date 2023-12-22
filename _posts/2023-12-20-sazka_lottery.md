@@ -14,22 +14,22 @@ tags:
     - logic
 ---
 
-Sportka is a popular lottery in Czechia, with an average superjackpot over 100M CZK.
+*Sportka* is a popular lottery in Czechia, with an average superjackpot over 100M CZK.
 What is the chance of winning the lottery?
 How much one loses by long-term betting?
-Today, we shall answer these questions.
+Today, we shall answer these questions, this time using R.
 
 
 ## Ticket
 
 A Sazka lottery ticket shown below contains 10 identical columns, each with numbers 1-49.
-In each round of Sportka, 6 distinct numbers are drawn from 1-49.
+In each round of *Sportka*, 6 distinct numbers are drawn from 1-49.
 Better selects 6 numbers in the column, the reward depends on how many chosen numbers were drawn.
 
 <img src="/img/sazka_lottery/ticket.png" style="display: block; width: 30em; margin-left: auto; margin-right: auto;"/>
 
 A bottom-right corner of each ticket contains a unique number.
-Apart from ticket identification, this number is also used for a supplementary game "Šance".
+Apart from ticket identification, this number is also used for a supplementary game *Šance*.
 A 6-digit number is drawn, and the reward for Šance is based on length of matched suffix digits with the ticket identifier.
 
 The ticket is used for 2 draws, each connected with different rewards.
@@ -74,10 +74,9 @@ Unfortunately, this method errs in probabilities of rare events, such as superja
 ```
 
 
-
 ### Dodatkové číslo
 
-After drawing $6$ numbers, an additional number "dodatkové číslo" is drawn.
+After drawing $6$ numbers, an additional number (*dodatkové číslo*) is drawn.
 Guessing this number increases reward given that 5/6 Sportka numbers are correctly guessed.
 
 Guessing dodatkové číslo is led by Bernoulli distribution.
@@ -88,13 +87,13 @@ Guessing dodatkové číslo is led by Bernoulli distribution.
 ```
 
 
-
-
 ### Pořadí
+
+The rewards are organized in "order" (*pořadí*), based on guessed numbers,
 
 The rewards are organized in orders, called "pořadí".
 
-| Guessed          | Order | Probability       |
+| <div style="width:15em">Guessed</div> | <div style="width:5em">Order</div> | <div style="width:15em">Probability</div> |
 | ---------------- | ----- | ----------------- |
 | 6/6              | 1.    | $7.2\cdot10^{-8}$ |
 | 5/6 + dodatkové  | 2.    | $4.3\cdot10^{-7}$ |
