@@ -55,10 +55,14 @@ Sportka follows **hypergeometric** distribution - a binomial distribution with r
 The chance of perfect guess, $6$ out of $6$, is $7.15\cdot10^{-8}$.
 To put this number in a context - if everyone in Czechia bet a single column twice a week, there would be one lucky better every $34$ weeks on average.
 
+```
+> sum(Pr_sportka[1:3])
+0.9813625
+```
 
-The chance of winning anything is 0.01863755.
+The chance of losing (i.e., reward $0$) is $98.1$%.
 
-The probabilities can be also estimated in a frequentist manner via simulation ($N=10^5$).
+The probabilities can be alternatively estimated in a frequentist manner via simulation ($N=10^5$).
 
 ```
 > library(plyr)
@@ -104,6 +108,13 @@ The rewards are organized in "order" (*pořadí*), based on the count of numbers
 | 4/6              | 4.    | $9.7\cdot10^{-4}$ |
 | 3/6              | 5.    | $0.018$           |
 
+Chance of 2. order means combining probabilities of 3. order and of guessing *dodatkové číslo*.
+As these are independent, we simply multiply them.
+
+```
+> Pr_sportka[6]*Pr_dodatkove
+4.290674e-07
+```
 
 
 ### Tahy
@@ -177,16 +188,10 @@ With initial price $20$ CZK, we get average loss $50$%.
 Reported rewards assume playing Sportka, or Šance separately.
 
 If both games are playing together, better can win superjackpot, whose value is currently $151$M.
-
-```
-> reward_superjackpot <- 151000000
-```
-
 Winning superjackpot requires
 
 - winning 1. order, and
 - winning at least one digit of Šance.
-
 
 If a single column is bet, the ticket price is $40$, and the average reward is as follows.
 
@@ -194,8 +199,8 @@ If a single column is bet, the ticket price is $40$, and the average reward is a
 > avg_reward <- (
 +    avg_reward_sportka +
 +    avg_reward_sance +
-+    Pr_sportka[7] * sum(Pr_sance[2:7]) * reward_superjackpot +
-+    Pr_sportka[7] * sum(Pr_sance[2:7]) * reward_superjackpot)
++    Pr_sportka[7] * sum(Pr_sance[2:7]) * 151000000 +
++    Pr_sportka[7] * sum(Pr_sance[2:7]) * 151000000)
 > avg_reward - 40
 -20.3
 ```
@@ -205,14 +210,34 @@ With average reward $-20.3$, the loss is $50.8$%.
 
 ## Betting multiple columns
 
-Another question is, whether it is long-term beneficial to bet multiple columns.
+Another question is, whether it is long-term beneficial to bet multiple columns. Here we need to get a bit formal: we fill $N$ columns, where $y$ is the set with drawn values, and $x_i$ is the guess in $i^{\text{th}}$ column. $R(\cdot)$ is the reward function, and $\cap$ denotes set union.
 
-*TODO*
+The total reward sums up, when betting in multiple columns.
+The columns are chosen before revealing the results, there is no information exchange between the draws.
+Thus, each column can be assumed to be an independent draw from hypergeometric distribution.
+
+$$\mathbb{E}_{\overrightarrow{x}\sim \overrightarrow{X}}\bigg[\sum_{i=1}^{N}R(x_i\cap y)\bigg]\stackrel{\perp}{=}\sum_{i=1}^{N}\mathbb{E}_{x_i\sim X}\big[R(x_i\cap y)\big]\stackrel{\text{id}}{=}N\cdot\mathbb{E}_{x\sim X}\big[R(x_i\cap y)\big]$$
+
+As Sportka tips are independent, average rewards / losses adds up.
+Betting multiple columns does not give any benefit, compared to betting a single column.
+
+We can take a look at the probability of *losing ticket* (no win in any column) as a distribution of number of columns.
+
+<img src="/img/sazka_lottery/multi_column.png" style="display: block; width: 30em; margin-left: auto; margin-right: auto;" />
+
+```
+> 1 - sum(Pr_sportka[1:3])^10
+0.1714964
+```
+
+A full ticket with $10$ filled columns costs $200$ CZK.
+The probability of not losing is $0.1714964$.
+
 
 
 ## Conclusion
 
-- Analyzed lottery games lead to average loss $50\%$ or more.
-- Sportka is more lossy than Šance.
+- Analyzed lottery games lead to average loss more than $50\%$.
+- Šance is less lossy than Sportka.
 - Playing Šance along Sportka is less lossy than playing Sportka alone.
 - *conclusion: multiple columns*
