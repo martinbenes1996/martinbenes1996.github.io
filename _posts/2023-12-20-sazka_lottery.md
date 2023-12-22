@@ -99,9 +99,8 @@ The rewards are organized in "order" (*pořadí*), based on guessed numbers,
 The rewards are organized in orders, called "pořadí".
 
 
-<div style="display: block; margin-left: auto; margin-right: auto;">
 
-| <div style="width:40%">Guessed</div> | <div style="width:20%">Order</div> | <div style="width:40%">Probability</div> |
+| <div style="width:20em">Guessed</div> | <div style="width:10em">Order</div> | <div style="width:20em">Probability</div> |
 | ---------------- | ----- | ----------------- |
 | 6/6              | 1.    | $7.2\cdot10^{-8}$ |
 | 5/6 + dodatkové  | 2.    | $4.3\cdot10^{-7}$ |
@@ -109,7 +108,6 @@ The rewards are organized in orders, called "pořadí".
 | 4/6              | 4.    | $9.7\cdot10^{-4}$ |
 | 3/6              | 5.    | $0.018$           |
 
-</div>
 
 
 ### Tahy

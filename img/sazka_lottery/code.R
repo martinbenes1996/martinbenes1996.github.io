@@ -61,5 +61,5 @@ set.seed(12345)
 bet <- sample(1:49, 6, replace=F)
 win <- replicate(100000, length(intersect(sample(1:49, 6), bet)))
 table(win) / length(win)
-Pr_sportka
+setNames(Pr_sportka, 0:6)
 
