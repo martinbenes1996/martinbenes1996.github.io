@@ -94,11 +94,7 @@ Guessing dodatkové číslo is led by Bernoulli distribution.
 
 ### Pořadí
 
-The rewards are organized in "order" (*pořadí*), based on guessed numbers,
-
-The rewards are organized in orders, called "pořadí".
-
-
+The rewards are organized in "order" (*pořadí*), based on the count of numbers guessed.
 
 | <div style="width:10em">Guessed</div> | <div style="width:8em">Order</div> | <div style="width:10em">Probability</div> |
 | ---------------- | ----- | ----------------- |
@@ -112,66 +108,112 @@ The rewards are organized in orders, called "pořadí".
 
 ### Tahy
 
-Sportka is performed in two draws. Each draw has different <a href="https://www.sazka.cz/loterie/sportka/sazky-a-vysledky">reward tables</a>, which changes over time.
+Sportka is played in two independent draws (*tahy*).
+Each draw has different <a href="https://www.sazka.cz/loterie/sportka/sazky-a-vysledky">reward tables</a>.
+Moreover, the table changes over time, so from now on, all the results depend on the reward table at the time.
+
+I use rewards from 22nd December 2023.
 
 ```
 > reward_tah1 <- c(0, 0, 0, 112, 630, 24283, 330520)
 > reward_tah2 <- c(0, 0, 0, 117, 664, 47217, 330520)
 > reward_poradi2 <- 730000
+> reward_sance <- c(0, 50, 100, 10^3, 10^4, 10^5, 970000)
 ```
 
 
 ### Average reward of Sportka
 
+Average reward is computed as an expected value over the rewards.
+
 ```
-avg_reward_tah1 <- (
-    Pr_sportka %*% reward_tah1 +
-    Pr_sportka[6] * Pr_dodatkove * reward_poradi2)
-avg_reward_tah2 <- (
-    Pr_sportka %*% (reward_tah2) +
-    Pr_sportka[6]*Pr_dodatkove*(reward_poradi2) +
-    Pr_sportka[7] * sum(Pr_sance[2:7]) * reward_superjackpot))
-avg_reward_sportka <- avg_reward_tah1 + avg_reward_tah2 - 20
+> avg_reward_tah1 <- (
++    Pr_sportka %*% reward_tah1 +
++    Pr_sportka[6] * Pr_dodatkove * reward_poradi2)
+> avg_reward_tah2 <- (
++    Pr_sportka %*% reward_tah2 +
++    Pr_sportka[6] * Pr_dodatkove * reward_poradi2)
+> avg_reward_sportka <- avg_reward_tah1 + avg_reward_tah2 - 20
+    -12.71179
 ```
 
-    -12.7
+The average reward is $-12.7$ CZK. With the initial price $20$ CZK, this means a loss of $63.5\%$.
 
 
 ## Šance
 
-<a href="https://www.sazka.cz/centrum-podpory/loterie-a-hry/loterie/sportka/jak-zjistit-vyhru-v-doplnkove-hre-sance">Sazka Šance</a>
-
-
-```
-# probability of sance
-Pr_sance <- 1/10^(1:6)
-Pr_sance <- c(1-sum(Pr_sance), Pr_sance)
-```
+Supplementary game <a href="https://www.sazka.cz/centrum-podpory/loterie-a-hry/loterie/sportka/jak-zjistit-vyhru-v-doplnkove-hre-sance">Šance</a> is based on guessing suffix of digits.
+Guessing the last k-digits is Bernoulli-distributed, with $p=10^{-k}$.
 
 ```
-# reward of sance
-rewards_sance <- c(0, 50, 100, 10^3, 10^4, 10^5, 970000)
-avg_reward_sance <- Pr_sance %*% (rewards_sance - 20)
-avg_reward_sance
+> Pr_sance <- 1/10^(1:6)
+> Pr_sance <- c(1-sum(Pr_sance), Pr_sance)
 ```
 
-    -10
+The probability of winning *anything* is as follows.
+
+```
+> sum(Pr_sance[2:7])
+    0.111111
+```
+
+The average reward of Šance is computed as expectation over rewards.
+For the selected reward values, Šance has higher return than Sportka.
+
+```
+> avg_reward_sance <- Pr_sance %*% reward_sance
+> avg_reward_sance - 20
+    -10.03
+```
+
+The average reward of Šance is $-10$ CZK.
+With initial price $20$ CZK, we get average loss $50\%$.
+
+Šance is less lossy than Sportka, and has much lower chance of losing (reward $0$).
 
 
 ## Superjackpot
 
-Superjackpot involves winning 1. order (pořadí) as well as at least one digit of Šance.
+Reported rewards assume playing Sportka, or Šance separately.
+
+If both games are playing together, better can win superjackpot, whose value is currently $151$M.
 
 ```
-reward_superjackpot <- 151000000
+> reward_superjackpot <- 151000000
 ```
 
-```
-avg_reward <- (
-    avg_reward_sportka +
-    avg_reward_sance +
-    Pr_sportka[7] * sum(Pr_sance[2:7]) * (reward_superjackpot - 40) +
-    Pr_sportka[7] * sum(Pr_sance[2:7]) * reward_superjackpot)
+Winning superjackpot requires
+
+- winning 1. order, and
+- winning at least one digit of Šance.
+
+
+If a single column is bet, the ticket price is $40$, and the average reward is as follows.
+
 ```
 
+> avg_reward <- (
++    avg_reward_sportka +
++    avg_reward_sance +
++    Pr_sportka[7] * sum(Pr_sance[2:7]) * reward_superjackpot +
++    Pr_sportka[7] * sum(Pr_sance[2:7]) * reward_superjackpot)
+> avg_reward - 40
     -20.3
+```
+
+With average reward $-20.3$, the loss is $-50.75\%$.
+
+
+## Betting multiple columns
+
+Another question is, whether it is long-term beneficial to bet multiple columns.
+
+*TODO*
+
+
+## Conclusion
+
+- Analyzed lottery games lead to average loss $50\%$ or more.
+- Sportka is more lossy than Šance.
+- Playing Šance along Sportka is less lossy than playing Sportka alone.
+- *conclusion: multiple columns*
