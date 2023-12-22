@@ -100,7 +100,7 @@ The rewards are organized in orders, called "pořadí".
 
 
 
-| <div style="width:20em">Guessed</div> | <div style="width:10em">Order</div> | <div style="width:20em">Probability</div> |
+| <div style="width:10em">Guessed</div> | <div style="width:8em">Order</div> | <div style="width:10em">Probability</div> |
 | ---------------- | ----- | ----------------- |
 | 6/6              | 1.    | $7.2\cdot10^{-8}$ |
 | 5/6 + dodatkové  | 2.    | $4.3\cdot10^{-7}$ |
