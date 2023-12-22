@@ -36,14 +36,15 @@ The ticket is used for 2 draws, each connected with different rewards.
 Sportka is played twice a week.
 As of 2023, the price for one column is 20 CZK, and the price for Šance is also 20 CZK.
 
-There exists <a href="https://www.sazka.cz/sazka-svet/blog/jak-se-urcuje-vyhra-ve-sportce">a similar blogpost</a> modelling Sportka, but I believe it is completely wrong.
+There exists <a href="https://www.sazka.cz/sazka-svet/blog/jak-se-urcuje-vyhra-ve-sportce">a similar blogpost</a> modelling Sportka, but the modelling there is wrong.
 
 
 ## Sportka
 
 For simplicity, we assume a single lottery draw, and a single column bet.
 Playing sportka can be understood as blindly picking $6$ stones from a bag of $6$ black and $43$ white stones, and counting black stones in the pick.
-This is hypergeometric distribution - a binomial distribution with replacement.
+
+Sportka follows **hypergeometric** distribution - a binomial distribution with replacement.
 
 ```
 Pr_sportka <- dhyper(0:6, 6, 49-6, 6)
