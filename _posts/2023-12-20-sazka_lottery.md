@@ -22,13 +22,24 @@ Today, we shall answer these questions.
 
 ## Ticket
 
+A Sazka lottery ticket shown below contains 10 identical columns, each with numbers 1-49.
+In each round of Sportka, 6 distinct numbers are drawn from 1-49.
+Better selects 6 numbers in the column, the reward depends on how many chosen numbers were drawn.
+
 <img src="/img/sazka_lottery/ticket.png" style="display: block; width: 30em; margin-left: auto; margin-right: auto;"/>
 
-*Rules of Sportka and Šance*
+A bottom-right corner of each ticket contains a unique number.
+Apart from ticket identification, this number is also used for a supplementary game "Šance".
+A 6-digit number is drawn, and the reward for Šance is based on length of matched suffix digits with the ticket identifier.
+
+The ticket is used for 2 draws, each connected with different rewards.
+Sportka is played twice a week.
+As of 2023, the price for one column is 20 CZK, and the price for Šance is also 20 CZK.
+
+There exists <a href="https://www.sazka.cz/sazka-svet/blog/jak-se-urcuje-vyhra-ve-sportce">a similar blogpost</a> modelling Sportka, but I believe it is completely wrong.
+
 
 ## Sportka
-
-<a href="https://www.sazka.cz/sazka-svet/blog/jak-se-urcuje-vyhra-ve-sportce">Sazka Sportka</a>
 
 Guessing a certain numbers follows hypergeometric distribution.
 
