@@ -47,41 +47,47 @@ Playing sportka can be understood as blindly picking $6$ stones from a bag of $6
 Sportka follows **hypergeometric** distribution - a binomial distribution with replacement.
 
 ```
-Pr_sportka <- dhyper(0:6, 6, 49-6, 6)
+> Pr_sportka <- dhyper(0:6, 6, 49-6, 6)
 ```
 
 <img src="/img/sazka_lottery/guess_probability.png" style="display: block; width: 30em; margin-left: auto; margin-right: auto;" />
 
-The probabilities can be also estimated via simulation,
-but it fails to correctly estimate the probabilities of rare events, such as superjackpot.
+The probabilities can be also estimated in a frequentist manner via simulation ($N=10^5$).
 
 ```
-library(plyr)
-set.seed(12345)
-bet <- sample(1:49, 6, replace=F)
-win <- replicate(100000, length(intersect(sample(1:49, 6), bet)))
-table(win) / length(win)
+> library(plyr)
+> set.seed(12345)
+> bet <- sample(1:49, 6, replace=F)
+> win <- replicate(100000, length(intersect(sample(1:49, 6), bet)))
+> table(win) / length(win)
+      0       1       2       3       4
+0.43781 0.41226 0.13187 0.01706 0.00100
 ```
 
-          0       1       2       3       4
-    0.43781 0.41226 0.13187 0.01706 0.00100
+Unfortunately, this method errs in probabilities of rare events, such as superjackpot.
+
 
 ```
-Pr_sportka
+> setNames(Pr_sportka, 0:6)
+      0       1       2       3          4          5          6
+0.43597 0.41302 0.13238 0.01765 9.6862e-04 1.8441e-05 7.1511e-08
 ```
-    4.359650e-01 4.130195e-01 1.323780e-01 1.765040e-02 9.686197e-04 1.844990e-05 7.151124e-08
+
 
 
 ### Dodatkové číslo
 
-The competition also contains an additional number, called "dodatkové číslo".
+After drawing $6$ numbers, an additional number "dodatkové číslo" is drawn.
+Guessing this number increases reward given that 5/6 Sportka numbers are correctly guessed.
+
+Guessing dodatkové číslo is led by Bernoulli distribution.
 
 ```
-# dodatkové číslo
-Pr_dodatkove <- 1/(49-6)
+> Pr_dodatkove <- 1/(49-6)
+0.02325581
 ```
 
-    0.02325581
+
 
 
 ### Pořadí
@@ -104,10 +110,9 @@ The chance of winning anything is 0.01863755.
 Sportka is performed in two draws. Each draw has different <a href="https://www.sazka.cz/loterie/sportka/sazky-a-vysledky">reward tables</a>, which changes over time.
 
 ```
-# rewards
-reward_tah1 <- c(0, 0, 0, 112, 630, 24283, 330520)
-reward_tah2 <- c(0, 0, 0, 117, 664, 47217, 330520)
-reward_poradi2 <- 730000
+> reward_tah1 <- c(0, 0, 0, 112, 630, 24283, 330520)
+> reward_tah2 <- c(0, 0, 0, 117, 664, 47217, 330520)
+> reward_poradi2 <- 730000
 ```
 
 
