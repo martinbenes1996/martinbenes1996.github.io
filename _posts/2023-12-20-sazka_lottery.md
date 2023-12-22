@@ -52,6 +52,12 @@ Sportka follows **hypergeometric** distribution - a binomial distribution with r
 
 <img src="/img/sazka_lottery/guess_probability.png" style="display: block; width: 30em; margin-left: auto; margin-right: auto;" />
 
+The chance of perfect guess, $6$ out of $6$, is $7.15\cdot10^{-8}$.
+To put this number in a context - if everyone in Czechia bet a single column twice a week, there would be one lucky better every $34$ weeks on average.
+
+
+The chance of winning anything is 0.01863755.
+
 The probabilities can be also estimated in a frequentist manner via simulation ($N=10^5$).
 
 ```
@@ -65,7 +71,6 @@ The probabilities can be also estimated in a frequentist manner via simulation (
 ```
 
 Unfortunately, this method errs in probabilities of rare events, such as superjackpot.
-
 
 ```
 > setNames(Pr_sportka, 0:6)
@@ -93,7 +98,10 @@ The rewards are organized in "order" (*pořadí*), based on guessed numbers,
 
 The rewards are organized in orders, called "pořadí".
 
-| <div style="width:15em">Guessed</div> | <div style="width:5em">Order</div> | <div style="width:15em">Probability</div> |
+
+<div style="display: block; margin-left: auto; margin-right: auto;">
+
+| <div style="width:40%">Guessed</div> | <div style="width:20%">Order</div> | <div style="width:40%">Probability</div> |
 | ---------------- | ----- | ----------------- |
 | 6/6              | 1.    | $7.2\cdot10^{-8}$ |
 | 5/6 + dodatkové  | 2.    | $4.3\cdot10^{-7}$ |
@@ -101,7 +109,7 @@ The rewards are organized in orders, called "pořadí".
 | 4/6              | 4.    | $9.7\cdot10^{-4}$ |
 | 3/6              | 5.    | $0.018$           |
 
-The chance of winning anything is 0.01863755.
+</div>
 
 
 ### Tahy
