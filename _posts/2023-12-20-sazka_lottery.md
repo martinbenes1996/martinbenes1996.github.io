@@ -137,7 +137,7 @@ Average reward is computed as an expected value over the rewards.
     -12.71179
 ```
 
-The average reward is $-12.7$ CZK. With the initial price $20$ CZK, this means a loss of $63.5\%$.
+The average reward is $-12.7$ CZK. With the initial price $20$ CZK, this means a loss of $63.5%$.
 
 
 ## Šance
@@ -201,7 +201,7 @@ If a single column is bet, the ticket price is $40$, and the average reward is a
     -20.3
 ```
 
-With average reward $-20.3$, the loss is $-50.75\%$.
+With average reward $-20.3$, the loss is $50.8%$.
 
 
 ## Betting multiple columns

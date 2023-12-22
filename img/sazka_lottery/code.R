@@ -10,7 +10,8 @@ library(stats)
 Pr_sance <- 1/10^(1:6)
 Pr_sance <- c(1-sum(Pr_sance), Pr_sance)
 rewards_sance <- c(0, 50, 100, 1000, 10000, 100000, 970000)
-avg_reward_sance <- Pr_sance %*% (rewards_sance - 20)
+avg_reward_sance <- Pr_sance %*% rewards_sance
+avg_reward_sance - 20
 
 # sportka
 Pr_sportka <- dhyper(0:6, 6, 49-6, 6)
@@ -39,12 +40,12 @@ reward_tah2 <- c(0, 0, 0, 117, 664, 47217, 330520)
 reward_poradi2 <- 730000
 avg_reward_tah1 <- (
   Pr_sportka %*% reward_tah1 +
-  Pr_sportka[6] * Pr_dodatkove * reward_poradi2 )
+  Pr_sportka[6] * Pr_dodatkove * reward_poradi2)
 avg_reward_tah2 <- (
-  Pr_sportka %*% (reward_tah2) +
-  Pr_sportka[6]*Pr_dodatkove*(reward_poradi2))
-avg_reward_sportka <- avg_reward_tah1 + avg_reward_tah2 - 20
-reward_superjackpot <- 151000000
+  Pr_sportka %*% reward_tah2 +
+  Pr_sportka[6] * Pr_dodatkove * reward_poradi2)
+avg_reward_sportka <- avg_reward_tah1 + avg_reward_tah2
+avg_reward_sportka - 20
 
 # total reward
 avg_reward <- (
@@ -53,8 +54,8 @@ avg_reward <- (
   # sance
   avg_reward_sance +
   # superjackpot
-  Pr_sportka[6+1]*sum(Pr_sance[2:7])*(151000000 - 40) +
-  Pr_sportka[6+1]*sum(Pr_sance[2:7])*(151000000))
+  Pr_sportka[6+1]*sum(Pr_sance[2:7])*(151000000) +
+  Pr_sportka[6+1]*sum(Pr_sance[2:7])*(151000000)) - 40
 
 # sportka - simulation
 set.seed(12345)
