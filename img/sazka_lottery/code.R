@@ -39,11 +39,11 @@ reward_tah2 <- c(0, 0, 0, 117, 664, 47217, 330520)
 reward_poradi2 <- 730000
 avg_reward_tah1 <- (
   Pr_sportka %*% reward_tah1 +
-    Pr_sportka[6] * Pr_dodatkove * reward_poradi2 )
+  Pr_sportka[6] * Pr_dodatkove * reward_poradi2 )
 avg_reward_tah2 <- (
   Pr_sportka %*% (reward_tah2) +
-    Pr_sportka[6]*Pr_dodatkove*(reward_poradi2))
-avg_reward <- avg_reward_tah1 + avg_reward_tah2 - 20
+  Pr_sportka[6]*Pr_dodatkove*(reward_poradi2))
+avg_reward_sportka <- avg_reward_tah1 + avg_reward_tah2 - 20
 reward_superjackpot <- 151000000
 
 # total reward

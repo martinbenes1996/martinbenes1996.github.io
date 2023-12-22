@@ -14,6 +14,11 @@ tags:
     - logic
 ---
 
+*Describe Sazka lottery ticket*
+
+<img src="/img/sazka_lottery/ticket.png" style="width: 50%"/>
+
+*Rules of Sportka and Šance*
 
 ## Sportka
 
@@ -27,6 +32,25 @@ Pr_sportka <- dhyper(0:6, 6, 49-6, 6)
 ```
 
 <img src="/img/sazka_lottery/guess_probability.png" style="width: 100%" />
+
+The probabilities can be also estimated via simulation,
+but it fails to correctly estimate the probabilities of rare events, such as superjackpot.
+
+```
+library(plyr)
+set.seed(12345)
+bet <- sample(1:49, 6, replace=F)
+win <- replicate(100000, length(intersect(sample(1:49, 6), bet)))
+table(win) / length(win)
+```
+
+          0       1       2       3       4
+    0.43781 0.41226 0.13187 0.01706 0.00100
+
+```
+Pr_sportka
+```
+    4.359650e-01 4.130195e-01 1.323780e-01 1.765040e-02 9.686197e-04 1.844990e-05 7.151124e-08
 
 
 ### Dodatkové číslo
@@ -67,18 +91,21 @@ reward_tah2 <- c(0, 0, 0, 117, 664, 47217, 330520)
 reward_poradi2 <- 730000
 ```
 
+
+### Average reward of Sportka
+
 ```
 avg_reward_tah1 <- (
-    Pr_sportka %*% (reward_tah1 - 20) +
-    Pr_sportka[5+1]*Pr_dodatkove*(reward_poradi2 - 20))
+    Pr_sportka %*% reward_tah1 +
+    Pr_sportka[6] * Pr_dodatkove * reward_poradi2)
 avg_reward_tah2 <- (
     Pr_sportka %*% (reward_tah2) +
-    Pr_sportka[5+1]*Pr_dodatkove*(reward_poradi2))
-avg_reward <- avg_reward_tah1 + avg_reward_tah2
+    Pr_sportka[6]*Pr_dodatkove*(reward_poradi2) +
+    Pr_sportka[7] * sum(Pr_sance[2:7]) * reward_superjackpot))
+avg_reward_sportka <- avg_reward_tah1 + avg_reward_tah2 - 20
 ```
 
     -12.7
-
 
 
 ## Šance
@@ -100,3 +127,22 @@ avg_reward_sance
 ```
 
     -10
+
+
+## Superjackpot
+
+Superjackpot involves winning 1. order (pořadí) as well as at least one digit of Šance.
+
+```
+reward_superjackpot <- 151000000
+```
+
+```
+avg_reward <- (
+    avg_reward_sportka +
+    avg_reward_sance +
+    Pr_sportka[7] * sum(Pr_sance[2:7]) * (reward_superjackpot - 40) +
+    Pr_sportka[7] * sum(Pr_sance[2:7]) * reward_superjackpot)
+```
+
+    -20.3
