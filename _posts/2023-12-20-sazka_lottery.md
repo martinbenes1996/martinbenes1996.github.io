@@ -14,10 +14,11 @@ tags:
     - logic
 ---
 
-Sportka is a popular lottery in Czechia, with a superjackpot over 100M CZK.  But what is the chance of winning it? And how much you lose by long-term betting?
+Sportka is a popular lottery in Czechia, with an average superjackpot over 100M CZK.
+In this post we shall model the lottery in order to find out, what the chance of winning is, and how much one loses by long-term betting in Sportka.
+
 
 ## Ticket
-
 
 <img src="/img/sazka_lottery/ticket.png" style="display: block; width: 30em; margin-left: auto; margin-right: auto;"/>
 
