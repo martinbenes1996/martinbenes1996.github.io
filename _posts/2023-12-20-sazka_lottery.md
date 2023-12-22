@@ -134,10 +134,10 @@ Average reward is computed as an expected value over the rewards.
 +    Pr_sportka %*% reward_tah2 +
 +    Pr_sportka[6] * Pr_dodatkove * reward_poradi2)
 > avg_reward_sportka <- avg_reward_tah1 + avg_reward_tah2 - 20
-    -12.71179
+-12.71179
 ```
 
-The average reward is $-12.7$ CZK. With the initial price $20$ CZK, this means a loss of $63.5%$.
+The average reward is $-12.7$ CZK. With the initial price $20$ CZK, this means a loss of $63.5$%.
 
 
 ## Šance
@@ -154,7 +154,7 @@ The probability of winning *anything* is as follows.
 
 ```
 > sum(Pr_sance[2:7])
-    0.111111
+0.111111
 ```
 
 The average reward of Šance is computed as expectation over rewards.
@@ -163,11 +163,11 @@ For the selected reward values, Šance has higher return than Sportka.
 ```
 > avg_reward_sance <- Pr_sance %*% reward_sance
 > avg_reward_sance - 20
-    -10.03
+-10.03
 ```
 
 The average reward of Šance is $-10$ CZK.
-With initial price $20$ CZK, we get average loss $50\%$.
+With initial price $20$ CZK, we get average loss $50$%.
 
 Šance is less lossy than Sportka, and has much lower chance of losing (reward $0$).
 
@@ -191,17 +191,16 @@ Winning superjackpot requires
 If a single column is bet, the ticket price is $40$, and the average reward is as follows.
 
 ```
-
 > avg_reward <- (
 +    avg_reward_sportka +
 +    avg_reward_sance +
 +    Pr_sportka[7] * sum(Pr_sance[2:7]) * reward_superjackpot +
 +    Pr_sportka[7] * sum(Pr_sance[2:7]) * reward_superjackpot)
 > avg_reward - 40
-    -20.3
+-20.3
 ```
 
-With average reward $-20.3$, the loss is $50.8%$.
+With average reward $-20.3$, the loss is $50.8$%.
 
 
 ## Betting multiple columns
