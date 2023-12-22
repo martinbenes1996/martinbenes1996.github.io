@@ -41,14 +41,15 @@ There exists <a href="https://www.sazka.cz/sazka-svet/blog/jak-se-urcuje-vyhra-v
 
 ## Sportka
 
-Guessing a certain numbers follows hypergeometric distribution.
+For simplicity, we assume a single lottery draw, and a single column bet.
+Playing sportka can be understood as blindly picking $6$ stones from a bag of $6$ black and $43$ white stones, and counting black stones in the pick.
+This is hypergeometric distribution - a binomial distribution with replacement.
 
 ```
-# probabilities
 Pr_sportka <- dhyper(0:6, 6, 49-6, 6)
 ```
 
-<img src="/img/sazka_lottery/guess_probability.png" style="width: 100%" />
+<img src="/img/sazka_lottery/guess_probability.png" style="display: block; width: 30em; margin-left: auto; margin-right: auto;" />
 
 The probabilities can be also estimated via simulation,
 but it fails to correctly estimate the probabilities of rare events, such as superjackpot.
