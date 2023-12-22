@@ -216,7 +216,7 @@ The total reward sums up, when betting in multiple columns.
 The columns are chosen before revealing the results, there is no information exchange between the draws.
 Thus, each column can be assumed to be an independent draw from hypergeometric distribution.
 
-$\mathbb{E}_{x\sim X}\bigg[\sum_{i=1}^{N}R(x_i\cap y)\bigg]\stackrel{\perp}{=}\sum_{i=1}^{N}\mathbb{E}_{x_i\sim X}\big[R(x_i\cap y)\big]\stackrel{\text{id}}{=}N\cdot\mathbb{E}_{x\sim X}\big[R(x_i\cap y)\big]$
+$E_{x\sim X}\bigg[\sum_{i=1}^{N}R(x_i\cap y)\bigg]\stackrel{\perp}{=}\sum_{i=1}^{N}E_{x_i\sim X}\big[R(x_i\cap y)\big]\stackrel{\text{id}}{=}N\cdot E_{x\sim X}\big[R(x_i\cap y)\big]$
 
 As Sportka tips are independent, average rewards / losses adds up.
 Betting multiple columns does not give any benefit, compared to betting a single column.
