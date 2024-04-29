@@ -19,7 +19,8 @@ ggplot(data.frame(Uhodnuto=0:6, Pr=Pr_sportka)) +
   theme_minimal() +
   scale_x_continuous(breaks=0:6) +
   xlab("Numbers guessed") +
-  ylab("Probability")
+  ylab("Probability") +
+  theme(text = element_text(size=20))
 ggsave("guess_probability.png", width=10, height=3)
 
 # sportka - simulation
@@ -67,10 +68,12 @@ avg_reward <- (
   Pr_sportka[6+1]*sum(Pr_sance[2:7])*reward_superjackpot) - 40
 
 # multiple columns
-ggplot(data.frame(`Vsazeno`=1:10, cols=1-sum(Pr_sportka[0:2+1])^(1:10))) +
+ggplot(data.frame(`Vsazeno`=1:10, cols=1-sum(Pr_sportka[1:3])^(1:10))) +
   geom_bar(aes(x=Vsazeno, y=cols), stat="identity", fill="steelblue") +
   theme_minimal() +
   xlab("Vsazeno sloupců") +
-  ylab("Pravděpodobnost jakékoli výhry") +
-  scale_x_continuous(breaks=1:10)
+  ylab("Pravděpodobnost výhry") +
+  scale_x_continuous(breaks=1:10) +
+  theme(text = element_text(size=20))
+ggsave("multi_column.png", width=10, height=5)
 
