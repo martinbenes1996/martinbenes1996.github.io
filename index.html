@@ -47,20 +47,22 @@ layout: default
 			<div class="row">
 				<h2 class="section-header">Publications</h2>
 				<hr class="section-separator" />
-				<!---->
-				<article class="list-item">
-					<a href="">Paper 1</a><br />
-					Abstract abstract abstract.<br />
-					<a href="">[PDF]</a>
-					<a href="">[Code]</a>
-				</article>
-				<!---->
-				<article class="list-item">
-					<a href="">Paper 2</a><br />
-					Abstract abstract abstract.<br />
-					<a href="">[PDF]</a>
-					<a href="">[Code]</a>
-				</article>
+
+				<div class="col-12 d-flex justify-content-center">
+					<article class="list-item">
+						<a href="">Paper 1</a><br />
+						Abstract abstract abstract.<br />
+						<a href="">[PDF]</a>
+						<a href="">[Code]</a>
+					</article>
+					<!---->
+					<article class="list-item">
+						<a href="">Paper 2</a><br />
+						Abstract abstract abstract.<br />
+						<a href="">[PDF]</a>
+						<a href="">[Code]</a>
+					</article>
+				</div>
 			</div>
 
 			<div class="row">
@@ -92,32 +94,35 @@ layout: default
 			<div class="row">
 				<h2 class="section-header">Teaching material</h2>
 				<hr class="section-separator" />
-				<!---->
-				<article class="list-item">
-					<a href="">Workshop 1</a><br />
-					Abstract abstract abstract.<br />
-					<a href="">[Repository]</a>
-					<a href="">[Slides]</a>
-				</article>
-				<!---->
-				<article class="list-item">
-					<a href="">Workshop 2</a><br />
-					Abstract abstract abstract.<br />
-					<a href="">[Repository]</a>
-					<a href="">[Slides]</a>
-				</article>
+				<div class="col-12 d-flex justify-content-center">
+					<article class="list-item">
+						<a href="">Workshop 1</a><br />
+						Abstract abstract abstract.<br />
+						<a href="">[Repository]</a>
+						<a href="">[Slides]</a>
+					</article>
+					<!---->
+					<article class="list-item">
+						<a href="">Workshop 2</a><br />
+						Abstract abstract abstract.<br />
+						<a href="">[Repository]</a>
+						<a href="">[Slides]</a>
+					</article>
+				</div>
 			</div>
 
 			<div class="row">
-				<h2 class="section-header">Teaching material</h2>
+				<h2 class="section-header">Stories</h2>
 				<hr class="section-separator" />
 
+				<div class="col-12 d-flex justify-content-center">
 				{% for post in paginator.posts %}
 					<article class="list-item">
 						<a href="{{ post.url }}">{{ post.title }}</a>
-						<p id="article-short-{{ post.id }}">{{ post.content | strip_html | truncate:200 }}</p>
+						<p id="article-short-{{ post.id }}">{{ post.content | strip_html | truncate:180 }}</p>
 					</article>
 				{% endfor %}
+				</div>
 
 			</div>
 
