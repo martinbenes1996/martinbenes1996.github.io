@@ -1,5 +1,5 @@
 @article{benes2024kerckhoffs,
-	title = {Kerckhoffs in Prison: A Study of the Steganalyst's Knowledge},
-	author = {Bene{\v{s}}, Martin and B{\"o}hme, Rainer},
-	year = {2024}
+  title = {Kerckhoffs in Prison: A Study of the Steganalyst's Knowledge},
+  author = {Bene{\v{s}}, Martin and B{\"o}hme, Rainer},
+  year = {2024}
 }

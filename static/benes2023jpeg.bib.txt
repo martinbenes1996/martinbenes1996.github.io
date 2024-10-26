@@ -1,8 +1,8 @@
 @article{benes2024kerckhoffs,
-	title={JPEG Steganalysis Using Leaked Cover Thumbnails},
-	author = {Bene{\v{s}}, Martin and B{\"o}hme, Rainer},
-	booktitle = {International Workshop on Information Forensics and Security (WIFS)},
-	organization = {IEEE},
-	pages = {1--6},
-	year = {2024}
+  title={JPEG Steganalysis Using Leaked Cover Thumbnails},
+  author = {Bene{\v{s}}, Martin and B{\"o}hme, Rainer},
+  booktitle = {International Workshop on Information Forensics and Security (WIFS)},
+  organization = {IEEE},
+  pages = {1--6},
+  year = {2024}
 }
