@@ -45,8 +45,44 @@ layout: default
 		</div>
 		<div class="col-md-7 col-sm-12 second-column">
 			<div class="row">
-				<h2 class="portfolio-header">Stories</h2>
-				<hr class="portfolio-separator" />
+				<h2 class="section-header">Publications</h2>
+				<hr class="section-separator" />
+				<!---->
+				<article class="list-item">
+					<a href="">Paper 1</a>
+					<p>Abstract abstract abstract.</p>
+				</article>
+				<!---->
+				<article class="list-item">
+					<a href="">Paper 2</a>
+					<p>Abstract abstract abstract.</p>
+				</article>
+			</div>
+
+			<div class="row">
+				<h2 class="section-header">Code</h2>
+				<hr class="section-separator" />
+				<table>
+					<tr>
+						<th>Name</th>
+						<th>Language</th>
+					</tr>
+					<tr>
+						<td><a href="https://github.com/martinbenes1996/package1">Package 1</a></td>
+						<td>Python</td>
+					</tr>
+					<tr>
+						<tr>
+							<td><a href="https://github.com/martinbenes1996/package">Package 2</a></td>
+							<td>Python</td>
+						</tr>
+					</tr>
+				</table>
+			</div>
+
+			<div class="row">
+				<h2 class="section-header">Stories</h2>
+				<hr class="section-separator" />
 
 				{% for post in paginator.posts %}
 					<article class="list-item">

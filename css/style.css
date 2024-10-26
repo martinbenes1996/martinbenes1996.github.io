@@ -97,19 +97,19 @@ div.profile-links {
     margin: 7%;
 }
 
-.portfolio-header {
+.section-header {
     font-size: 150%
 }
 
-hr.portfolio-separator {
+hr.section-separator {
     height: 0.5rem;
     background-color: black;
 }
 
-.portfolio-link {
+/* .section-link {
     margin-top: 2rem;
     text-align: right;
-}
+} */
 
 .w3-model {
     padding-top: 20%;
