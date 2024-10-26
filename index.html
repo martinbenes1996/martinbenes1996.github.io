@@ -6,7 +6,7 @@ layout: default
 	<div class="row">
 		<div class="col-md-5 col-sm-12 first-column">
 			<h1 class="profile-header"><strong>Martin Beneš</strong><br />
-				<span class="h5">[marc&#618;n &#712;b&#603;n&#603;&#643;]</span>
+				<span class="h5">[marc&#618;n &#712;b&#603;n&#603;&#643;]</span><br />
 				<span class="h5 text-muted">Data Scientist & Researcher</span>
 			</h1>
 			<img src="img/martinbenes.jpg" title="Martin Benes" class="profile-photo" alt="Title photo of the author Martin Benes." />
@@ -50,14 +50,31 @@ layout: default
 				<hr class="section-separator" />
 
 				<div class="col-12 d-flex justify-content-center">
+
+				{% for publication in paginator.publications %}
 					<article class="list-item">
+						<b>{{ publication.title }}</b><br />
+						{{ publication.venue }}<br />
+						{% if static_file.path == '/publications/bib/{{post.id}}.bib.txt' %}
+						<a href="/publications/bib/{{publication.id}}.bib.txt">[BibTeX]</a>
+						{% endif %}
+						{% if publication.pdf == nil %}
+						<a href="{{ publication.pdf }}">[PDF]</a>
+						{% endif %}
+						{% if publication.repo == nil %}
+						<a href="{{ publication.repo }}">[Code]</a>
+						{% endif %}
+						<!-- <a href="{{ post.url }}">{{ post.title }}</a>
+						<p id="article-short-{{ post.id }}">{{ post.content | strip_html | truncate:180 }}</p> -->
+					</article>
+				{% endfor %}
+					<!-- <article class="list-item">
 						<b>Kerckhoffs in Prison: A Study of the Steganalyst's Knowledge.</b><br />
 						IEEE WIFS 2024<br />
 						<a href="/static/benes2024kerckhoffs.bib.txt">[BibTeX]</a>
 						<a href="https://informationsecurity.uibk.ac.at/pdfs/BB2024_WIFS.pdf">[PDF]</a>
 						<a href="https://github.com/uibk-uncover/KerckhoffsInPrison">[Code]</a>
 					</article>
-					<!---->
 					<article class="list-item">
 						<b>Exploring Diffusion-Inspired Pixel Predictors for WS Steganalysis</b><br />
 						ACM IH&MMSec 2024<br />
@@ -65,7 +82,6 @@ layout: default
 						<a href="https://dl.acm.org/doi/pdf/10.1145/3658664.3659645">[PDF]</a>
 						<a href="https://github.com/uibk-uncover/ws-unet">[Code]</a>
 					</article>
-					<!---->
 					<article class="list-item">
 						<b>Cover-source Mismatch in Steganalysis: Systematic Review</b><br />
 						EURASIP JIS<br />
@@ -73,7 +89,6 @@ layout: default
 						<a href="https://jis-eurasipjournals.springeropen.com/counter/pdf/10.1186/s13635-024-00171-6.pdf">[PDF]</a>
 						<a href="https://github.com/uibk-uncover/uncovering_csm">[Code]</a>
 					</article>
-					<!---->
 					<article class="list-item">
 						<b>JPEG Steganalysis Using Leaked Cover Thumbnails</b><br />
 						IEEE WIFS 2023<br />
@@ -81,7 +96,6 @@ layout: default
 						<a href="https://informationsecurity.uibk.ac.at/pdfs/BLB2023_WIFS.pdf">[PDF]</a>
 						<a href="https://github.com/uibk-uncover/thumbnail-steganalysis">[Code]</a>
 					</article>
-					<!---->
 					<article class="list-item">
 						<b>The Effect of the JPEG Implementation on the Cover-Source Mismatch Error in Image Steganalysis</b><br />
 						EURASIP EUSIPCO 2022<br />
@@ -89,14 +103,13 @@ layout: default
 						<a href="https://eurasip.org/Proceedings/Eusipco/Eusipco2022/pdfs/0001057.pdf">[PDF]</a>
 						<a href="https://github.com/uibk-uncover/libjpeg-CSM">[Code]</a>
 					</article>
-					<!---->
 					<article class="list-item">
 						<b>Know Your Library: How the libjpeg Version Influences Compression and Decompression Results</b><br />
 						ACM IH&MMSec 2022<br />
 						<a href="/static/benes2022know.bib.txt">[BibTeX]</a>
 						<a href="https://dl.acm.org/doi/pdf/10.1145/3531536.3532962">[PDF]</a>
 						<a href="https://github.com/uibk-uncover/KnowYourLibrary">[Code]</a>
-					</article>
+					</article> -->
 				</div>
 				<br />
 			</div>
