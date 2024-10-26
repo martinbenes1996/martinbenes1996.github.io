@@ -13,6 +13,7 @@ github_repo: "https://www.github.com/martinbenes1996/martinbenes1996.github.io.g
 # permalink: pretty
 #permalink: /:year/:month/:day/:title
 paginate: 10
+paginate_path: "/posts/page:num/"
 exclude: ["old"]
 # anchorjs: true                          # if you want to customize anchor. check out line:181 of `post.html`
 
