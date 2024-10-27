@@ -159,7 +159,7 @@ footer {
 
 
 a {
-    color: black;
+    color: orange;
 }
 
 a:hover {
@@ -167,7 +167,7 @@ a:hover {
 }
 
 a:visited {
-    color: black;
+    color: orange;
 }
 
 a:visited:hover {
