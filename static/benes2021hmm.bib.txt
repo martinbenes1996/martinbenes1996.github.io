@@ -1,0 +1,7 @@
+@thesis{mastersthesis,
+  title = {HMM modelling for the spread of the SARS--CoV--2},
+  author = {Bene{\v{s}}, Martin},
+  year = {2021},
+  school = {Link{\"o}ping University},
+  type = {Master's thesis}
+}
