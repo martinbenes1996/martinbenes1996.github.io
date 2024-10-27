@@ -187,10 +187,10 @@ footer a:visited:hover {
     color: grey;
 }
 
-.noformat a,
-.noformat a:hover,
-.noformat a:visited,
-.noformat a:visited:hover {
+a.noformat ,
+a.noformat:hover,
+a.noformat:visited,
+a.noformat:visited:hover {
     color: black;
     text-decoration: none;
 }
