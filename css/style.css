@@ -157,23 +157,15 @@ footer {
     text-align: center;
 }
 
-
-a {
-    color: 	#CD7F32;
-}
-
-a:hover {
-    color: grey;
-}
-
+a,
 a:visited {
     color: 	#CD7F32;
 }
 
+a:hover,
 a:visited:hover {
     color: grey;
 }
-
 
 div.footer-category-column {
     margin-bottom: 0rem;
@@ -185,20 +177,22 @@ div.footer-category-column {
     }
 }
 
-footer a {
-    color: white;
-}
-
-footer a:hover {
-    color: grey;
-}
-
+footer a,
 footer a:visited {
     color: white;
 }
 
+footer a:hover,
 footer a:visited:hover {
     color: grey;
+}
+
+.noformat a,
+.noformat a:hover,
+.noformat a:visited,
+.noformat a:visited:hover {
+    color: black;
+    text-decoration: none;
 }
 
 footer h5 {
