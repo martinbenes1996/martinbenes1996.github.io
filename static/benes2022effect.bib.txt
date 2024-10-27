@@ -4,5 +4,5 @@
   booktitle = {European Signal Processing Conference (EUSIPCO)},
   pages = {1057--1061},
   year = {2022},
-  organization = {IEEE}
+  organization = {EURASIP}
 }

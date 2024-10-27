@@ -1,7 +1,7 @@
 @article{mallet2024cover,
   title = {Cover-source Mismatch in Steganalysis: Systematic Review},
   author = {Mallet, Antoine and Bene{\v{s}}, Martin and Cogranne, R{\'e}mi},
-  journal = {EURASIP Journal on Information Security},
+  journal = {EURASIP Journal on Information Security (JIS)},
   volume = {2024},
   number = {1},
   pages = {26},
