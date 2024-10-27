@@ -39,7 +39,7 @@ title: Stories
 					{% for post in site.posts %}
 					<article class="list-item">
 						<a href="{{ post.url }}">{{ post.title }}</a><br />
-						<spam>{{ page.date | date: "%b %d, %Y" }}</spam><br />
+						<spam>{{ post.date | date: "%b %d, %Y" }}</spam><br />
 						<p id="article-short-{{ post.id }}">{{ post.content | strip_html | truncate:180 }}</p>
 					</article>
 					{% endfor %}
