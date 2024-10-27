@@ -71,7 +71,7 @@ img.profile-photo {
     width: 50%;
     margin: 3rem;
     margin-top: 2rem;
-    border: 0.5rem solid #000;
+    border: 0.3rem solid #000;
 }
 
 @media (max-width: 768px) {
