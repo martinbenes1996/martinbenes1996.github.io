@@ -158,9 +158,22 @@ footer {
 }
 
 
-footer a {
-    color: white;
+a {
+    color: black;
 }
+
+a:hover {
+    color: grey;
+}
+
+a:visited {
+    color: black;
+}
+
+a:visited:hover {
+    color: grey;
+}
+
 
 div.footer-category-column {
     margin-bottom: 0rem;
@@ -170,6 +183,10 @@ div.footer-category-column {
     div.footer-category-column {
         margin-bottom: 2rem;
     }
+}
+
+footer a {
+    color: white;
 }
 
 footer a:hover {
