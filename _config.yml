@@ -1,8 +1,8 @@
 # Site settings
-title: Martin Benes
-SEOTitle: Martin Benes
+title: Martin Beneš
+SEOTitle: Martin Beneš
 email: martinbenes1996@gmail.com
-description: "Martin Benes is a data scientist and software developer. His mother tongue is Python, but he is fluent in R as well."
+description: "Martin Beneš' personal website."
 url: "https://www.mbenes.me/"
 baseurl: ""
 github_repo: "https://www.github.com/martinbenes1996/martinbenes1996.github.io.git" # you code repository
