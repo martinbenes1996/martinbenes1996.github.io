@@ -44,6 +44,7 @@ Let's have a large, grass area, decomposed into square segments. Each square is 
 ```python
 import matplotlib.pyplot as plt
 import numpy as np
+from PIL import Image
 
 # actors
 
@@ -72,54 +73,11 @@ plt.imshow(A);
 ![png](/img/herd_cellular_files/output_12_1.png)
 
 
+Next, we get the sheep moving. For visualizing time-dependent heatmaps, we use `pillow` and store them in as GIF images.
 
-Next, we get the sheep moving. For visualizing time-dependent heatmaps, we use `plotly` and define following class.
-
-
-```python
-import plotly.graph_objects as go
-class AreaViewer:
-    def __init__(self, actors=[EMPTY, SHEEP]):
-        self.fig = go.Figure()
-        self.colorscale = [
-            ({EMPTY: 'green', SHEEP: 'white', TOURIST: 'black'})[actor]
-            for actor in actors
-        ]
-    def add_area(self, area):
-        self.fig.add_trace(
-            go.Heatmap(
-                z=area,
-                colorscale=self.colorscale,
-                showscale=False,
-            )
-        )
-
-        # first frame visible
-
-        for i in range(len(self.fig.data)):
-            self.fig.data[i].visible = (i == 0)
-
-    def show(self):
-
-        # slider steps
-
-        steps = []
-        for i in range(len(self.fig.data)):
-            step = dict(
-                method="update",
-                args=[{"visible": [False] * len(self.fig.data)}]
-            )
-            step["args"][0]["visible"][i] = True  # only the current frame
-
-            steps.append(step)
-        # slider
-
-        sliders = [{'steps': steps}]
-        self.fig.update_layout(sliders=sliders, yaxis_scaleanchor="x")
-        self.fig.show()
-```
-
-Cellular automaton is defined via behavior of an individual. Individuals define the movement based on the current state, reacting to what happens in the neighborhood. In our case, we must define "the sheep logic".
+Cellular automaton is defined via behavior of an individual.
+Individuals define the movement based on the current state, reacting to what happens in the neighborhood.
+In our case, we must define "the sheep logic".
 
 ### Sheep logic
 
@@ -198,8 +156,10 @@ clamp = lambda x, dim: np.clip(x, 0, area.shape[dim])
 
 # run
 
-viewer = AreaViewer([EMPTY, SHEEP])
+frames = []
 for step in range(50):
+
+    frame = np.zeros((*area.shape, 3), dtype='uint8')
     for x_glob, y_glob in zip(*np.where((area == SHEEP))):
         object_type = area[x_glob, y_glob]
 
@@ -214,13 +174,18 @@ for step in range(50):
 
         direction = sheep_logic(area_win, [x_loc, y_loc], [x_glob, y_glob], [win_min, win_max])
 
+        # Add to frame
+
+        frame[area == EMPTY] = [0, 128, 0]
+        frame[area == SHEEP] = [255, 255, 255]
+
         # Move
 
         area[x_glob, y_glob] = EMPTY
         area[x_glob+direction[0], y_glob+direction[1]] = object_type
 
-    viewer.add_area(area)
-viewer.show()
+    frames.append(Image.fromarray(frame))
+frames[0].save("image.gif", save_all=True, append_images=frames[1:])
 ```
 
 
@@ -359,8 +324,10 @@ win_size = 15
 
 # run
 
-viewer = AreaViewer([EMPTY, SHEEP, TOURIST])
+frames = []
 for step in range(50):
+
+    frame = np.zeros((*area.shape, 3), dtype='uint8')
     for x_glob, y_glob in zip(*np.where(area != EMPTY)):
         object_type = area[x_glob, y_glob]
 
@@ -378,13 +345,18 @@ for step in range(50):
         elif object_type == TOURIST:
             direction = tourist_logic(area_win, [x_loc, y_loc], [x_glob, y_glob], [win_min, win_max])
 
-        # move
+        # Add to frame
+
+        frame[area == EMPTY] = [0, 128, 0]
+        frame[area == SHEEP] = [255, 255, 255]
+
+        # Move
 
         area[x_glob, y_glob] = EMPTY
         area[x_glob+direction[0], y_glob+direction[1]] = object_type
 
-    viewer.add_area(area)
-viewer.show()
+    frames.append(Image.fromarray(frame))
+frames[0].save("image.gif", save_all=True, append_images=frames[1:])
 ```
 
 <!-- <script src="/js/herd_cellular_files/plot2.js" type="text/javascript"></script> -->
