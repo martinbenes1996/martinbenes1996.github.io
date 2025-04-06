@@ -46,16 +46,19 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 # actors
+
 EMPTY = 0
 SHEEP = 1
 TOURIST = 2
 
 # randomly spread sheep around the area
+
 rng = np.random.default_rng(12345)
 area = rng.choice([EMPTY, SHEEP], size=(50, 50), p=[.95, .05])
 print('Generated', np.sum(area == SHEEP), 'sheep.')
 
 # plot the area
+
 A = np.zeros((*area.shape, 3), dtype='uint8')
 A[area == EMPTY] = [0, 128, 0]
 A[area == SHEEP] = [255, 255, 255]
@@ -63,7 +66,6 @@ plt.imshow(A);
 ```
 
     Generated 135 sheep.
-
 
 
 
@@ -92,11 +94,13 @@ class AreaViewer:
             )
         )
         # first frame visible
+
         for i in range(len(self.fig.data)):
             self.fig.data[i].visible = (i == 0)
 
     def show(self):
         # slider steps
+
         steps = []
         for i in range(len(self.fig.data)):
             step = dict(
@@ -104,9 +108,10 @@ class AreaViewer:
                 args=[{"visible": [False] * len(self.fig.data)}]
             )
             step["args"][0]["visible"][i] = True  # only the current frame
-            steps.append(step)
 
+            steps.append(step)
         # slider
+
         sliders = [{'steps': steps}]
         self.fig.update_layout(sliders=sliders, yaxis_scaleanchor="x")
         self.fig.show()
@@ -118,7 +123,7 @@ Cellular automaton is defined via behavior of an individual. Individuals define 
 
 The schema below shows the logic of sheep. Sheep tries to run towards the local herd centroid. Later we will also introduce the tourists that sheep runs from and extend the sheep movements towards Moore.
 
-<img src="js/herd_cellular_files/cellular_schema.png" width = "70%"/>
+<img src="/img/herd_cellular_files/cellular_schema.png" width = "70%"/>
 
 A sheep first estimates a herd centroid. Then it considers possible moves (up, down, left, right, stay), and weights them by the dot product with the vector towards the centroid. What this means is that directions getting the sheep towards the centroid get positive, larger score, and directions away from centroid get negative score.
 
@@ -128,10 +133,12 @@ Finally, the scores are converted to probabilities using the softmax function, a
 ```python
 def score_to_direction(score):
     # softmax score
+
     p_sum = np.sum(np.exp(list(score.values())))
     p = {k: np.exp(v) / p_sum for k, v in score.items()}
 
     # draw randomly
+
     direction = rng.choice(list(p.keys()), p=list(p.values()))
     return direction
 ```
@@ -141,9 +148,11 @@ def score_to_direction(score):
 def sheep_logic(area_win, loc, glob, lim):
 
     # sheep centroid
+
     sheep = np.array(list(zip(*np.where(area_win == SHEEP))))
     ctr = np.mean(sheep, axis=0) if len(sheep[0]) > 0 else np.array(loc)
     # gravity score
+
     score = {
         tuple(k): np.array(k) @ (ctr - loc)
         for k in [(-1, 0), (1, 0), (0, -1), (0, 1), (0, 0)]
@@ -157,13 +166,16 @@ def sheep_logic(area_win, loc, glob, lim):
         [(0, +1), glob[1] < lim[1][1]-1],
     ]:
         # do not roam outside the area
+
         if not in_area:
             score[direction] = -np.inf
         # the next square must be empty
+
         elif area[x_glob+direction[0], y_glob+direction[1]] != EMPTY:
             score[direction] = -np.inf
 
     # direction according to score
+
     return score_to_direction(score)
 ```
 
@@ -173,14 +185,17 @@ Each sheep only sees $15\times15$ pixels around it.
 
 ```python
 # initialize sheep area
+
 rng = np.random.default_rng(12345)
 area = rng.choice([EMPTY, SHEEP], size=(75, 75), p=[.95, .05])
 
 # parameters
+
 win_size = 15
 clamp = lambda x, dim: np.clip(x, 0, area.shape[dim])
 
 # run
+
 viewer = AreaViewer([EMPTY, SHEEP])
 for step in range(50):
     for x_glob, y_glob in zip(*np.where((area == SHEEP))):
@@ -204,7 +219,7 @@ viewer.show()
 ```
 
 
-<script src="js/herd_cellular_files/plot1.js"></script>
+<script src="js/herd_cellular_files/plot1.js" type="text/javascript"></script>
 
 
 The sheep cluster together, but nothing really pushes them into moving further. The sub-herds do not see each other, as their centroids are more than $7$ blocks apart.
@@ -346,7 +361,7 @@ for step in range(50):
 viewer.show()
 ```
 
-<script src="/js/herd_cellular_files/plot2.js"></script>
+<script src="/js/herd_cellular_files/plot2.js" type="text/javascript"></script>
 
 Nice! The sheep are (moderately) avoiding the tourists, which breaks the clusters.
 
@@ -483,7 +498,7 @@ viewer.show()
 ```
 
 
-<script src="//js/herd_cellular_files/plot3.js"></script>
+<script src="//js/herd_cellular_files/plot3.js" type="text/javascript"></script>
 
 This modification makes the movement way more organic. The sheep seem to have now more flexibility to avoid the tourists.
 
