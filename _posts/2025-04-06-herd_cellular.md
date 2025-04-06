@@ -93,12 +93,14 @@ class AreaViewer:
                 showscale=False,
             )
         )
+
         # first frame visible
 
         for i in range(len(self.fig.data)):
             self.fig.data[i].visible = (i == 0)
 
     def show(self):
+
         # slider steps
 
         steps = []
@@ -132,6 +134,7 @@ Finally, the scores are converted to probabilities using the softmax function, a
 
 ```python
 def score_to_direction(score):
+
     # softmax score
 
     p_sum = np.sum(np.exp(list(score.values())))
@@ -146,7 +149,6 @@ def score_to_direction(score):
 
 ```python
 def sheep_logic(area_win, loc, glob, lim):
-
     # sheep centroid
 
     sheep = np.array(list(zip(*np.where(area_win == SHEEP))))
@@ -157,8 +159,8 @@ def sheep_logic(area_win, loc, glob, lim):
         tuple(k): np.array(k) @ (ctr - loc)
         for k in [(-1, 0), (1, 0), (0, -1), (0, 1), (0, 0)]
     }
-
     # check
+
     for direction, in_area in [
         [(-1, 0), glob[0] > lim[0][0]],
         [(0, -1), glob[1] > lim[0][1]],
@@ -202,15 +204,18 @@ for step in range(50):
         object_type = area[x_glob, y_glob]
 
         # Moore View neighborhood
+
         win_min = clamp(x_glob-win_size//2, 0), clamp(y_glob-win_size//2, 1)
         win_max = clamp(x_glob+win_size//2+1, 0), clamp(y_glob+win_size//2+1, 1)
         area_win = area[win_min[0]:win_max[0], win_min[1]:win_max[1]]
         x_loc, y_loc = x_glob - win_min[0], y_glob - win_min[1]
 
         # Sheep logic
+
         direction = sheep_logic(area_win, [x_loc, y_loc], [x_glob, y_glob], [win_min, win_max])
 
-        # move
+        # Move
+
         area[x_glob, y_glob] = EMPTY
         area[x_glob+direction[0], y_glob+direction[1]] = object_type
 
@@ -239,18 +244,21 @@ tourist_factor = .2  # factor controlling how much tourists run after the sheep
 def tourist_logic(area_win, loc, glob, lim):
 
     # sheep centroid
+
     sheep = list(zip(*np.where(area_win == SHEEP)))
     if len(sheep) > 0:
         ctr = np.mean(sheep, axis=0)
     else:
         ctr = np.array(loc)
     # gravity score (towards sheep)
+
     score = {
         tuple(k): np.array(k) @ (ctr - loc)
         for k in [(-1, 0), (1, 0), (0, -1), (0, 1), (0, 0)]
     }
 
     # check
+
     for direction, in_area in [
         [(-1, 0), glob[0] > lim[0][0]],
         [(0, -1), glob[1] > lim[0][1]],
@@ -258,15 +266,18 @@ def tourist_logic(area_win, loc, glob, lim):
         [(0, +1), glob[1] < lim[1][1]-1],
     ]:
         # do not roam outside the area
+
         if not in_area:
             score[direction] = -np.inf
         # the next square must be empty
+
         elif area[x_glob+direction[0], y_glob+direction[1]] != EMPTY:
             score[direction] = -np.inf
 
         score[direction] *= tourist_factor
 
     # direction according to score
+
     return score_to_direction(score)
 ```
 
@@ -282,14 +293,17 @@ fear_factor = 10  # how much are sheep afraid of tourists
 def sheep_logic(area_win, loc, glob, lim):
 
     # sheep centroid
+
     ctr = np.mean(list(zip(*np.where(area_win == SHEEP))), axis=0)
     # gravity score (towards sheep centroid)
+
     score_sheep = {
         tuple(k): np.array(k) @ np.array(ctr - loc)
         for k in [(-1, 0), (1, 0), (0, -1), (0, 1), (0, 0)]
     }
 
     # anti-gravity score (from tourists)
+
     tourists = np.array(list(zip(*np.where(area_win == TOURIST))))
     score_tourist = {
         tuple(k): min([*[
@@ -302,12 +316,14 @@ def sheep_logic(area_win, loc, glob, lim):
         score_tourist[(0, 0)] = np.inf  # don't stay still when people are around
 
     # combine both scores
+
     score = {
         k: score_sheep[k] - fear_factor * score_tourist[k]
         for k in score_sheep
     }
 
     # check
+
     for direction, in_area in [
         [(-1, 0), glob[0] > lim[0][0]],
         [(0, -1), glob[1] > lim[0][1]],
@@ -315,13 +331,16 @@ def sheep_logic(area_win, loc, glob, lim):
         [(0, +1), glob[1] < lim[1][1]-1],
     ]:
         # do not roam outside the area
+
         if not in_area:
             score[direction] = -np.inf
         # the next square must be empty
+
         elif area[x_glob+direction[0], y_glob+direction[1]] != EMPTY:
             score[direction] = -100
 
     # direction according to score
+
     return score_to_direction(score)
 ```
 
@@ -330,31 +349,37 @@ We plug both together. We populate $5\%$ with sheep, and $0.2\%$ with tourists.
 
 ```python
 # initialize sheep area
+
 rng = np.random.default_rng(12345)
 area = rng.choice([EMPTY, SHEEP, TOURIST], size=(75, 75), p=[.949, .05, .001])
 
 # parameters
+
 win_size = 15
 
 # run
+
 viewer = AreaViewer([EMPTY, SHEEP, TOURIST])
 for step in range(50):
     for x_glob, y_glob in zip(*np.where(area != EMPTY)):
         object_type = area[x_glob, y_glob]
 
         # Moore View neighborhood
+
         win_min = clamp(x_glob-win_size//2, 0), clamp(y_glob-win_size//2, 1)
         win_max = clamp(x_glob+win_size//2+1, 0), clamp(y_glob+win_size//2+1, 1)
         area_win = area[win_min[0]:win_max[0], win_min[1]:win_max[1]]
         x_loc, y_loc = x_glob - win_min[0], y_glob - win_min[1]
 
         # Sheep logic
+
         if object_type == SHEEP:
             direction = sheep_logic(area_win, [x_loc, y_loc], [x_glob, y_glob], [win_min, win_max])
         elif object_type == TOURIST:
             direction = tourist_logic(area_win, [x_loc, y_loc], [x_glob, y_glob], [win_min, win_max])
 
         # move
+
         area[x_glob, y_glob] = EMPTY
         area[x_glob+direction[0], y_glob+direction[1]] = object_type
 
@@ -376,18 +401,21 @@ Final modification is to replace the von Neumann neighborhood movement with Moor
 def tourist_logic(area_win, loc, glob, lim):
 
     # sheep centroid
+
     sheep = list(zip(*np.where(area_win == SHEEP)))
     if len(sheep) > 0:
         ctr = np.mean(sheep, axis=0)
     else:
         ctr = np.array(loc)
     # gravity score (towards sheep)
+
     score = {
         tuple(k): np.array(k) @ (ctr - loc)
         for k in [(-1, 0), (1, 0), (0, -1), (0, 1), (1, 1), (1, -1), (-1, 1), (-1, -1), (0, 0)]
     }
 
     # check
+
     for direction, in_area in [
         [(-1, 0), glob[0] > lim[0][0]],
         [(0, -1), glob[1] > lim[0][1]],
@@ -399,15 +427,18 @@ def tourist_logic(area_win, loc, glob, lim):
         [(+1, +1), (glob[0] < lim[1][0]-1) & (glob[1] < lim[1][1]-1)],
     ]:
         # do not roam outside the area
+
         if not in_area:
             score[direction] = -np.inf
         # the next square must be empty
+
         elif area[x_glob+direction[0], y_glob+direction[1]] != EMPTY:
             score[direction] = -np.inf
 
         score[direction] *= tourist_factor
 
     # direction according to score
+
     return score_to_direction(score)
 ```
 
@@ -416,15 +447,18 @@ def tourist_logic(area_win, loc, glob, lim):
 def sheep_logic(area_win, loc, glob, lim):
 
     # sheep centroid
+
     sheep = np.array(list(zip(*np.where(area_win == SHEEP))))
     ctr = np.mean(sheep, axis=0) if len(sheep[0]) > 0 else np.array(loc)
     # gravity score (towards sheep centroid)
+
     score_sheep = {
         tuple(k): np.array(k) @ np.array(ctr - loc)
         for k in [(-1, 0), (1, 0), (0, -1), (0, 1), (1, 1), (1, -1), (-1, 1), (-1, -1), (0, 0)]
     }
 
     # anti-gravity score (from tourists)
+
     tourists = np.array(list(zip(*np.where(area_win == TOURIST))))
     score_tourist = {
         tuple(k): min([*[
@@ -437,12 +471,14 @@ def sheep_logic(area_win, loc, glob, lim):
         score_tourist[(0, 0)] = np.inf  # don't stay still when tourists are around
 
     # combine both scores
+
     score = {
         k: score_sheep[k] - fear_factor * score_tourist[k]
         for k in score_sheep
     }
 
     # check
+
     for direction, in_area in [
         [(-1, 0), glob[0] > lim[0][0]],
         [(0, -1), glob[1] > lim[0][1]],
@@ -454,51 +490,20 @@ def sheep_logic(area_win, loc, glob, lim):
         [(+1, +1), (glob[0] < lim[1][0]-1) & (glob[1] < lim[1][1]-1)],
     ]:
         # do not roam outside the area
+
         if not in_area:
             score[direction] = -np.inf
         # the next square must be empty
+
         elif area[x_glob+direction[0], y_glob+direction[1]] != EMPTY:
             score[direction] = -100
 
     # direction according to score
+
     return score_to_direction(score)
 ```
 
-
-```python
-# initialize sheep area
-rng = np.random.default_rng(12345)
-area = rng.choice([EMPTY, SHEEP, TOURIST], size=(100, 100), p=[.949, .05, .001])
-
-# parameters
-win_size = 20
-
-# run
-viewer = AreaViewer([EMPTY, SHEEP, TOURIST])
-for step in range(100):
-    for x_glob, y_glob in zip(*np.where(area != EMPTY)):
-        object_type = area[x_glob, y_glob]
-
-        # Moore View neighborhood
-        win_min = clamp(x_glob-win_size//2, 0), clamp(y_glob-win_size//2, 1)
-        win_max = clamp(x_glob+win_size//2+1, 0), clamp(y_glob+win_size//2+1, 1)
-        area_win = area[win_min[0]:win_max[0], win_min[1]:win_max[1]]
-        x_loc, y_loc = x_glob - win_min[0], y_glob - win_min[1]
-
-        # Sheep logic
-        if object_type == SHEEP:
-            direction = sheep_logic(area_win, [x_loc, y_loc], [x_glob, y_glob], [win_min, win_max])
-        elif object_type == TOURIST:
-            direction = tourist_logic(area_win, [x_loc, y_loc], [x_glob, y_glob], [win_min, win_max])
-
-        # move
-        area[x_glob, y_glob] = EMPTY
-        area[x_glob+direction[0], y_glob+direction[1]] = object_type
-
-    viewer.add_area(area)
-viewer.show()
-```
-
+The rest of the code remains the same.
 
 <!-- <script src="//js/herd_cellular_files/plot3.js" type="text/javascript"></script> -->
 <img src="/img/herd_cellular_files/moore.gif" width = "50%"/>
