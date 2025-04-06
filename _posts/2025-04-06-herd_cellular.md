@@ -204,7 +204,7 @@ viewer.show()
 ```
 
 
-<script src="/js/herd_cellular_files/plot1.js"></script>
+<script src="js/herd_cellular_files/plot1.js"></script>
 
 
 The sheep cluster together, but nothing really pushes them into moving further. The sub-herds do not see each other, as their centroids are more than $7$ blocks apart.
@@ -346,7 +346,7 @@ for step in range(50):
 viewer.show()
 ```
 
-<script src="//js/herd_cellular_files/plot2.js"></script>
+<script src="/js/herd_cellular_files/plot2.js"></script>
 
 Nice! The sheep are (moderately) avoiding the tourists, which breaks the clusters.
 
@@ -483,7 +483,7 @@ viewer.show()
 ```
 
 
-<script src="//img/herd_cellular_files/plot3.js"></script>
+<script src="//js/herd_cellular_files/plot3.js"></script>
 
 This modification makes the movement way more organic. The sheep seem to have now more flexibility to avoid the tourists.
 
