@@ -118,7 +118,7 @@ Cellular automaton is defined via behavior of an individual. Individuals define 
 
 The schema below shows the logic of sheep. Sheep tries to run towards the local herd centroid. Later we will also introduce the tourists that sheep runs from and extend the sheep movements towards Moore.
 
-<img src="/img/herd_cellular_files/cellular_schema.png" width = "70%"/>
+<img src="js/herd_cellular_files/cellular_schema.png" width = "70%"/>
 
 A sheep first estimates a herd centroid. Then it considers possible moves (up, down, left, right, stay), and weights them by the dot product with the vector towards the centroid. What this means is that directions getting the sheep towards the centroid get positive, larger score, and directions away from centroid get negative score.
 
@@ -204,7 +204,7 @@ viewer.show()
 ```
 
 
-<script src="/img/herd_cellular_files/plot1.js"></script>
+<script src="/js/herd_cellular_files/plot1.js"></script>
 
 
 The sheep cluster together, but nothing really pushes them into moving further. The sub-herds do not see each other, as their centroids are more than $7$ blocks apart.
@@ -346,7 +346,7 @@ for step in range(50):
 viewer.show()
 ```
 
-<script src="/img/herd_cellular_files/plot2.js"></script>
+<script src="//js/herd_cellular_files/plot2.js"></script>
 
 Nice! The sheep are (moderately) avoiding the tourists, which breaks the clusters.
 
@@ -483,7 +483,7 @@ viewer.show()
 ```
 
 
-<script src="/img/herd_cellular_files/plot3.js"></script>
+<script src="//img/herd_cellular_files/plot3.js"></script>
 
 This modification makes the movement way more organic. The sheep seem to have now more flexibility to avoid the tourists.
 
