@@ -208,6 +208,10 @@ footer h5 {
 table {
 border-collapse: separate;
 border-spacing: 0 0.5em; /* only vertical spacing */
+width: 100%;
+max-width: 100%;
+margin-bottom: 2px;
+
 }
 th, td {
 padding: 0.5em 1em;
