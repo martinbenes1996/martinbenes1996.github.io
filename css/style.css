@@ -211,6 +211,8 @@ border-spacing: 0 0.5em; /* only vertical spacing */
 width: 100%;
 max-width: 100%;
 margin-bottom: 2px;
+border-top: 2px solid #000;
+border-bottom: 2px solid #000;
 
 }
 th, td {
