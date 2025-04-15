@@ -204,3 +204,11 @@ footer h5 {
     margin-top: 2rem;
     color: gray;
 }
+
+table {
+border-collapse: separate;
+border-spacing: 0 0.5em; /* only vertical spacing */
+}
+th, td {
+padding: 0.5em 1em;
+}
