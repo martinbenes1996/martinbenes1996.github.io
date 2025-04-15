@@ -42,7 +42,7 @@ This implies $k$ Mercis reach the length of $k m$ and the total length is $2\pi 
 The full model along with the tiling gap is
 
 $$
-\underbrace{2\pi r} _{\text{circumference}}=\underbrace{k\cdot m} _{\text{length of}~m~\text{bars}}+\underbrace{\epsilon} _{\text{tiling gap}}.
+2\pi r=k\cdot m+\epsilon.
 $$
 
 We can actually directly estimate $k$ as $k=\lfloor\frac{2\pi r}{m}\rfloor$.
@@ -86,10 +86,12 @@ for r in np.arange(4.5,6.5,.1):
         'circ0': 2*np.pi*r,
         'm': m,
         # circle model
+
         'k1': k1,
         'eps1': 2*np.pi*r - k1*m,
         'circ1': k1*m,
         # polygon model
+
         'k2': k2,
         'eps2': 2*np.pi*r - 2*k2*r * np.atan(m/2/r),
         'circ2': 2*k2*r * np.atan(m/2/r),
