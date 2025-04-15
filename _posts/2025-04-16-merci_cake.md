@@ -1,14 +1,14 @@
 ---
 layout:     post
-title:      The Merci Cake Issue
+title:      The Merci cake issue
 date:       2025-04-16
 author:     Martin Beneš
 catalog:    true
 katex:      true
 tags:
-    - cellular automata
-    - discrete simulation
-    - dynamic system
+    - geometric modeling
+    - applied mathematics
+    - discretization
 ---
 
 
