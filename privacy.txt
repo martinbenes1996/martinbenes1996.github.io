@@ -1,0 +1,9 @@
+# Privacy policy
+
+I take your privacy seriously.
+This site doesn’t collect personal data, set cookies, or run tracking scripts.
+
+The site is hosted on GitHub Pages, which may log technical details like your IP address or browser type.
+That information stays on their servers; I don’t see it, use it, or share it.
+
+Questions? Email me at martinbenes1996 [at] gmail [dot] com.
