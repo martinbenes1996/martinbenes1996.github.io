@@ -1,5 +1,5 @@
-@inproceedings{ning2024dctdiff,
-	title = {DCTdiff: Intriguing Properties of Image Generative Modeling in the DCT Space},
+@inproceedings{ning2025dctdiff,
+	title = {{DCT}diff: Intriguing Properties of Image Generative Modeling in the {DCT} Space},
 	author = {Ning, Mang and Li, Mingxiao and Su, Jianlin and Jia, Haozhe and Liu, Lanmiao and Bene{\v{s}}, Martin and Salah, Albert Ali and Ertugrul, Itir Onal},
 	booktitle = {International Conference on Machine Learning (ICML)},
 	year = {2025}

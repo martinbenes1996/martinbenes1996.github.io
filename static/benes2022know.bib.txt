@@ -1,5 +1,5 @@
 @inproceedings{benes2022know,
-  title = {Know Your Library: How the LibJPEG Version Influences Compression and Decompression Results},
+  title = {Know Your Library: How the {LibJPEG} Version Influences Compression and Decompression Results},
   author = {Bene{\v{s}}, Martin and Hofer, Nora and B{\"o}hme, Rainer},
   booktitle = {Workshop on Information Hiding and Multimedia Security (IH&MMSec)},
   pages = {19--25},
