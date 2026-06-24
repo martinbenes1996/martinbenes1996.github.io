@@ -1,5 +1,9 @@
 @article{benes2024kerckhoffs,
-  title = {Kerckhoffs in Prison: A Study of the Steganalyst's Knowledge},
+  title = {Kerckhoffs in prison: {A} study of the steganalyst's knowledge},
   author = {Bene{\v{s}}, Martin and B{\"o}hme, Rainer},
+  booktitle = {International Workshop on Information Forensics and Security (WIFS)},
+  organization = {IEEE},
+  pages = {1--6},
+  doi = {10.1109/WIFS61860.2024.10810682},
   year = {2024}
 }

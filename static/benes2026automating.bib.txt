@@ -1,0 +1,9 @@
+@inproceedings{benes2026automating,
+	title = {Automating color image steganography research from first principles},
+	author = {Bene{\v s}, Martin and B{\"o}hme, Rainer},
+	booktitle = {European Symposium on Research Computer Security ({ESORICS})},
+	series = {Lecture Notes in Computer Science},
+	publisher = {Springer},
+	year = {2026},
+	note = {To appear}
+}

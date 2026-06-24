@@ -1,8 +1,10 @@
 @inproceedings{benevs2024exploring,
-  title = {Exploring Diffusion-Inspired Pixel Predictors for {WS} Steganalysis},
+  title = {Exploring diffusion-inspired pixel predictors for {WS} steganalysis},
   author = {Bene{\v{s}}, Martin and B{\"o}hme, Rainer},
+  editor = {P{\'{e}}rez{-}Gonz{\'{a}}lez, Fernando and Comesa{\~{n}}a Alfaro, Pedro and Kr{\"{a}}tzer, Christian and Zhao, Hong Vicky},
   booktitle = {Workshop on Information Hiding and Multimedia Security (IH&MMSec)},
   pages = {75--86},
   year = {2024},
+  doi = {10.1145/3658664.3659645},
   publisher = {ACM}
 }
