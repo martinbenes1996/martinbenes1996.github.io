@@ -1,5 +1,5 @@
 @inproceedings{ning2025dctdiff,
-	title = {{DCT}diff: Intriguing Properties of Image Generative Modeling in the {DCT} Space},
+	title = {{DCT}diff: {I}ntriguing properties of image generative modeling in the {DCT} space},
 	author = {Ning, Mang and Li, Mingxiao and Su, Jianlin and Jia, Haozhe and Liu, Lanmiao and Bene{\v{s}}, Martin and Salah, Albert Ali and Ertugrul, Itir {\"O}nal},
 	editor = {Singh, Aarti and Fazel, Maryam  and Hsu, Daniel and Lacoste{-}Julien, Simon and Berkenkamp, Felix and Maharaj, Tegan and Wagstaff, Kiri and Zhu, Jerry},
 	booktitle = {International Conference on Machine Learning (ICML)},
