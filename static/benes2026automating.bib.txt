@@ -3,6 +3,7 @@
 	author = {Bene{\v s}, Martin and B{\"o}hme, Rainer},
 	booktitle = {European Symposium on Research Computer Security ({ESORICS})},
 	series = {Lecture Notes in Computer Science},
+	volume = {16970},
 	publisher = {Springer},
 	year = {2026},
 	note = {To appear}
