@@ -1,0 +1,7 @@
+@inproceedings{benes2026variational,
+	title = {Variational cover modification steganography},
+	author = {Bene{\v s}, Martin and B{\"o}hme, Rainer},
+	booktitle = {Conference on Neural Information Processing Systems ({NeurIPS})},
+	year = {2026},
+	note = {Accepted}
+}
