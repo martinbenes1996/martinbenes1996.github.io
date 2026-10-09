@@ -88,7 +88,7 @@ For different N between 1 and 80 we receive unintuitive results for the probabil
 # N in {1,...,80}
 
 import numpy as np
-N = np.linspace(1,80,80) 
+N = np.linspace(1,80,80)
 Pn = bday_paradox(N)
 ```
 
@@ -145,4 +145,3 @@ In a group of 23 people the probability is more than 0.5.
 
 - Better Explained: <a href="https://betterexplained.com/articles/understanding-the-birthday-paradox/" target="_blank" rel="noopener noreferrer">Understanding the Birthday Paradox</a>.
 - Marek Valášek: <a href="https://youtu.be/cuBbmeLwZGg?si=AclWKBwFHSxNTwe1&amp;t=1232" target="_blank" rel="noopener noreferrer">Jak nás klame intuice 1</a> (YouTube, from 20:32).
-- Andrea Giancoli: <a href="https://www.eatright.org/health/lifestyle/holidays/have-a-fun-and-healthier-birthday-party" target="_blank" rel="noopener noreferrer">Have a Fun and Healthful Birthday Party</a>. Eat Right.
