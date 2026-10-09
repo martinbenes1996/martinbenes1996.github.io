@@ -5,8 +5,6 @@ subtitle:   Are here any people with the same birthday?
 date:       2021-06-08
 author:     Martin Beneš
 header-img: img/bday_paradox_files/bday.jpg
-catalog:    true
-katex:      true
 tags:
     - probability
     - mathematics

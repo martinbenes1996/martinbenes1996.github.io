@@ -6,39 +6,14 @@ description: "Computer and data scientist at the University of Innsbruck, resear
 image: /img/martinbenes.jpg # default image for link previews
 url: "https://www.martinbenes.at"
 baseurl: ""
-github_repo: "https://www.github.com/martinbenes1996/martinbenes1996.github.io.git" # you code repository
-
+github_repo: "https://www.github.com/martinbenes1996/martinbenes1996.github.io.git" # source code repository
 
 # Build settings
-# from 2016, 'pygments' is unsupported on GitHub Pages. Use 'rouge' for highlighting instead.
-# permalink: pretty
-#permalink: /:year/:month/:day/:title
-paginate: 10
-exclude: ["old"]
-# anchorjs: true                          # if you want to customize anchor. check out line:181 of `post.html`
-
 collections:
   posts:
     output: true
     sort_by: date
 
-# Gems
-# from PR#40, to support local preview for Jekyll 3.0
-gems: [
-  jekyll-paginate,
-  kramdown-math-katex
-]
-
-# Markdown settings
-# replace redcarpet to kramdown,
-# although redcarpet can auto highlight code, the lack of header-id make the catalog impossible, so I switch to kramdown
-# document: http://jekyllrb.com/docs/configuration/#kramdown
+# Markdown: GitHub Pages renders GFM with CommonMark; math is rendered by MathJax in the browser
 markdown: GFM
 highlighter: rouge
-use_math: true
-kramdown:
-  input: GFM                            # use Github Flavored Markdown !important
-  math_engine: katex
-  auto_ids: true
-  hard_wrap: true
-  syntax_highlighter: rouge

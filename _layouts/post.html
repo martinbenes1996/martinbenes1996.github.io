@@ -20,31 +20,36 @@ layout: default
 </script>
 <script src="/lib/mathjax/tex-svg-full.js"></script>
 
-<div class="container">
-    <div class="row">
-        <div class="col-md-12">
-            <!-- Title -->
-            <h1>
-                {{ page.title }}
-            </h1>
-            <!-- Author -->
-            <strong>
-                {{ page.author }}
-            </strong><br/>
-            <!-- Date -->
-            <small>
-                <time datetime="{{ page.date }}">
-                    {{ page.date | date: "%b %d, %Y" }}
-                </time>
-            </small>
-            <hr class="portfolio-separator" />
-        </div>
-    </div>
+<div class="container main">
+	{% include mobile-header.html %}
+	<!-- wide screens: the site name and menu in one slim row above the post -->
+	<div class="row post-site-header hidden-xs hidden-sm">
+		<div class="col-md-5 text-center">
+			<a href="/" class="noformat"><strong class="h3">Martin Beneš</strong></a><br />
+			<span class="text-muted">computer & data scientist</span>
+		</div>
+		<div class="col-md-7">
+			{% include nav.html %}
+		</div>
+	</div>
+
 	<div class="row">
-        <div class="col-md-12">
-            <article class="list-item article-text">
-    			{{ content }}
-            </article>
-        </div>
-    </div>
+		<div class="col-md-12">
+			<h1>{{ page.title }}</h1>
+			{% if page.subtitle %}<p class="lead text-muted">{{ page.subtitle }}</p>{% endif %}
+			<strong>{{ page.author }}</strong><br />
+			<small>
+				<time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%b %d, %Y" }}</time>
+			</small>
+			<hr />
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-12">
+			<article class="article-text">
+				{{ content }}
+			</article>
+			<p class="post-back"><a href="/stories">&larr; All stories</a></p>
+		</div>
+	</div>
 </div>

@@ -2,15 +2,15 @@
 /* from http://stackoverflow.com/a/23393920 */
 
 .highlight pre code * {
-	white-space: nowrap;    // this sets all children inside to nowrap
+	white-space: nowrap;    /* this sets all children inside to nowrap */
   }
 
   .highlight pre {
-	overflow-x: auto;       // this sets the scrolling in x
+	overflow-x: auto;       /* this sets the scrolling in x */
   }
 
   .highlight pre code {
-	white-space: pre;       // forces <code> to respect <pre> formatting
+	white-space: pre;       /* forces <code> to respect <pre> formatting */
   }
 
 
@@ -19,7 +19,8 @@
    * Courtesy of GitHub.com
    */
 
-  .highlight pre, pre, .highlight .hll { background-color: #f8f8f8; border: 1px solid #ccc; padding: 6px 10px; border-radius: 3px; }
+  .highlight pre, pre { background-color: #f7f7f7; border: 1px solid #e3e3e3; padding: 0.8em 1em; border-radius: 4px; font-size: 0.85em; }
+  .highlight .hll { background-color: #f8f8f8; }
   .highlight .c { color: #999988; font-style: italic; }
   .highlight .err { color: #a61717; background-color: #e3d2d2; }
   .highlight .k { font-weight: bold; }

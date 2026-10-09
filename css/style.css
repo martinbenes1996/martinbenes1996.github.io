@@ -3,33 +3,6 @@ html {
     font-family: Helvetica, Arial, sans-serif;
 }
 
-.cookieBanner {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    width: 100%;
-    padding: 2rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background-color: #eee;
-    border-radius: 5px;
-    box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.2);
-    z-index: 10000;
-    opacity: 0.75;
-}
-
-.cookieClose {
-    /*padding: 0.5rem;*/
-    background-color: black;
-    border: none;
-    color: white;
-    border-radius: 2px;
-    cursor: pointer;
-    opacity: 1;
-}
-
 div.main {
     padding: 5rem;
     min-height: calc(100vh - 10vh);
@@ -40,9 +13,6 @@ div.main {
         padding: 3rem;
     }
 
-    div.main-article {
-        padding: 3rem;
-    }
 }
 
 article.list-item {
@@ -119,24 +89,28 @@ a.pub-link:hover i {
     color: #ccc;
     margin-right: 1.2em;
 }
-article.portfolio-list-item {
-    margin-top: 4rem;
-}
 
 .mobile-header {
     text-align: center;
 }
 
+.post-site-header {
+    margin-bottom: 2rem;
+}
+.post-site-header .h3 {
+    margin: 0;
+}
+a.nav-section,
+a.nav-section:visited {
+    color: inherit;
+}
+.post-back {
+    margin-top: 3rem;
+}
+
 .first-column {
     margin-bottom: 1rem;
     text-align: center;
-}
-
-.profile-header {
-}
-
-.profile-subheader {
-    display: none;
 }
 
 img.profile-photo {
@@ -191,44 +165,6 @@ a.profile-link:hover i {
 hr.section-separator {
     height: 0.25rem;
     background-color: black;
-}
-
-/* .section-link {
-    margin-top: 2rem;
-    text-align: right;
-} */
-
-.w3-model {
-    padding-top: 20%;
-}
-
-.w3-modal-content {
-    height: 80%;
-    background-color: rgba(0, 0, 0, 0);
-    text-align: center;
-}
-
-#img01 {
-    height: 100%;
-    object-fit: contain;
-}
-
-@media (max-width: 768px) {
-    #img01 {
-        height: auto;
-        width: 100%;
-    }
-
-    .w3-modal-content {
-        height: 80%;
-        background-color: rgba(0, 0, 0, 0);
-    }
-}
-
-.achievements-row {
-}
-
-.achievements-item {
 }
 
 footer {

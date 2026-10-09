@@ -1,12 +1,10 @@
 ---
 layout:     post
-title:      Chance of winning a lottery
-subtitle:   What is the chance of winning a lottery?
+title:      What is the chance of winning a lottery?
+subtitle:   The maths of losing
 date:       2023-12-20
 author:     Martin Beneš
 header-img: img/sazka_lottery/ticket.png
-catalog:    true
-katex:      true
 tags:
     - probability
     - mathematics
@@ -46,8 +44,8 @@ Playing sportka can be understood as blindly picking $6$ stones from a bag of $6
 
 Sportka follows **hypergeometric** distribution - a binomial distribution with replacement.
 
-```
-> Pr_sportka <- dhyper(0:6, 6, 49-6, 6)
+```r
+Pr_sportka <- dhyper(0:6, 6, 49-6, 6)
 ```
 
 <img src="/img/sazka_lottery/guess_probability.png" style="display: block; width: 30em; margin-left: auto; margin-right: auto;" />
@@ -55,31 +53,31 @@ Sportka follows **hypergeometric** distribution - a binomial distribution with r
 The chance of perfect guess, $6$ out of $6$, is $7.15\cdot10^{-8}$.
 To put this number in a context - if everyone in Czechia bet a single column twice a week, there would be one lucky better every $34$ weeks on average.
 
-```
-> sum(Pr_sportka[1:3])
-0.9813625
+```r
+sum(Pr_sportka[1:3])
+#> 0.9813625
 ```
 
 The chance of losing (i.e., reward $0$) is $98.1$%.
 
 The probabilities can be alternatively estimated in a frequentist manner via simulation ($N=10^5$).
 
-```
-> library(plyr)
-> set.seed(12345)
-> bet <- sample(1:49, 6, replace=F)
-> win <- replicate(100000, length(intersect(sample(1:49, 6), bet)))
-> table(win) / length(win)
-      0       1       2       3       4
-0.43781 0.41226 0.13187 0.01706 0.00100
+```r
+library(plyr)
+set.seed(12345)
+bet <- sample(1:49, 6, replace=F)
+win <- replicate(100000, length(intersect(sample(1:49, 6), bet)))
+table(win) / length(win)
+#>       0       1       2       3       4
+#> 0.43781 0.41226 0.13187 0.01706 0.00100
 ```
 
 Unfortunately, this method errs in probabilities of rare events, such as superjackpot.
 
-```
-> setNames(Pr_sportka, 0:6)
-      0       1       2       3          4          5          6
-0.43597 0.41302 0.13238 0.01765 9.6862e-04 1.8441e-05 7.1511e-08
+```r
+setNames(Pr_sportka, 0:6)
+#>       0       1       2       3          4          5          6
+#> 0.43597 0.41302 0.13238 0.01765 9.6862e-04 1.8441e-05 7.1511e-08
 ```
 
 
@@ -90,9 +88,9 @@ Guessing this number increases reward given that 5/6 Sportka numbers are correct
 
 Guessing dodatkové číslo is led by Bernoulli distribution.
 
-```
-> Pr_dodatkove <- 1/(49-6)
-0.02325581
+```r
+Pr_dodatkove <- 1/(49-6)
+#> 0.02325581
 ```
 
 
@@ -111,9 +109,9 @@ The rewards are organized in "order" (*pořadí*), based on the count of numbers
 Chance of 2. order means combining probabilities of 3. order and of guessing *dodatkové číslo*.
 As these are independent, we simply multiply them.
 
-```
-> Pr_sportka[6]*Pr_dodatkove
-4.290674e-07
+```r
+Pr_sportka[6]*Pr_dodatkove
+#> 4.290674e-07
 ```
 
 
@@ -125,11 +123,11 @@ Moreover, the table changes over time, so from now on, all the results depend on
 
 I use rewards from 22nd December 2023.
 
-```
-> reward_tah1 <- c(0, 0, 0, 112, 630, 24283, 330520)
-> reward_tah2 <- c(0, 0, 0, 117, 664, 47217, 330520)
-> reward_poradi2 <- 730000
-> reward_sance <- c(0, 50, 100, 10^3, 10^4, 10^5, 970000)
+```r
+reward_tah1 <- c(0, 0, 0, 112, 630, 24283, 330520)
+reward_tah2 <- c(0, 0, 0, 117, 664, 47217, 330520)
+reward_poradi2 <- 730000
+reward_sance <- c(0, 50, 100, 10^3, 10^4, 10^5, 970000)
 ```
 
 
@@ -137,15 +135,15 @@ I use rewards from 22nd December 2023.
 
 Average reward is computed as an expected value over the rewards.
 
-```
-> avg_reward_tah1 <- (
-+    Pr_sportka %*% reward_tah1 +
-+    Pr_sportka[6] * Pr_dodatkove * reward_poradi2)
-> avg_reward_tah2 <- (
-+    Pr_sportka %*% reward_tah2 +
-+    Pr_sportka[6] * Pr_dodatkove * reward_poradi2)
-> avg_reward_sportka <- avg_reward_tah1 + avg_reward_tah2 - 20
--12.71179
+```r
+avg_reward_tah1 <- (
+    Pr_sportka %*% reward_tah1 +
+    Pr_sportka[6] * Pr_dodatkove * reward_poradi2)
+avg_reward_tah2 <- (
+    Pr_sportka %*% reward_tah2 +
+    Pr_sportka[6] * Pr_dodatkove * reward_poradi2)
+avg_reward_sportka <- avg_reward_tah1 + avg_reward_tah2 - 20
+#> -12.71179
 ```
 
 The average reward is $-12.7$ CZK. With the initial price $20$ CZK, this means a loss of $63.5$%.
@@ -156,25 +154,25 @@ The average reward is $-12.7$ CZK. With the initial price $20$ CZK, this means a
 Supplementary game <a href="https://www.sazka.cz/centrum-podpory/loterie-a-hry/loterie/sportka/jak-zjistit-vyhru-v-doplnkove-hre-sance">Šance</a> is based on guessing suffix of digits.
 Guessing the last k-digits is Bernoulli-distributed, with $p=10^{-k}$.
 
-```
-> Pr_sance <- 1/10^(1:6)
-> Pr_sance <- c(1-sum(Pr_sance), Pr_sance)
+```r
+Pr_sance <- 1/10^(1:6)
+Pr_sance <- c(1-sum(Pr_sance), Pr_sance)
 ```
 
 The probability of winning *anything* is as follows.
 
-```
-> sum(Pr_sance[2:7])
-0.111111
+```r
+sum(Pr_sance[2:7])
+#> 0.111111
 ```
 
 The average reward of Šance is computed as expectation over rewards.
 For the selected reward values, Šance has higher return than Sportka.
 
-```
-> avg_reward_sance <- Pr_sance %*% reward_sance
-> avg_reward_sance - 20
--10.03
+```r
+avg_reward_sance <- Pr_sance %*% reward_sance
+avg_reward_sance - 20
+#> -10.03
 ```
 
 The average reward of Šance is $-10$ CZK.
@@ -195,14 +193,14 @@ Winning superjackpot requires
 
 If a single column is bet, the ticket price is $40$, and the average reward is as follows.
 
-```
-> avg_reward <- (
-+    avg_reward_sportka +
-+    avg_reward_sance +
-+    Pr_sportka[7] * sum(Pr_sance[2:7]) * 151000000 +
-+    Pr_sportka[7] * sum(Pr_sance[2:7]) * 151000000)
-> avg_reward - 40
--20.3
+```r
+avg_reward <- (
+    avg_reward_sportka +
+    avg_reward_sance +
+    Pr_sportka[7] * sum(Pr_sance[2:7]) * 151000000 +
+    Pr_sportka[7] * sum(Pr_sance[2:7]) * 151000000)
+avg_reward - 40
+#> -20.3
 ```
 
 With average reward $-20.3$, the loss is $50.8$%.
@@ -225,9 +223,9 @@ We can take a look at the probability of *losing ticket* (no win in any column) 
 
 <img src="/img/sazka_lottery/multi_column.png" style="display: block; width: 30em; margin-left: auto; margin-right: auto;" />
 
-```
-> 1 - sum(Pr_sportka[1:3])^10
-0.1714964
+```r
+1 - sum(Pr_sportka[1:3])^10
+#> 0.1714964
 ```
 
 A full ticket with $10$ filled columns costs $200$ CZK.

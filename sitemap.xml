@@ -1,93 +1,25 @@
+---
+layout: null
+---
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset
-  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-
-<url>
-  <loc>https://www.martinbenes.at/</loc>
-  <lastmod>2024-10-27T09:44:02+00:00</lastmod>
-  <priority>1.00</priority>
-</url>
-<url>
-  <loc>https://www.martinbenes.at/cv_martinbenes.pdf</loc>
-  <lastmod>2024-10-27T09:44:02+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://www.martinbenes.at/publications</loc>
-  <lastmod>2024-10-27T09:44:02+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://www.martinbenes.at/stories</loc>
-  <lastmod>2024-10-27T09:44:02+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://www.martinbenes.at/download</loc>
-  <lastmod>2024-10-27T09:44:02+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://www.martinbenes.at/static/benes2024kerckhoffs.bib.txt</loc>
-  <lastmod>2024-10-27T09:44:02+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://www.martinbenes.at/static/mallet2024cover.bib.txt</loc>
-  <lastmod>2024-10-27T09:44:02+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://www.martinbenes.at/2025/04/15/merci_cake</loc>
-  <lastmod>2025-04-15T00:00:00+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://www.martinbenes.at/2025/04/06/herd_cellular</loc>
-  <lastmod>2025-04-06T00:00:00+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://www.martinbenes.at/2023/12/20/sazka_lottery</loc>
-  <lastmod>2024-10-27T09:44:02+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://www.martinbenes.at/2021/06/08/bday_paradox</loc>
-  <lastmod>2024-10-27T09:44:02+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://www.martinbenes.at/static/benes2024exploring.bib.txt</loc>
-  <lastmod>2024-10-27T09:44:02+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://www.martinbenes.at/static/benes2023jpeg.bib.txt</loc>
-  <lastmod>2024-10-27T09:44:02+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://www.martinbenes.at/static/benes2022effect.bib.txt</loc>
-  <lastmod>2024-10-27T09:44:02+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://www.martinbenes.at/static/benes2022know.bib.txt</loc>
-  <lastmod>2024-10-27T09:44:02+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://www.martinbenes.at/static/benes2021hmm.bib.txt</loc>
-  <lastmod>2024-10-27T09:44:02+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://www.martinbenes.at/2021/06/02/knn_iris</loc>
-  <lastmod>2024-10-27T09:44:02+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+{%- comment -%}
+  Generated on every build. URLs follow the same rule as the canonical tags (no .html).
+{%- endcomment -%}
+{%- for p in site.html_pages %}{% unless p.sitemap == false %}
+  <url>
+    <loc>{{ p.url | replace: '.html', '' | absolute_url }}</loc>
+  </url>
+{%- endunless %}{% endfor %}
+{%- for post in site.posts %}
+  <url>
+    <loc>{{ post.url | replace: '.html', '' | absolute_url }}</loc>
+    <lastmod>{{ post.date | date_to_xmlschema }}</lastmod>
+  </url>
+{%- endfor %}
+{%- for f in site.static_files %}{% if f.extname == '.pdf' or f.path contains '.bib.txt' %}
+  <url>
+    <loc>{{ f.path | absolute_url }}</loc>
+  </url>
+{%- endif %}{% endfor %}
 </urlset>

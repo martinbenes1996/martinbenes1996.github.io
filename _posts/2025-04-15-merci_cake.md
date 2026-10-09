@@ -3,8 +3,6 @@ layout:     post
 title:      The Merci cake issue
 date:       2025-04-15
 author:     Martin Beneš
-catalog:    true
-katex:      true
 tags:
     - geometric modeling
     - applied mathematics
