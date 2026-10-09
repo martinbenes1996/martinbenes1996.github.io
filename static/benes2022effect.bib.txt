@@ -4,5 +4,7 @@
   booktitle = {European Signal Processing Conference (EUSIPCO)},
   pages = {1057--1061},
   year = {2022},
-  organization = {EURASIP}
+  publisher = {IEEE},
+  organization = {EURASIP},
+  doi = {10.23919/EUSIPCO55093.2022.9909711}
 }
