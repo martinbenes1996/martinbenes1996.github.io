@@ -18,6 +18,13 @@ div.main {
 article.list-item {
     margin-top: 3rem;
 }
+.pub-authors {
+    font-size: 0.95em;
+    color: #777;
+}
+.pub-me {
+    color: #333;
+}
 .pub-link {
     margin-right: 1.2em;
     white-space: nowrap;

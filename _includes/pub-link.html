@@ -1,0 +1,5 @@
+{%- if include.url == 'pending' -%}
+<span class="pub-link pub-pending" data-tooltip="In preparation"><i class="{{ include.icon }}" aria-hidden="true"></i> {{ include.label }}<span class="sr-only"> (in preparation)</span></span>
+{%- elsif include.url -%}
+<a href="{{ include.url }}" target="_blank" rel="noopener noreferrer nofollow" class="pub-link"><i class="{{ include.icon }}" aria-hidden="true"></i> {{ include.label }}</a>
+{%- endif -%}

@@ -1,0 +1,97 @@
+# Publications, newest first. Rendered by _includes/publication.html on the
+# home page (first two entries) and on /publications (all entries).
+#
+# Authors are full names; the include abbreviates given names to initials
+# and highlights "Martin Beneš".
+# Link fields (pdf, code, video, publisher, proceedings, openreview) take a URL,
+# or "pending" to show a greyed-out "In preparation" placeholder.
+
+- title: Steganalysis exploiting JPEG block padding
+  authors: [Martin Beneš, Friedrich Hartmann, Rainer Böhme]
+  venue: IEEE WIFS 2026
+  pdf: pending
+  code: https://github.com/uibk-uncover/JPA
+  publisher: pending
+  bib: benes2026steganalysis
+
+- title: Variational cover modification steganography
+  authors: [Martin Beneš, Rainer Böhme]
+  venue: NeurIPS 2026
+  pdf: pending
+  code: pending # https://github.com/uibk-uncover/vcms
+  publisher: https://neurips.cc/virtual/2026/loc/sydney/poster/149566
+  # openreview: https://openreview.net/forum?id=pAhg9hlxJV
+  bib: benes2026variational
+
+- title: Automating color image steganography research from first principles
+  authors: [Martin Beneš, Rainer Böhme]
+  venue: ESORICS 2026
+  pdf: https://informationsecurity.uibk.ac.at/pdfs/BB2026_ESORICS.pdf
+  code: https://github.com/uibk-uncover/stegan-dalf
+  publisher: https://link.springer.com/chapter/10.1007/978-3-032-38692-2_20
+  bib: benes2026automating
+
+- title: "DCTdiff: Intriguing properties of image generative modeling in the DCT space"
+  authors: [Mang Ning, Mingxiao Li, Jianlin Su, Haozhe Jia, Lanmiao Liu, Martin Beneš, Wenshuo Chen, Albert Ali Salah, Itir Önal Ertugrul]
+  venue: ICML 2025
+  pdf: https://arxiv.org/pdf/2412.15032
+  code: https://github.com/forever208/dctdiff
+  publisher: https://icml.cc/virtual/2025/poster/43686
+  proceedings: https://proceedings.mlr.press/v267/ning25c.html
+  openreview: https://openreview.net/forum?id=vDoAA8xKXL
+  bib: ning2025dctdiff
+
+- title: "Kerckhoffs in prison: A study of the steganalyst's knowledge"
+  authors: [Martin Beneš, Rainer Böhme]
+  venue: IEEE WIFS 2024
+  pdf: https://informationsecurity.uibk.ac.at/pdfs/BB2024_WIFS.pdf
+  publisher: https://ieeexplore.ieee.org/document/10810682
+  bib: benes2024kerckhoffs
+
+- title: "Cover-source mismatch in steganalysis: Systematic review"
+  authors: [Antoine Mallet, Martin Beneš, Rémi Cogranne]
+  venue: EURASIP JIS 2024
+  pdf: https://jis-eurasipjournals.springeropen.com/counter/pdf/10.1186/s13635-024-00171-6.pdf
+  publisher: https://link.springer.com/article/10.1186/s13635-024-00171-6
+  bib: mallet2024cover
+
+- title: Exploring diffusion-inspired pixel predictors for WS steganalysis
+  authors: [Martin Beneš, Rainer Böhme]
+  venue: ACM IH&MMSec 2024
+  pdf: https://dl.acm.org/doi/pdf/10.1145/3658664.3659645
+  code: https://github.com/uibk-uncover/ws-unet
+  publisher: https://dl.acm.org/doi/10.1145/3658664.3659645
+  bib: benes2024exploring
+
+- title: JPEG steganalysis using leaked cover thumbnails
+  authors: [Martin Beneš, Benedikt Lorch, Rainer Böhme]
+  venue: IEEE WIFS 2023
+  pdf: https://informationsecurity.uibk.ac.at/pdfs/BLB2023_WIFS.pdf
+  code: https://github.com/uibk-uncover/thumbnail-steganalysis
+  publisher: https://ieeexplore.ieee.org/abstract/document/10374587
+  bib: benes2023jpeg
+
+- title: The effect of the JPEG implementation on the cover-source mismatch error in image steganalysis
+  authors: [Martin Beneš, Nora Hofer, Rainer Böhme]
+  venue: EURASIP EUSIPCO 2022
+  pdf: https://eurasip.org/Proceedings/Eusipco/Eusipco2022/pdfs/0001057.pdf
+  code: https://github.com/uibk-uncover/libjpeg-CSM
+  video: https://www.youtube.com/watch?v=dZ7bDWldgiE
+  publisher: https://ieeexplore.ieee.org/document/9909711
+  bib: benes2022effect
+
+- title: "Know your library: How the libjpeg version influences compression and decompression results"
+  authors: [Martin Beneš, Nora Hofer, Rainer Böhme]
+  venue: ACM IH&MMSec 2022
+  pdf: https://dl.acm.org/doi/pdf/10.1145/3531536.3532962
+  code: https://github.com/uibk-uncover/KnowYourLibrary
+  publisher: https://dl.acm.org/doi/10.1145/3531536.3532962
+  bib: benes2022know
+
+- title: HMM modelling for the spread of the SARS-CoV-2
+  authors: [Martin Beneš]
+  venue: Master Thesis
+  pdf: https://www.diva-portal.org/smash/get/diva2:1569335/FULLTEXT01.pdf
+  code: https://github.com/martinbenes1996/732A64
+  publisher: https://liu.diva-portal.org/smash/record.jsf?pid=diva2%3A1569335
+  bib: benes2021hmm

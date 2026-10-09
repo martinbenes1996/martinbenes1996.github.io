@@ -37,26 +37,9 @@ layout: default
 
 				<div>
 
-					<article class="list-item">
-						<b>Steganalysis exploiting JPEG block padding</b><br />
-						<span class="text-muted">IEEE WIFS 2026</span><br />
-						<span class="pub-link pub-pending" data-tooltip="In preparation"><i class="fa-regular fa-file-pdf" aria-hidden="true"></i> PDF<span class="sr-only"> (in preparation)</span></span>
-						<a href="https://github.com/uibk-uncover/JPA" target="_blank" rel="noopener noreferrer nofollow" class="pub-link"><i class="fa-brands fa-github" aria-hidden="true"></i> Code</a>
-						<span class="pub-sep" aria-hidden="true">|</span>
-						<span class="pub-link pub-pending" data-tooltip="In preparation"><i class="fa-solid fa-building-columns" aria-hidden="true"></i> Publisher<span class="sr-only"> (in preparation)</span></span>
-						<a href="/static/benes2026steganalysis.bib.txt" target="_blank" rel="noopener noreferrer nofollow" class="pub-link js-bibtex" aria-expanded="false"><i class="fa-solid fa-quote-right" aria-hidden="true"></i> BibTeX</a>
-					</article>
-					<article class="list-item">
-						<b>Variational cover modification steganography</b><br />
-						<span class="text-muted">NeurIPS 2026</span><br />
-						<span class="pub-link pub-pending" data-tooltip="In preparation"><i class="fa-regular fa-file-pdf" aria-hidden="true"></i> PDF<span class="sr-only"> (in preparation)</span></span>
-						<!-- <a href="https://github.com/uibk-uncover/vcms" target="_blank" rel="noopener noreferrer nofollow" class="pub-link"><i class="fa-brands fa-github" aria-hidden="true"></i> Code</a> -->
-						<span class="pub-link pub-pending" data-tooltip="In preparation"><i class="fa-brands fa-github" aria-hidden="true"></i> Code<span class="sr-only"> (in preparation)</span></span>
-						<span class="pub-sep" aria-hidden="true">|</span>
-						<a href="https://neurips.cc/virtual/2026/loc/sydney/poster/149566" target="_blank" rel="noopener noreferrer nofollow" class="pub-link"><i class="fa-solid fa-building-columns" aria-hidden="true"></i> Publisher</a>
-						<!-- <a href="https://openreview.net/forum?id=pAhg9hlxJV" target="_blank" rel="noopener noreferrer nofollow" class="pub-link"><i class="fa-regular fa-comments" aria-hidden="true"></i> OpenReview</a> -->
-						<a href="/static/benes2026variational.bib.txt" target="_blank" rel="noopener noreferrer nofollow" class="pub-link js-bibtex" aria-expanded="false"><i class="fa-solid fa-quote-right" aria-hidden="true"></i> BibTeX</a>
-					</article>
+					{% for pub in site.data.publications limit:2 %}
+					{% include publication.html pub=pub %}
+					{% endfor %}
 					<article class="list-item">
 						<a href="/publications">More ...</a>
 					</article>
