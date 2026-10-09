@@ -1,4 +1,4 @@
-@article{benes2026steganalysis,
+@inproceedings{benes2026steganalysis,
   title = {Steganalysis exploiting {JPEG} block padding},
   author = {Bene{\v{s}}, Martin and Hartmann, Friedrich and B{\"o}hme, Rainer},
   booktitle = {International Workshop on Information Forensics and Security (WIFS)},

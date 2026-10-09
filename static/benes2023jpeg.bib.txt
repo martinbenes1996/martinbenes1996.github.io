@@ -1,4 +1,4 @@
-@article{benes2024kerckhoffs,
+@inproceedings{benes2023jpeg,
   title = {{JPEG} steganalysis using leaked cover thumbnails},
   author = {Bene{\v{s}}, Martin and B{\"o}hme, Rainer},
   booktitle = {International Workshop on Information Forensics and Security (WIFS)},

@@ -1,4 +1,4 @@
-@article{benes2024kerckhoffs,
+@inproceedings{benes2024kerckhoffs,
   title = {Kerckhoffs in prison: {A} study of the steganalyst's knowledge},
   author = {Bene{\v{s}}, Martin and B{\"o}hme, Rainer},
   booktitle = {International Workshop on Information Forensics and Security (WIFS)},

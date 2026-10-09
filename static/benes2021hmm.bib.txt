@@ -1,4 +1,4 @@
-@thesis{mastersthesis,
+@thesis{benes2021hmm,
   title = {{HMM} modelling for the spread of the {SARS--CoV--2}},
   author = {Bene{\v{s}}, Martin},
   year = {2021},
