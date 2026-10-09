@@ -123,6 +123,10 @@ article.portfolio-list-item {
     margin-top: 4rem;
 }
 
+.mobile-header {
+    text-align: center;
+}
+
 .first-column {
     margin-bottom: 1rem;
     text-align: center;
@@ -243,7 +247,7 @@ footer {
 
 a,
 a:visited {
-    color: 	#CD7F32;
+    color: #A0612A; /* bronze, darkened for WCAG AA contrast on white */
 }
 
 a:hover,
