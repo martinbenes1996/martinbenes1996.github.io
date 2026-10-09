@@ -15,7 +15,7 @@ layout: default
 				<p>
 					Computer & data scientist.
 					Open-source software developer.
-					Finishing up my PhD student at University of Innsbruck.
+					Finishing up my PhD at University of Innsbruck.
 				</p>
 				<p>
 					Previously R&D intern at Blindspot,
@@ -26,46 +26,15 @@ layout: default
 					Bc. in Information technology from Brno University of Technology.
 				</p>
 			</div>
-			<div class="profile-links">
-				<h3 class="profile-subheader" style="display: none">Profile links</h3>
-				<p>
-					<a href="/cv_martinbenes.pdf" target="_blank">View my CV</a>
-				</p>
-				<p>
-					<a href="https://www.github.com/martinbenes1996" target="_blank" rel="noopener noreferrer nofollow">View my GitHub profile</a>
-				</p>
-				<p>
-					<a href="https://www.linkedin.com/in/martinbenes1996" target="_blank" rel="noopener noreferrer nofollow">View my LinkedIn profile</a>
-				</p>
-				<p>
-					<a href="https://informationsecurity.uibk.ac.at/people/martin-benes/" target="_blank" rel="noopener noreferrer nofollow">View my UIBK profile</a>
-				</p>
-			</div>
+			{% include profile-links.html %}
 		</div>
 		<div class="col-md-7 col-sm-12 second-column">
-			<!---->
-			<hr />
-			<div class="row">
-				<div class="col-3 col-md-3 col-sm-3 col-xs-6 text-center">
-					Home
-				</div>
-				<div class="col-3 col-md-3 col-sm-3 col-xs-6 text-center">
-					<a href="/publications">Publications</a>
-				</div>
-				<div class="col-3 col-md-3 col-sm-3 col-xs-6 text-center">
-					<a href="/stories">Stories</a>
-				</div>
-				<div class="col-3 col-md-3 col-sm-3 col-xs-6 text-center">
-					<a href="/download">Download</a>
-				</div>
-			</div>
-			<hr />
-			<!---->
+			{% include nav.html %}
 			<div class="row">
 				<h2 class="section-header">Latest publications</h2>
 				<hr class="section-separator" />
 
-				<div class="col-12 d-flex justify-content-center">
+				<div>
 
 					<article class="list-item">
 						<b>Steganalysis exploiting JPEG block padding</b><br />
@@ -98,7 +67,7 @@ layout: default
 				<h2 class="section-header">Latest stories</h2>
 				<hr class="section-separator" />
 
-				<div class="col-12 d-flex justify-content-center">
+				<div>
 				{% for post in site.posts limit:2 %}
 					<article class="list-item">
 						<a href="{{ post.url }}">{{ post.title }}</a>

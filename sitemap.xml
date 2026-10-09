@@ -5,77 +5,87 @@
   xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 
 <url>
-  <loc>https://martinbenes.at/</loc>
+  <loc>https://www.martinbenes.at/</loc>
   <lastmod>2024-10-27T09:44:02+00:00</lastmod>
   <priority>1.00</priority>
 </url>
 <url>
-  <loc>https://martinbenes.at/cv_martinbenes.pdf</loc>
+  <loc>https://www.martinbenes.at/cv_martinbenes.pdf</loc>
   <lastmod>2024-10-27T09:44:02+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://martinbenes.at/publications</loc>
+  <loc>https://www.martinbenes.at/publications</loc>
   <lastmod>2024-10-27T09:44:02+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://martinbenes.at/stories</loc>
+  <loc>https://www.martinbenes.at/stories</loc>
   <lastmod>2024-10-27T09:44:02+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://martinbenes.at/download</loc>
+  <loc>https://www.martinbenes.at/download</loc>
   <lastmod>2024-10-27T09:44:02+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://martinbenes.at/static/benes2024kerckhoffs.bib.txt</loc>
+  <loc>https://www.martinbenes.at/static/benes2024kerckhoffs.bib.txt</loc>
   <lastmod>2024-10-27T09:44:02+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://martinbenes.at/static/mallet2024cover.bib.txt</loc>
+  <loc>https://www.martinbenes.at/static/mallet2024cover.bib.txt</loc>
   <lastmod>2024-10-27T09:44:02+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://martinbenes.at/2023/12/20/sazka_lottery.html</loc>
+  <loc>https://www.martinbenes.at/2025/04/15/merci_cake</loc>
+  <lastmod>2025-04-15T00:00:00+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.martinbenes.at/2025/04/06/herd_cellular</loc>
+  <lastmod>2025-04-06T00:00:00+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.martinbenes.at/2023/12/20/sazka_lottery</loc>
   <lastmod>2024-10-27T09:44:02+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://martinbenes.at/2021/06/08/bday_paradox.html</loc>
+  <loc>https://www.martinbenes.at/2021/06/08/bday_paradox</loc>
   <lastmod>2024-10-27T09:44:02+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://martinbenes.at/static/benes2024exploring.bib.txt</loc>
+  <loc>https://www.martinbenes.at/static/benes2024exploring.bib.txt</loc>
   <lastmod>2024-10-27T09:44:02+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://martinbenes.at/static/benes2023jpeg.bib.txt</loc>
+  <loc>https://www.martinbenes.at/static/benes2023jpeg.bib.txt</loc>
   <lastmod>2024-10-27T09:44:02+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://martinbenes.at/static/benes2022effect.bib.txt</loc>
+  <loc>https://www.martinbenes.at/static/benes2022effect.bib.txt</loc>
   <lastmod>2024-10-27T09:44:02+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://martinbenes.at/static/benes2022know.bib.txt</loc>
+  <loc>https://www.martinbenes.at/static/benes2022know.bib.txt</loc>
   <lastmod>2024-10-27T09:44:02+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://martinbenes.at/static/benes2021hmm.bib.txt</loc>
+  <loc>https://www.martinbenes.at/static/benes2021hmm.bib.txt</loc>
   <lastmod>2024-10-27T09:44:02+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://martinbenes.at/2021/06/02/knn_iris.html</loc>
+  <loc>https://www.martinbenes.at/2021/06/02/knn_iris</loc>
   <lastmod>2024-10-27T09:44:02+00:00</lastmod>
   <priority>0.64</priority>
 </url>

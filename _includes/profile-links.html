@@ -1,0 +1,19 @@
+<div class="profile-links">
+	<h3 class="sr-only">Profile links</h3>
+	<a href="#" class="profile-link js-email" data-user="martinbenes1996" data-domain="gmail.com"><i class="fa-solid fa-envelope" aria-hidden="true"></i> Email</a>
+	<a href="/cv_martinbenes.pdf" target="_blank" class="profile-link"><i class="fa-regular fa-file-lines" aria-hidden="true"></i> CV</a>
+	<a href="https://scholar.google.com/citations?user=RjHR9hUAAAAJ" target="_blank" rel="me noopener noreferrer" class="profile-link"><i class="fa-brands fa-google-scholar" aria-hidden="true"></i> Scholar</a>
+	<a href="https://orcid.org/0000-0003-0008-7524" target="_blank" rel="me noopener noreferrer" class="profile-link"><i class="fa-brands fa-orcid" aria-hidden="true"></i> ORCID</a>
+	<a href="https://www.github.com/martinbenes1996" target="_blank" rel="me noopener noreferrer" class="profile-link"><i class="fa-brands fa-github" aria-hidden="true"></i> GitHub</a>
+	<a href="https://www.linkedin.com/in/martinbenes1996" target="_blank" rel="me noopener noreferrer" class="profile-link"><i class="fa-brands fa-linkedin" aria-hidden="true"></i> LinkedIn</a>
+	<a href="https://informationsecurity.uibk.ac.at/people/martin-benes/" target="_blank" rel="me noopener noreferrer" class="profile-link"><i class="fa-solid fa-building-columns" aria-hidden="true"></i> UIBK</a>
+</div>
+<script>
+	// assemble the address only on interaction, to keep it away from scrapers
+	document.querySelectorAll('.js-email').forEach(function (a) {
+		function reveal() { a.href = 'mailto:' + a.dataset.user + '@' + a.dataset.domain; }
+		a.addEventListener('mouseenter', reveal);
+		a.addEventListener('focus', reveal);
+		a.addEventListener('click', reveal);
+	});
+</script>

@@ -1,6 +1,6 @@
 
 html {
-    font-family: 'Helvetica';
+    font-family: Helvetica, Arial, sans-serif;
 }
 
 .cookieBanner {
@@ -136,6 +136,18 @@ div.profile-text {
 
 div.profile-links {
     margin: 7%;
+    line-height: 2;
+}
+.profile-link {
+    margin: 0 0.6em;
+    white-space: nowrap;
+}
+.profile-link i {
+    color: #777;
+    margin-right: 0.2em;
+}
+a.profile-link:hover i {
+    color: inherit;
 }
 
 .section-header {
@@ -186,16 +198,17 @@ hr.section-separator {
 }
 
 footer {
-    background-color: black;
-    color: white;
-    padding-top: 4vh;/*3rem;*/
-    padding-left: 1vh;
-    padding-right: 1vh;
-    padding-bottom: 4vh;/*1.5rem;*/
-    /*position: absolute;*/
-    /*bottom: 0;*/
-    width: 100%;
+    margin-top: 4rem;
+    padding: 2rem 1rem;
+    border-top: 1px solid #ddd;
+    color: #777;
+    font-size: 0.9em;
     text-align: center;
+}
+
+.footer-sep {
+    margin: 0 0.6em;
+    color: #ccc;
 }
 
 a,
@@ -208,42 +221,12 @@ a:visited:hover {
     color: grey;
 }
 
-div.footer-category-column {
-    margin-bottom: 0rem;
-}
-
-@media only screen and (max-width: 991px) {
-    div.footer-category-column {
-        margin-bottom: 2rem;
-    }
-}
-
-footer a,
-footer a:visited {
-    color: white;
-}
-
-footer a:hover,
-footer a:visited:hover {
-    color: grey;
-}
-
 a.noformat ,
 a.noformat:hover,
 a.noformat:visited,
 a.noformat:visited:hover {
     color: black;
     text-decoration: none;
-}
-
-footer h5 {
-    font-weight: bold;
-    color: white;
-}
-
-.footer-design-row {
-    margin-top: 2rem;
-    color: gray;
 }
 
 table {

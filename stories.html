@@ -11,30 +11,14 @@ title: Stories
 				<span class="h5 text-muted" style="visibility: hidden">data scientist & researcher</span>
 			</h1>
 			<img src="img/martinbenes.jpg" title="Martin Benes" class="profile-photo" alt="Title photo of the author Martin Benes." />
+			{% include profile-links.html %}
 		</div>
 		<div class="col-md-7 col-sm-12 second-column">
-			<!---->
-			<hr />
-			<div class="row">
-				<div class="col-3 col-md-3 col-sm-3 col-xs-6 text-center">
-					<a href="/">Home</a>
-				</div>
-				<div class="col-3 col-md-3 col-sm-3 col-xs-6 text-center">
-					<a href="/publications">Publications</a>
-				</div>
-				<div class="col-3 col-md-3 col-sm-3 col-xs-6 text-center">
-					Stories
-				</div>
-				<div class="col-3 col-md-3 col-sm-3 col-xs-6 text-center">
-					<a href="/download">Download</a>
-				</div>
-			</div>
-			<hr />
-			<!---->
+			{% include nav.html %}
 			<div class="row">
 				<h2 class="section-header">Stories</h2>
 				<hr class="section-separator" />
-				<div class="col-12 d-flex justify-content-center">
+				<div>
 
 					{% for post in site.posts %}
 					<article class="list-item">

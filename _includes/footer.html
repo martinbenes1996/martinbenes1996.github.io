@@ -1,52 +1,7 @@
 <footer>
-    <div class="container-fluid">
-        <h4 style="display: none">Footer</h4>
-        <div class="col-md-3 col-sm-4 col-xs-12 footer-category-column">
-            <h5>Quick links</h5>
-            <div>
-                <a href="/">Home</a>
-            </div>
-            <div>
-                <a href="https://scholar.google.com/citations?user=RjHR9hUAAAAJ" target="_blank" rel="noopener noreferrer nofollow" >Scholar</a>
-            </div>
-            <div>
-                <a href="https://www.github.com/martinbenes1996" target="_blank" rel="noopener noreferrer nofollow" >GitHub</a>
-            </div>
-            <div>
-                <a href="https://orcid.org/0000-0003-0008-7524" target="_blank" rel="noopener noreferrer nofollow" >ORCID</a>
-            </div>
-        </div>
-        <div class="col-md-3 col-sm-4 col-xs-12 footer-category-column">
-            <h5>Social</h5>
-            <div>
-                <a href="https://www.linkedin.com/in/martinbenes1996" target="_blank" rel="noopener noreferrer nofollow" >LinkedIn</a>
-            </div>
-            <div>
-                <a href="https://stackoverflow.com/users/20225232/martin-benes" target="_blank" rel="noopener noreferrer nofollow" >StackOverflow</a>
-            </div>
-            <div>
-                <a href="https://www.instagram.com/martinbenes1996" target="_blank" rel="noopener noreferrer nofollow" >Instagram</a>
-            </div>
-            <div>
-                <a href="https://martinbenes1996.medium.com/" target="_blank" rel="noopener noreferrer nofollow" >Medium</a>
-            </div>
-        </div>
-        <div class="col-md-3 col-sm-4 col-xs-12 footer-category-column">
-            <h5>Miscellaneous</h5>
-            <!-- <div>
-                <a href="https://www.buymeacoffee.com/martinbenes1996" target="_blank" rel="noopener noreferrer nofollow">Buy me a coffee!</a>
-            </div> -->
-            <div>
-                <a href="/privacy.txt">Privacy policy</a>
-            </div>
-            <div>
-                <a href="/sitemap.xml">Sitemap</a>
-            </div>
-        </div>
-        <div class="col-md-3 col-sm-12 col-xs-12 footer-design-row">
-            <!--<div>Registered on <time datetime="2021-06-28">Jun 28, 2021</time>.</div>
-            <div>National tax number: 123456789</div><br>-->
-            <div>Design by Martin Beneš &copy; 2024</div>
-        </div>
-    </div>
+    &copy; {{ site.time | date: '%Y' }} Martin Beneš
+    <span class="footer-sep" aria-hidden="true">·</span>
+    Last updated <time datetime="{{ site.time | date: '%Y-%m-%d' }}">{{ site.time | date: '%b %Y' }}</time>
+    <span class="footer-sep" aria-hidden="true">·</span>
+    <a href="/privacy.txt">Privacy</a>
 </footer>
