@@ -3,6 +3,7 @@ layout:     post
 title:      What is the chance of winning a lottery?
 subtitle:   The maths of losing
 date:       2023-12-20
+topics:     [probability]
 author:     Martin Beneš
 header-img: img/sazka_lottery/ticket.png
 tags:
@@ -98,7 +99,7 @@ Pr_dodatkove <- 1/(49-6)
 
 The rewards are organized in "order" (*pořadí*), based on the count of numbers guessed.
 
-| <div style="width:10em">Guessed</div> | <div style="width:8em">Order</div> | <div style="width:10em">Probability</div> |
+| Guessed          | Order | Probability       |
 | ---------------- | ----- | ----------------- |
 | 6/6              | 1.    | $7.2\cdot10^{-8}$ |
 | 5/6 + dodatkové  | 2.    | $4.3\cdot10^{-7}$ |
@@ -214,7 +215,7 @@ The total reward sums up, when betting in multiple columns.
 The columns are chosen before revealing the results, there is no information exchange between the draws.
 Thus, each column can be assumed to be an independent draw from hypergeometric distribution.
 
-$E_{x\sim X}\bigg[\sum_{i=1}^{N}R(x_i\cap y)\bigg]\stackrel{\perp}{=}\sum_{i=1}^{N}E_{x_i\sim X}\big[R(x_i\cap y)\big]\stackrel{\text{id}}{=}N\cdot E_{x\sim X}\big[R(x_i\cap y)\big]$
+$$E_{x\sim X}\bigg[\sum_{i=1}^{N}R(x_i\cap y)\bigg]\stackrel{\perp}{=}\sum_{i=1}^{N}E_{x_i\sim X}\big[R(x_i\cap y)\big]\stackrel{\text{id}}{=}N\cdot E_{x\sim X}\big[R(x_i\cap y)\big]$$
 
 As Sportka tips are independent, average rewards / losses adds up.
 Betting multiple columns does not give any benefit, compared to betting a single column.

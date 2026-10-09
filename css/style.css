@@ -222,3 +222,108 @@ border-top: 1px solid #000;
 th, td {
 padding: 0em;
 }
+
+.project-meta {
+    font-size: 0.95em;
+    color: #777;
+}
+
+/* Tiles: bordered cards for software, talks and publications */
+.tile {
+    padding: 1.2rem 1.5rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+/* grid tiles share a row height; push the link to the bottom */
+.tile-grid .tile {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.tile-body {
+    flex-grow: 1;
+    margin-bottom: 0.6em;
+}
+.tile-list,
+.tile-grid {
+    margin-top: 2rem;
+}
+.tile > p:last-child {
+    margin-bottom: 0;
+}
+.tile > p + .tile-footer {
+    margin-top: -0.2em;
+}
+.tile-list .tile + .tile {
+    margin-top: 1.5rem;
+}
+.tile-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.5rem;
+}
+@media (max-width: 576px) {
+    .tile-grid {
+        grid-template-columns: minmax(0, 1fr);
+    }
+}
+
+/* story topic: small pill, in story tiles and the post header */
+.topic-tag {
+    display: inline-block;
+    padding: 0.1em 0.7em;
+    font-size: 0.8em;
+    color: #777;
+    border: 1px solid #ddd;
+    border-radius: 1em;
+    white-space: nowrap;
+}
+/* story tile footer: date, then topic pills; wraps on narrow screens */
+.tile-footer {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.4em;
+}
+.tile-footer .project-meta {
+    margin-right: 0.6em;
+}
+.tile-footer .topic-tag + .topic-tag {
+    margin-left: 0;
+}
+.topic-tag + .topic-tag {
+    margin-left: 0.4em;
+}
+small + .topic-tag {
+    margin-left: 0.6em;
+}
+
+/* post content: keep images and tables within the page on phones */
+.article-text img {
+    max-width: 100%;
+    height: auto;
+}
+/* wide tables scroll sideways inside their own box instead of widening the page */
+.article-text table {
+    display: block;
+    overflow-x: auto;
+}
+.article-text th,
+.article-text td {
+    padding: 0.3em 1.2em 0.3em 0;
+    white-space: nowrap;
+}
+/* on phones, small percentage-width images would be too tiny to read */
+@media (max-width: 768px) {
+    .article-text img {
+        display: block;
+        width: 85%;
+        margin: 1em auto;
+    }
+}
+/* wide display equations scroll inside their own box instead of widening the page */
+.article-text mjx-container[display="true"] {
+    max-width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+}

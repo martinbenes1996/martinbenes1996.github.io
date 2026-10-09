@@ -2,6 +2,7 @@
 layout:     post
 title:      Modelling a sheep herd by fluid dynamics
 date:       2025-04-06
+topics:     [simulation, behavior, cellular automata]
 author:     Martin Beneš
 tags:
     - cellular automata

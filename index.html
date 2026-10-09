@@ -9,18 +9,18 @@ layout: default
 			<h1 class="profile-header hidden-xs hidden-sm" title="[marc&#618;n &#712;b&#603;n&#603;&#643;]"><a href="/" class="noformat"><strong>Martin Beneš</strong></a><br />
 				<span class="h5 text-muted">computer & data scientist</span>
 			</h1>
-			<img src="img/martinbenes.jpg" title="Martin Benes" class="profile-photo hidden-xs hidden-sm" alt="Title photo of the author Martin Benes." />
+			<img src="img/martinbenes.jpg" title="Martin Benes" class="profile-photo hidden-xs hidden-sm" alt="Martin Beneš" />
 			<h2 class="sr-only">Profile</h2>
 			<div class="profile-text">
 				<h3 class="sr-only">Profile description</h3>
 				<p>
-					Computer & data scientist.
-					Open-source software developer.
-					Finishing up my PhD at University of Innsbruck.
+					Researching image steganography and steganalysis.
+					Developing open-source tools.
+					Finishing up my PhD at the University of Innsbruck.
 				</p>
 				<p>
-					Previously R&D intern at Blindspot,
-					and backend developer at TaxiCaller and Artisys.
+					Previously R&D intern at Blindspot (2024),
+					and backend developer at TaxiCaller (2019&ndash;2021) and Artisys (2017&ndash;2019).
 				</p>
 				<p>
 					MSc. in Statistics and machine learning from Linköping University.
@@ -35,7 +35,7 @@ layout: default
 				<h2 class="section-header">Latest publications</h2>
 				<hr class="section-separator" />
 
-				<div>
+				<div class="tile-list">
 
 					{% for pub in site.data.publications limit:2 %}
 					{% include publication.html pub=pub %}
@@ -51,12 +51,9 @@ layout: default
 				<h2 class="section-header">Latest stories</h2>
 				<hr class="section-separator" />
 
-				<div>
+				<div class="tile-list">
 				{% for post in site.posts limit:2 %}
-					<article class="list-item">
-						<a href="{{ post.url }}">{{ post.title }}</a>
-						<p id="article-short-{{ post.id }}">{{ post.content | strip_html | truncate:180 }}</p>
-					</article>
+					{% include story-tile.html post=post %}
 				{% endfor %}
 					<article class="list-item">
 						<a href="/stories">More ...</a>

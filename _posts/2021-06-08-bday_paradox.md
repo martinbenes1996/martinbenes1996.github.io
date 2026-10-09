@@ -3,6 +3,7 @@ layout:     post
 title:      Birthday paradox
 subtitle:   Are here any people with the same birthday?
 date:       2021-06-08
+topics:     [combinatorics, probability]
 author:     Martin Beneš
 header-img: img/bday_paradox_files/bday.jpg
 tags:

@@ -41,6 +41,7 @@ layout: default
 			<small>
 				<time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%b %d, %Y" }}</time>
 			</small>
+			{% for topic in page.topics %}<span class="topic-tag">{{ topic }}</span>{% endfor %}
 			<hr />
 		</div>
 	</div>

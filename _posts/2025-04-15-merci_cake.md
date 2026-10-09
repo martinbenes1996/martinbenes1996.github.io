@@ -2,6 +2,7 @@
 layout:     post
 title:      The Merci cake issue
 date:       2025-04-15
+topics:     [geometry, numerical methods]
 author:     Martin Beneš
 tags:
     - geometric modeling

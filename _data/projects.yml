@@ -1,0 +1,51 @@
+# Projects page content. Rendered by projects.html.
+#
+# software: open-source libraries, newest/most relevant first.
+# talks: newest first; `link` is the slides or demo repo, `link_type` picks
+#   the icon and label ("slides" or "code").
+
+software:
+  - name: sealwatch
+    description: Implementations of image steganalysis
+    languages: [Python, Rust]
+    url: https://github.com/uibk-uncover/sealwatch
+
+  - name: conseal
+    description: Simulators of image steganography methods
+    languages: [Python, Rust]
+    url: https://github.com/uibk-uncover/conseal
+
+  - name: jpeglib
+    description: Envelope for libjpeg for handling JPEG files
+    languages: [Python, C++]
+    url: https://github.com/martinbenes1996/jpeglib
+
+  - name: covid19dh
+    description: Interface to COVID-19 Data Hub
+    languages: [Python]
+    url: https://github.com/covid19datahub/Python
+
+talks:
+  - title: Real-World Steganography and Steganalysis
+    kind: Guest lecture
+    venue: University of Twente
+    date: Mar 2025
+    language: English
+    link: /pdfs/twente_2025_realworld-stego.pdf
+    link_type: slides
+
+  - title: Digitální neviditelný inkoust
+    kind: Workshop
+    venue: Gymnázium Brno-Řečkovice
+    date: Apr 2024
+    language: Czech
+    link: https://github.com/martinbenes1996/gyrec-stego-demo
+    link_type: code
+
+  - title: Digitale Zaubertinte
+    kind: Tag der MIP
+    venue: University of Innsbruck
+    date: Feb 2024
+    language: English
+    link: https://github.com/uibk-uncover/mip-stego-demo
+    link_type: code
