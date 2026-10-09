@@ -143,6 +143,6 @@ In a group of 23 people the probability is more than 0.5.
 
 ## References
 
-- Better Explained: Understanding the Birthday Paradox. <a href="https://betterexplained.com/articles/understanding-the-birthday-paradox/">https://betterexplained.com/</a>.
-- Marek Valášek: Jak nás klame intuice 1. <a href="https://www.youtube.com/watch?v=cuBbmeLwZGg">https://www.youtube.com/</a>
-- Andrea Giancoli: Have a Fun and Healthful Birthday Party. <a href="https://www.eatright.org/health/lifestyle/holidays/have-a-fun-and-healthier-birthday-party">https://www.eatright.org/</a>
+- Better Explained: <a href="https://betterexplained.com/articles/understanding-the-birthday-paradox/" target="_blank" rel="noopener noreferrer">Understanding the Birthday Paradox</a>.
+- Marek Valášek: <a href="https://youtu.be/cuBbmeLwZGg?si=AclWKBwFHSxNTwe1&amp;t=1232" target="_blank" rel="noopener noreferrer">Jak nás klame intuice 1</a> (YouTube, from 20:32).
+- Andrea Giancoli: <a href="https://www.eatright.org/health/lifestyle/holidays/have-a-fun-and-healthier-birthday-party" target="_blank" rel="noopener noreferrer">Have a Fun and Healthful Birthday Party</a>. Eat Right.

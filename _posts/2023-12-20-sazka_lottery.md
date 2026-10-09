@@ -34,7 +34,7 @@ The ticket is used for 2 draws, each connected with different rewards.
 Sportka is played twice a week.
 As of 2023, the price for one column is 20 CZK, and the price for Šance is also 20 CZK.
 
-There exists <a href="https://www.sazka.cz/sazka-svet/blog/jak-se-urcuje-vyhra-ve-sportce">a similar blogpost</a> modelling Sportka, but the modelling there is wrong.
+There exists <a href="https://www.sazka.cz/sazka-svet/blog/jak-se-urcuje-vyhra-ve-sportce" target="_blank" rel="noopener noreferrer">a similar blogpost</a> modelling Sportka, but the modelling there is wrong.
 
 
 ## Sportka
@@ -118,7 +118,7 @@ Pr_sportka[6]*Pr_dodatkove
 ### Tahy
 
 Sportka is played in two independent draws (*tahy*).
-Each draw has different <a href="https://www.sazka.cz/loterie/sportka/sazky-a-vysledky">reward tables</a>.
+Each draw has different <a href="https://www.sazka.cz/loterie/sportka/sazky-a-vysledky" target="_blank" rel="noopener noreferrer">reward tables</a>.
 Moreover, the table changes over time, so from now on, all the results depend on the reward table at the time.
 
 I use rewards from 22nd December 2023.
@@ -151,7 +151,7 @@ The average reward is $-12.7$ CZK. With the initial price $20$ CZK, this means a
 
 ## Šance
 
-Supplementary game <a href="https://www.sazka.cz/centrum-podpory/loterie-a-hry/loterie/sportka/jak-zjistit-vyhru-v-doplnkove-hre-sance">Šance</a> is based on guessing suffix of digits.
+Supplementary game <a href="https://www.sazka.cz/centrum-podpory/loterie-a-hry/loterie/sportka/jak-zjistit-vyhru-v-doplnkove-hre-sance" target="_blank" rel="noopener noreferrer">Šance</a> is based on guessing suffix of digits.
 Guessing the last k-digits is Bernoulli-distributed, with $p=10^{-k}$.
 
 ```r
