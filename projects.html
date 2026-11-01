@@ -26,6 +26,7 @@ title: Projects
 						<b>{{ project.name }}</b><br />
 						<span class="text-muted tile-body">{{ project.description }}</span>
 						{% include pub-link.html url=project.url icon="fa-brands fa-github" label="GitHub" %}
+						{% include pub-link.html url=project.docs icon="fa-solid fa-book" label="Docs" %}
 					</article>
 					{% endfor %}
 

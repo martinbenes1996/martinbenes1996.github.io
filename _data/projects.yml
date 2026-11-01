@@ -1,6 +1,7 @@
 # Projects page content. Rendered by projects.html.
 #
-# software: open-source libraries, newest/most relevant first.
+# software: open-source libraries, newest/most relevant first;
+#   `docs` is the documentation, optional.
 # talks: newest first; `link` is the slides or demo repo, `link_type` picks
 #   the icon and label ("slides" or "code").
 
@@ -9,16 +10,19 @@ software:
     description: Implementations of image steganalysis
     languages: [Python, Rust]
     url: https://github.com/uibk-uncover/sealwatch
+    docs: https://sealwatch.readthedocs.io/
 
   - name: conseal
     description: Simulators of image steganography methods
     languages: [Python, Rust]
     url: https://github.com/uibk-uncover/conseal
+    docs: https://conseal.readthedocs.io/
 
   - name: jpeglib
     description: Envelope for libjpeg for handling JPEG files
     languages: [Python, C++]
     url: https://github.com/martinbenes1996/jpeglib
+    docs: https://jpeglib.readthedocs.io/
 
   - name: covid19dh
     description: Interface to COVID-19 Data Hub
