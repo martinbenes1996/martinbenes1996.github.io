@@ -25,8 +25,10 @@ title: Projects
 						<span class="project-meta">{{ project.languages | join: ' &middot; ' }}</span><br />
 						<b>{{ project.name }}</b><br />
 						<span class="text-muted tile-body">{{ project.description }}</span>
-						{% include pub-link.html url=project.url icon="fa-brands fa-github" label="GitHub" %}
-						{% include pub-link.html url=project.docs icon="fa-solid fa-book" label="Docs" %}
+						<span>
+							{% include pub-link.html url=project.url icon="fa-brands fa-github" label="GitHub" %}
+							{% include pub-link.html url=project.docs icon="fa-solid fa-book-open" label="Docs" %}
+						</span>
 					</article>
 					{% endfor %}
 
