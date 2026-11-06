@@ -17,8 +17,8 @@
 - title: Variational cover modification steganography
   authors: [Martin Beneš, Rainer Böhme]
   venue: NeurIPS 2026
-  pdf: pending
-  code: pending # https://github.com/uibk-uncover/vcms
+  pdf: https://informationsecurity.uibk.ac.at/pdfs/BB2026_NEURIPS.pdf
+  code: https://github.com/uibk-uncover/vcms
   publisher: https://neurips.cc/virtual/2026/loc/sydney/poster/149566
   # openreview: https://openreview.net/forum?id=pAhg9hlxJV
   bib: benes2026variational
