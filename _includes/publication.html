@@ -11,7 +11,12 @@
 	<span class="text-muted">{{ pub.venue }}</span><br />
 	{% include pub-link.html url=pub.pdf icon="fa-regular fa-file-pdf" label="PDF" %}
 	{% include pub-link.html url=pub.code icon="fa-brands fa-github" label="Code" %}
+	{% if pub.video or pub.poster or pub.slides %}
+	<span class="pub-sep" aria-hidden="true">|</span>
 	{% include pub-link.html url=pub.video icon="fa-brands fa-youtube" label="Video" %}
+	{% include pub-link.html url=pub.poster icon="fa-regular fa-file-image" label="Poster" %}
+	{% include pub-link.html url=pub.slides icon="fa-solid fa-person-chalkboard" label="Slides" %}
+	{% endif %}
 	<span class="pub-sep" aria-hidden="true">|</span>
 	{% include pub-link.html url=pub.publisher icon="fa-solid fa-building-columns" label="Publisher" %}
 	{% include pub-link.html url=pub.proceedings icon="fa-solid fa-book" label="Proceedings" %}
