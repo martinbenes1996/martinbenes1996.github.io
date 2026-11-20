@@ -21,7 +21,7 @@
   code: https://github.com/uibk-uncover/vcms
   publisher: https://neurips.cc/virtual/2026/loc/sydney/poster/149566
   video: https://www.youtube.com/watch?v=JNzXuK37clI
-  # openreview: https://openreview.net/forum?id=pAhg9hlxJV
+  openreview: https://openreview.net/forum?id=pAhg9hlxJV
   bib: benes2026variational
 
 - title: Automating color image steganography research from first principles
