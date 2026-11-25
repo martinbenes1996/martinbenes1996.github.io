@@ -19,10 +19,14 @@
   venue: NeurIPS 2026
   pdf: https://informationsecurity.uibk.ac.at/pdfs/BB2026_NEURIPS.pdf
   code: https://github.com/uibk-uncover/vcms
+  # poster: https://icml.cc/media/PosterPDFs/ICML%202025/43686.png?t=1752054396.0939872
+  slides: https://neurips.cc/media/neurips-2026/Slides/149566.pdf
   publisher: https://neurips.cc/virtual/2026/loc/sydney/poster/149566
   video: https://www.youtube.com/watch?v=JNzXuK37clI
   openreview: https://openreview.net/forum?id=pAhg9hlxJV
   bib: benes2026variational
+
+
 
 - title: Automating color image steganography research from first principles
   authors: [Martin Beneš, Rainer Böhme]
